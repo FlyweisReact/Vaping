@@ -47,11 +47,11 @@ html {
   display: inline-block;
   line-height: 1;
 }
-.product-variants-item .input-container .active {
+.product-variants-item .input-container .input-radio:focus {
   background: #000;
   color: #fff;
 }
-
+.product-variants-item .input-container .input-radio:focus ~
 .product-variants-item .input-radio {
   cursor: pointer;
   position: absolute;
@@ -64,11 +64,13 @@ html {
   height: 34px;
   outline: none;
 }
-.product-variants-item .input-container .active ~ .radio-label {
-  color: #fff !important;
+.product-variants-item
+  .input-container
+  .input-radio[checked="checked"]
+  ~ .radio-label {
+  color: #fff;
   position: relative;
   background: transparent;
-  font-weight: bold;
 }
 .product-variants-item .radio-label {
   font-size: 12px;

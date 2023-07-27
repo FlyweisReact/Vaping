@@ -1,0 +1,17 @@
+/** @format */
+
+body {
+  margin: 0;
+  font-family: Quicksand !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: black;
+}
+
+code {
+  font-family: Quicksand !important;
+}
+html{
+  font-family: Quicksand  !important;
+}

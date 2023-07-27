@@ -47,11 +47,9 @@ html {
   display: inline-block;
   line-height: 1;
 }
-.product-variants-item .input-container .active {
-  background: #000;
-  color: #fff;
+.product-variants-item .input-container .input-radio[checked="checked"] {
+    background: #000;
 }
-
 .product-variants-item .input-radio {
   cursor: pointer;
   position: absolute;
@@ -64,14 +62,17 @@ html {
   height: 34px;
   outline: none;
 }
-.product-variants-item .input-container .active ~ .radio-label {
-  color: #fff !important;
+.product-variants-item .input-container .input-radio[checked="checked"] ~ .radio-label {
+  color: #fff;
   position: relative;
   background: transparent;
-  font-weight: bold;
 }
-.product-variants-item .radio-label {
+product-variants-item .radio-label {
   font-size: 12px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
   box-shadow: none;
   display: inline-block;
   min-width: 34px;

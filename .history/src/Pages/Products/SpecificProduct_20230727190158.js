@@ -37,7 +37,6 @@ const SpecificProduct = () => {
       setProduct(res);
       getImageLink(res);
       allRelatedProduct(res?.categoryId?._id);
-      setColorId(res?.colors?.[0]?._id);
     } catch {}
   };
 
@@ -62,11 +61,7 @@ const SpecificProduct = () => {
 
   let payload;
   if (colorId) {
-    if (size) {
-      payload = { productId: name, quantity, colorId, size };
-    } else {
-      payload = { productId: name, quantity, colorId };
-    }
+    payload = { productId: name, quantity, colorId };
   } else {
     payload = { productId: name, quantity };
   }
@@ -80,17 +75,13 @@ const SpecificProduct = () => {
     addItemWishlist(name);
   };
 
-  const getProductSize = async () => {
+  const getProductSize = async (id) => {
     try {
-      const res = await getSize(colorId);
+      const res = await getSize(id);
       setSizeList(res);
       setSize(res?.colorSize?.[0]?.size);
     } catch {}
   };
-
-  useEffect(() => {
-    getProductSize();
-  }, [colorId]);
 
   return (
     <div>
@@ -199,10 +190,7 @@ const SpecificProduct = () => {
                           }  box  `}
                           tabIndex={0}
                           key={index}
-                          onClick={() => {
-                            getProductSize(i._id);
-                            setColorId(i._id);
-                          }}
+                          onClick={() => setColorId(i._id)}
                         >
                           <div
                             style={{
@@ -218,32 +206,53 @@ const SpecificProduct = () => {
                   </div>
                 )}
 
-                {sizeList?.colorSize?.length === 0 || !sizeList?.colorSize ? (
+                {product?.colors?.length === 0 || !product?.colors ? (
                   ""
                 ) : (
                   <div class="product-variants-item">
                     <span class="control-label">Size : </span>
                     <ul id="group_1">
-                      {sizeList?.colorSize?.map((i, index) => (
-                        <li class="input-container pull-xs-left" key={index}>
-                          <input
-                            class={`input-radio ${
-                              size === i.size ? "active" : ""
-                            }`}
-                            type="radio"
-                            data-product-attribute="1"
-                            name="group[1]"
-                            onClick={() => setSize(i.size)}
-                          />
-                          <span
-                            class="radio-label"
-                            onClick={() => setSize(i.size)}
-                          >
-                            {" "}
-                            {i.size}{" "}
-                          </span>
-                        </li>
-                      ))}
+                      <li class="input-container pull-xs-left">
+                        <input
+                          class="input-radio"
+                          type="radio"
+                          data-product-attribute="1"
+                          name="group[1]"
+                          value="1"
+                          checked="checked"
+                        />
+                        <span class="radio-label">Small</span>
+                      </li>
+                      <li class="input-container pull-xs-left">
+                        <input
+                          class="input-radio"
+                          type="radio"
+                          data-product-attribute="1"
+                          name="group[1]"
+                          value="2"
+                        />
+                        <span class="radio-label">Medium</span>
+                      </li>
+                      <li class="input-container pull-xs-left">
+                        <input
+                          class="input-radio"
+                          type="radio"
+                          data-product-attribute="1"
+                          name="group[1]"
+                          value="3"
+                        />
+                        <span class="radio-label">Large</span>
+                      </li>
+                      <li class="input-container pull-xs-left">
+                        <input
+                          class="input-radio"
+                          type="radio"
+                          data-product-attribute="1"
+                          name="group[1]"
+                          value="4"
+                        />
+                        <span class="radio-label">Extra Large</span>
+                      </li>
                     </ul>
                   </div>
                 )}

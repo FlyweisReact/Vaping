@@ -33,10 +33,11 @@ const Cart = () => {
   }, []);
 
   const getImageLink = (item) => {
-    if (item?.productId?.colorActive === true) {
-      return item?.productColorId?.img;
+    if (item?.colorActive === true) {
+      console.log(item,  "Item")
+      return item?.colors?.[0]?.img;
     } else {
-      return item?.productId?.img;
+      return item?.img;
     }
   };
 
@@ -95,7 +96,7 @@ const Cart = () => {
                                 <span className="big-container">
                                   <span className="img-container">
                                     <img
-                                      src={getImageLink(i)}
+                                      src={getImageLink(i?.productId)}
                                       alt=""
                                       className="img-fluid"
                                     />

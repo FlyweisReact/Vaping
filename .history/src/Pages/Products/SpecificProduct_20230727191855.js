@@ -62,11 +62,7 @@ const SpecificProduct = () => {
 
   let payload;
   if (colorId) {
-    if (size) {
-      payload = { productId: name, quantity, colorId, size };
-    } else {
-      payload = { productId: name, quantity, colorId };
-    }
+    payload = { productId: name, quantity, colorId };
   } else {
     payload = { productId: name, quantity };
   }
@@ -233,15 +229,8 @@ const SpecificProduct = () => {
                             type="radio"
                             data-product-attribute="1"
                             name="group[1]"
-                            onClick={() => setSize(i.size)}
                           />
-                          <span
-                            class="radio-label"
-                            onClick={() => setSize(i.size)}
-                          >
-                            {" "}
-                            {i.size}{" "}
-                          </span>
+                          <span class="radio-label" onC > {i.size} </span>
                         </li>
                       ))}
                     </ul>

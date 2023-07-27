@@ -16,7 +16,6 @@ const Auth = {
 const getSize = async (payload) => {
   try{
     const response = await axios.get(`${BaseUrl}api/v1/Product/color/${payload}`)
-    return response.data.data
   }catch(e) { 
     console.log(e)
   } 
@@ -117,4 +116,4 @@ const getOrder = async () => {
   }
 };
 
-export { getCart, addItemCart, placeOrder ,getOrder , getSize };
+export { getCart, addItemCart, placeOrder ,getOrder };

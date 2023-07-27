@@ -64,11 +64,10 @@ html {
   height: 34px;
   outline: none;
 }
-.product-variants-item .input-container .active ~ .radio-label {
-  color: #fff !important;
+.product-variants-item .input-container .active  .radio-label {
+  color: #fff;
   position: relative;
   background: transparent;
-  font-weight: bold;
 }
 .product-variants-item .radio-label {
   font-size: 12px;

@@ -62,11 +62,7 @@ const SpecificProduct = () => {
 
   let payload;
   if (colorId) {
-    if (size) {
-      payload = { productId: name, quantity, colorId, size };
-    } else {
-      payload = { productId: name, quantity, colorId };
-    }
+    if
   } else {
     payload = { productId: name, quantity };
   }
@@ -91,6 +87,7 @@ const SpecificProduct = () => {
   useEffect(() => {
     getProductSize();
   }, [colorId]);
+
 
   return (
     <div>

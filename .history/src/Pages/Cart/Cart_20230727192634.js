@@ -33,7 +33,9 @@ const Cart = () => {
   }, []);
 
   const getImageLink = (item) => {
+    console.log(item);
     if (item?.productId?.colorActive === true) {
+      console.log(item, "Item");
       return item?.productColorId?.img;
     } else {
       return item?.productId?.img;

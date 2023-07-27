@@ -37,7 +37,7 @@ const SpecificProduct = () => {
       setProduct(res);
       getImageLink(res);
       allRelatedProduct(res?.categoryId?._id);
-      setColorId(res?.colors?.[0]?._id);
+      setColorId(res?.colors?.[0]?.)
     } catch {}
   };
 
@@ -62,11 +62,7 @@ const SpecificProduct = () => {
 
   let payload;
   if (colorId) {
-    if (size) {
-      payload = { productId: name, quantity, colorId, size };
-    } else {
-      payload = { productId: name, quantity, colorId };
-    }
+    payload = { productId: name, quantity, colorId };
   } else {
     payload = { productId: name, quantity };
   }
@@ -88,9 +84,10 @@ const SpecificProduct = () => {
     } catch {}
   };
 
+
   useEffect(() => {
-    getProductSize();
-  }, [colorId]);
+    getProductSize()
+  },[colorId])
 
   return (
     <div>
@@ -227,21 +224,12 @@ const SpecificProduct = () => {
                       {sizeList?.colorSize?.map((i, index) => (
                         <li class="input-container pull-xs-left" key={index}>
                           <input
-                            class={`input-radio ${
-                              size === i.size ? "active" : ""
-                            }`}
+                            class="input-radio"
                             type="radio"
                             data-product-attribute="1"
                             name="group[1]"
-                            onClick={() => setSize(i.size)}
                           />
-                          <span
-                            class="radio-label"
-                            onClick={() => setSize(i.size)}
-                          >
-                            {" "}
-                            {i.size}{" "}
-                          </span>
+                          <span class="radio-label"> {i.size} </span>
                         </li>
                       ))}
                     </ul>
