@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import {
   createAddress,
@@ -91,17 +90,7 @@ const Address = () => {
           <div className="right-container">
             <div className="block_content-right">
               <div class="title_account_second">Your personal information</div>
-              <Link
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "flex-end",
-                }}
-                to="/create-address"
-              >
-                {" "}
-                + Create New
-              </Link>
+              
 
               {data?.length < 1 || !data ? (
                 <form onSubmit={handleSubmit}>
@@ -289,34 +278,34 @@ const Address = () => {
                 </form>
               ) : (
                 <form>
-                  <div className="cart">
-                    <section id="main" style={{ marginBottom: 0 }}>
-                      <div className="cart-grid" style={{ paddingBottom: 0 }}>
-                        <div
-                          className="cart-grid-body"
-                          style={{ width: "100%", paddingBottom: 0 }}
-                        >
-                          <div className="cart-container">
-                            <div
-                              className="group_title"
-                              style={{ border: "none" }}
-                            >
-                              <table>
-                                <thead>
-                                  <tr>
-                                    <th>Alias</th>
-                                    <th>Company</th>
-                                    <th>Vat Number</th>
-                                    <th>Address</th>
-                                    <th>City</th>
-                                    <th>Pincode</th>
-                                    <th>Country</th>
-                                    <th></th>
-                                  </tr>
-                                </thead>
-                                <tbody style={{ marginTop: "100px" }}>
-                                  {data?.map((i, index) => (
-                                    <tr key={index}>
+                  {data?.map((i, index) => (
+                    <div className="cart" key={index}>
+                      <section id="main" style={{ marginBottom: 0 }}>
+                        <div className="cart-grid" style={{ paddingBottom: 0 }}>
+                          <div
+                            className="cart-grid-body"
+                            style={{ width: "100%", paddingBottom: 0 }}
+                          >
+                            <div className="cart-container">
+                              <div
+                                className="group_title"
+                                style={{ border: "none" }}
+                              >
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Alias</th>
+                                      <th>Company</th>
+                                      <th>Vat Number</th>
+                                      <th>Address</th>
+                                      <th>City</th>
+                                      <th>Pincode</th>
+                                      <th>Country</th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody style={{ marginTop: "100px" }}>
+                                    <tr>
                                       <td>{i.alias}</td>
 
                                       <td>
@@ -363,15 +352,15 @@ const Address = () => {
                                         ></i>
                                       </td>
                                     </tr>
-                                  ))}
-                                </tbody>
-                              </table>
+                                  </tbody>
+                                </table>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </section>
-                  </div>
+                      </section>
+                    </div>
+                  ))}
                 </form>
               )}
             </div>
