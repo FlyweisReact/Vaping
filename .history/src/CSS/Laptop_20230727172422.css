@@ -245,11 +245,19 @@
   .cart #main .cart-grid .cart-grid-body .page-title {
     font-size: 14px;
   }
+  
 
-  .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
-    width: 100%;
-    overflow-x: scroll;
-  }
+ 
+  
+  .cart
+    #main
+    .cart-grid
+    .cart-grid-body
+    .cart-container
+    .group_title
+    {
+      overflow: hidden;
+    }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
     display: none;
   }

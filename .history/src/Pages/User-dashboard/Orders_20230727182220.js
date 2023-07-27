@@ -20,14 +20,6 @@ const Orders = () => {
     fetchHandler();
   }, []);
 
-  const getImageLink = (item) => {
-    if (item?.colorActive === true) {
-      return item?.colors?.[0]?.img;
-    } else {
-      return item?.img;
-    }
-  };
-
   return (
     <div>
       <Navbar />
@@ -91,18 +83,14 @@ const Orders = () => {
                                       <span className="big-container">
                                         <span className="img-container">
                                           <img
-                                            src={getImageLink(i.productId)}
+                                            src="	https://demo.bestprestashoptheme.com/vaping/24-cart_default/hummingbird-printed-t-shirt.jpg"
                                             alt=""
                                             className="img-fluid"
                                           />
                                         </span>
 
                                         <div>
-                                          <Link
-                                            to={`/product/${i.productId._id}`}
-                                          >
-                                            {i?.productId?.name}
-                                          </Link>
+                                          <Link to={`/product/${i.productId._id}`}>{i?.productId?.name}</a>
                                         </div>
                                       </span>
                                     </td>

@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { getOrder } from "../../Repository/User/cart";
 import Profilebar from "./Profilebar";
@@ -19,14 +18,6 @@ const Orders = () => {
   useEffect(() => {
     fetchHandler();
   }, []);
-
-  const getImageLink = (item) => {
-    if (item?.colorActive === true) {
-      return item?.colors?.[0]?.img;
-    } else {
-      return item?.img;
-    }
-  };
 
   return (
     <div>
@@ -83,49 +74,50 @@ const Orders = () => {
                                   <th>Total</th>
                                 </tr>
                               </thead>
-
+                           
                               <tbody style={{ marginTop: "100px" }}>
-                                {products?.map((i, index) => (
-                                  <tr key={index}>
-                                    <td>
-                                      <span className="big-container">
-                                        <span className="img-container">
-                                          <img
-                                            src={getImageLink(i.productId)}
-                                            alt=""
-                                            className="img-fluid"
-                                          />
-                                        </span>
+                                <tr>
+                                  <td>
+                                    <span className="big-container">
+                                      <span className="img-container">
+                                        <img
+                                          src="	https://demo.bestprestashoptheme.com/vaping/24-cart_default/hummingbird-printed-t-shirt.jpg"
+                                          alt=""
+                                          className="img-fluid"
+                                        />
+                                      </span>
 
-                                        <div>
-                                          <Link
-                                            to={`/product/${i.productId._id}`}
-                                          >
-                                            {i?.productId?.name}
-                                          </Link>
+                                      <div>
+                                        <a href="/">Diamond Halo Stud Monte</a>
+                                        <div className="variant">
+                                          <span>Size:</span>
+                                          <span className="value">Small </span>
                                         </div>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span className="product-price">
-                                        £{i?.productPrice}
-                                      </span>
-                                    </td>
+                                        <div className="variant">
+                                          <span>Color:</span>
+                                          <span>White</span>
+                                        </div>
+                                      </div>
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span className="product-price">
+                                      £22.94
+                                    </span>
+                                  </td>
 
-                                    <td>
-                                      <span className="product-price">
-                                        {" "}
-                                        {i?.quantity}{" "}
-                                      </span>
-                                    </td>
+                                  <td>
+                                    <span className="product-price">5</span>
+                                  </td>
 
-                                    <td>
-                                      <span className="product-price total">
-                                        £{i?.total}
-                                      </span>
-                                    </td>
-                                  </tr>
-                                ))}
+                                  <td>
+                                    <span className="product-price total">
+                                      £22.94
+                                    </span>
+                                  </td>
+                                </tr>
+
+                     
                               </tbody>
                             </table>
                           </div>

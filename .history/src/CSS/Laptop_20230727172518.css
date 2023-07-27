@@ -246,6 +246,7 @@
     font-size: 14px;
   }
 
+  .cart #main .cart-grid .cart-grid-body .cart-container .group_title 
   .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
     width: 100%;
     overflow-x: scroll;

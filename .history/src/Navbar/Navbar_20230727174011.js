@@ -228,7 +228,7 @@ const Navbar = () => {
                               <div className="media">
                                 <img
                                   className=" product-image"
-                                  src={getImageLink(i?.productId)}
+                                  src={getImageLink(i.productId)}
                                   alt=""
                                 />
 

@@ -91,7 +91,7 @@ const Orders = () => {
                                       <span className="big-container">
                                         <span className="img-container">
                                           <img
-                                            src={getImageLink(i.productId)}
+                                            src={getImageLink()}
                                             alt=""
                                             className="img-fluid"
                                           />

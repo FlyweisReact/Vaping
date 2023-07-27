@@ -247,6 +247,9 @@
   }
 
   .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
+    table-layout: ;
+  }
+  .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
     width: 100%;
     overflow-x: scroll;
   }

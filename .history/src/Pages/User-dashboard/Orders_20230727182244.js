@@ -91,7 +91,7 @@ const Orders = () => {
                                       <span className="big-container">
                                         <span className="img-container">
                                           <img
-                                            src={getImageLink(i.productId)}
+                                            src="	https://demo.bestprestashoptheme.com/vaping/24-cart_default/hummingbird-printed-t-shirt.jpg"
                                             alt=""
                                             className="img-fluid"
                                           />

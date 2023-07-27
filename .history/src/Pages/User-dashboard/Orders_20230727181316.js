@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { getOrder } from "../../Repository/User/cart";
 import Profilebar from "./Profilebar";
@@ -19,14 +18,6 @@ const Orders = () => {
   useEffect(() => {
     fetchHandler();
   }, []);
-
-  const getImageLink = (item) => {
-    if (item?.colorActive === true) {
-      return item?.colors?.[0]?.img;
-    } else {
-      return item?.img;
-    }
-  };
 
   return (
     <div>
@@ -83,50 +74,10 @@ const Orders = () => {
                                   <th>Total</th>
                                 </tr>
                               </thead>
+                              {products?.map((i , index) => (
 
-                              <tbody style={{ marginTop: "100px" }}>
-                                {products?.map((i, index) => (
-                                  <tr key={index}>
-                                    <td>
-                                      <span className="big-container">
-                                        <span className="img-container">
-                                          <img
-                                            src={getImageLink(i.productId)}
-                                            alt=""
-                                            className="img-fluid"
-                                          />
-                                        </span>
-
-                                        <div>
-                                          <Link
-                                            to={`/product/${i.productId._id}`}
-                                          >
-                                            {i?.productId?.name}
-                                          </Link>
-                                        </div>
-                                      </span>
-                                    </td>
-                                    <td>
-                                      <span className="product-price">
-                                        £{i?.productPrice}
-                                      </span>
-                                    </td>
-
-                                    <td>
-                                      <span className="product-price">
-                                        {" "}
-                                        {i?.quantity}{" "}
-                                      </span>
-                                    </td>
-
-                                    <td>
-                                      <span className="product-price total">
-                                        £{i?.total}
-                                      </span>
-                                    </td>
-                                  </tr>
-                                ))}
-                              </tbody>
+                              ))}
+                         
                             </table>
                           </div>
                         </div>

@@ -42,7 +42,7 @@ const addItemCart = async (payload) => {
       },
     });
   } catch (e) {
-    const msg = e?.response?.data?.message;
+    const msg = e?.response?.data?.message
     Store.addNotification({
       title: "Error !",
       message: msg,
@@ -59,6 +59,8 @@ const addItemCart = async (payload) => {
   }
 };
 
+
+
 const placeOrder = async (payload) => {
   try {
     const response = await axios.post(
@@ -66,9 +68,10 @@ const placeOrder = async (payload) => {
       payload,
       Auth
     );
+    const msg = response.data.message;
     Store.addNotification({
       title: "Success !",
-      message: "Order Has Been Placed Successfully",
+      message: msg,
       type: "success",
       insert: "top",
       container: "top-center",
@@ -80,7 +83,7 @@ const placeOrder = async (payload) => {
       },
     });
   } catch (e) {
-    const msg = e?.response?.data?.message;
+    const msg = e?.response?.data?.message
     Store.addNotification({
       title: "Error !",
       message: msg,
@@ -97,13 +100,4 @@ const placeOrder = async (payload) => {
   }
 };
 
-const getOrder = async () => {
-  try {
-    const response = await axios.get(`${BaseUrl}api/v1/user/Orders`, Auth);
-    return response.data.data
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-export { getCart, addItemCart, placeOrder ,getOrder };
+export { getCart ,addItemCart  };

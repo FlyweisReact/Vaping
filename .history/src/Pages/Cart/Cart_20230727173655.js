@@ -95,7 +95,7 @@ const Cart = () => {
                                 <span className="big-container">
                                   <span className="img-container">
                                     <img
-                                      src={getImageLink(i?.productId)}
+                                      src={getImageLink(i.productId)}
                                       alt=""
                                       className="img-fluid"
                                     />

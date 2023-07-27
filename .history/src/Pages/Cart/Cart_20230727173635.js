@@ -95,21 +95,21 @@ const Cart = () => {
                                 <span className="big-container">
                                   <span className="img-container">
                                     <img
-                                      src={getImageLink(i?.productId)}
+                                      src={getImageLink(i.productId)}
                                       alt=""
                                       className="img-fluid"
                                     />
                                   </span>
 
                                   <div>
-                                    <a href="/"> {i?.productId?.name} </a>
+                                    <a href="/"> {i.productId.name} </a>
                                   </div>
                                 </span>
                               </td>
                               <td>
                                 <span className="product-price">
                                   {" "}
-                                  £{i?.productPrice}
+                                  £{i.productPrice}
                                 </span>
                               </td>
 
@@ -120,7 +120,7 @@ const Cart = () => {
                                       type="text"
                                       id="quantity_wanted"
                                       min="1"
-                                      value={i?.quantity}
+                                      value={i.quantity}
                                     />
                                     <span className="input-group-btn-vertical">
                                       <button
@@ -142,7 +142,7 @@ const Cart = () => {
 
                               <td>
                                 <span className="product-price total">
-                                  £{i?.total}
+                                  £{i.total}
                                 </span>
                               </td>
 
@@ -166,7 +166,7 @@ const Cart = () => {
                     <div className="cart-detailed-totals">
                       <div className="summary">
                         <p>Total Items:</p>
-                        <p className="value">{Items?.totalItem}</p>
+                        <p className="value">{Items.totalItem}</p>
                       </div>
                       <div className="summary">
                         <p>Discounted Price:</p>

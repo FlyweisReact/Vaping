@@ -248,7 +248,7 @@
 
   .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
     width: 100%;
-    overflow-x: scroll;
+    overflow-y: ;
   }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
     display: none;

@@ -5,7 +5,6 @@ import Breadcrumb from "../../Component/Breadcrumb";
 import Navbar from "../../Navbar/Navbar";
 import { getCart, placeOrder } from "../../Repository/User/cart";
 import { getAllAddress } from "../../Repository/User/Addresses";
-import { Store } from "react-notifications-component";
 
 const Cart = () => {
   const [Items, setItems] = useState({});
@@ -40,26 +39,12 @@ const Cart = () => {
     }
   };
 
-  const PlaceOrder = async () => {
-    if (addressId) {
-      await placeOrder(addressId);
-      fetchHandler();
-      setAddressSelector(false);
-    } else {
-      Store.addNotification({
-        title: "Error !",
-        message: "Please Select Address First !",
-        type: "danger",
-        insert: "top",
-        container: "top-center",
-        animationIn: ["animate__animated", "animate__fadeIn"],
-        animationOut: ["animate__animated", "animate__fadeOut"],
-        dismiss: {
-          duration: 1000,
-          onScreen: true,
-        },
-      });
+  const PlaceOrder = (e) => {
+    e.preventDefault();
+    if(addressId){
+      
     }
+    placeOrder(addressId);
   };
 
   return (
@@ -95,21 +80,21 @@ const Cart = () => {
                                 <span className="big-container">
                                   <span className="img-container">
                                     <img
-                                      src={getImageLink(i?.productId)}
+                                      src={getImageLink(i.productId)}
                                       alt=""
                                       className="img-fluid"
                                     />
                                   </span>
 
                                   <div>
-                                    <a href="/"> {i?.productId?.name} </a>
+                                    <a href="/"> {i.productId.name} </a>
                                   </div>
                                 </span>
                               </td>
                               <td>
                                 <span className="product-price">
                                   {" "}
-                                  £{i?.productPrice}
+                                  £{i.productPrice}
                                 </span>
                               </td>
 
@@ -120,7 +105,7 @@ const Cart = () => {
                                       type="text"
                                       id="quantity_wanted"
                                       min="1"
-                                      value={i?.quantity}
+                                      value={i.quantity}
                                     />
                                     <span className="input-group-btn-vertical">
                                       <button
@@ -142,7 +127,7 @@ const Cart = () => {
 
                               <td>
                                 <span className="product-price total">
-                                  £{i?.total}
+                                  £{i.total}
                                 </span>
                               </td>
 
@@ -154,7 +139,7 @@ const Cart = () => {
                         </tbody>
                       </table>
                     </div>
-                    <button className="continue_shopping Hide_This">
+                    <button className="continue_shopping">
                       Continue shopping
                     </button>
                   </div>
@@ -166,16 +151,16 @@ const Cart = () => {
                     <div className="cart-detailed-totals">
                       <div className="summary">
                         <p>Total Items:</p>
-                        <p className="value">{Items?.totalItem}</p>
+                        <p className="value">{Items.totalItem}</p>
                       </div>
                       <div className="summary">
                         <p>Discounted Price:</p>
-                        <p className="value">£{Items?.discountPrice}</p>
+                        <p className="value">£{Items.discountPrice}</p>
                       </div>
 
                       <div className="summary">
                         <p>Amount To Be Paid:</p>
-                        <p className="value">£{Items?.paidAmount} </p>
+                        <p className="value">£{Items.paidAmount} </p>
                       </div>
 
                       <div className="empty"></div>
@@ -185,7 +170,7 @@ const Cart = () => {
                           {" "}
                           <span className="upper">TOTAL</span> (tax incl.)
                         </p>
-                        <p className="value"> £{Items?.totalAmount} </p>
+                        <p className="value"> £{Items.totalAmount} </p>
                       </div>
 
                       <button
@@ -210,7 +195,7 @@ const Cart = () => {
                     <h1 class="page-title">Select Address </h1>
 
                     <div className="cart-container">
-                      <div className="group_title  overflow_Container">
+                      <div className="group_title ">
                         <table>
                           <thead>
                             <tr>

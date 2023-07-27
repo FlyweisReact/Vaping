@@ -228,7 +228,7 @@ const Navbar = () => {
                               <div className="media">
                                 <img
                                   className=" product-image"
-                                  src={getImageLink(i?.productId)}
+                                  src={getImageLink(i.productId)}
                                   alt=""
                                 />
 
@@ -238,18 +238,18 @@ const Navbar = () => {
 
                                 <div className="media-body">
                                   <div class="product-name">
-                                    <Link to={`/product/${i?.productId?._id}`}>
+                                    <Link to={`/product/${i.productId._id}`}>
                                       {" "}
-                                      {i?.productId?.name}{" "}
+                                      {i.productId.name}{" "}
                                     </Link>
                                   </div>
                                   <div>
                                     <span class="product-price">
-                                      ${i?.productPrice}
+                                      ${i.productPrice}
                                     </span>
                                     <span class="quantity">
                                       {" "}
-                                      x {i?.quantity}{" "}
+                                      x {i.quantity}{" "}
                                     </span>
                                   </div>
                                 </div>

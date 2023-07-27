@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { getOrder } from "../../Repository/User/cart";
 import Profilebar from "./Profilebar";
@@ -19,14 +18,6 @@ const Orders = () => {
   useEffect(() => {
     fetchHandler();
   }, []);
-
-  const getImageLink = (item) => {
-    if (item?.colorActive === true) {
-      return item?.colors?.[0]?.img;
-    } else {
-      return item?.img;
-    }
-  };
 
   return (
     <div>
@@ -91,18 +82,14 @@ const Orders = () => {
                                       <span className="big-container">
                                         <span className="img-container">
                                           <img
-                                            src={getImageLink(i.productId)}
+                                            src="	https://demo.bestprestashoptheme.com/vaping/24-cart_default/hummingbird-printed-t-shirt.jpg"
                                             alt=""
                                             className="img-fluid"
                                           />
                                         </span>
 
                                         <div>
-                                          <Link
-                                            to={`/product/${i.productId._id}`}
-                                          >
-                                            {i?.productId?.name}
-                                          </Link>
+                                          <a href="/product/${}">{i?.productId?.name}</a>
                                         </div>
                                       </span>
                                     </td>

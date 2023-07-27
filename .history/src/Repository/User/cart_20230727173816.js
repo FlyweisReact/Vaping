@@ -100,10 +100,10 @@ const placeOrder = async (payload) => {
 const getOrder = async () => {
   try {
     const response = await axios.get(`${BaseUrl}api/v1/user/Orders`, Auth);
-    return response.data.data
+    return response 
   } catch (e) {
     console.log(e);
   }
 };
 
-export { getCart, addItemCart, placeOrder ,getOrder };
+export { getCart, addItemCart, placeOrder };

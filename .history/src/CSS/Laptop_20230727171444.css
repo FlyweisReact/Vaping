@@ -245,10 +245,58 @@
   .cart #main .cart-grid .cart-grid-body .page-title {
     font-size: 14px;
   }
+  .cart
+    #main
+    .cart-grid
+    .cart-grid-body
+    .cart-container
+    .group_title
+    table
+    thead
+    tr
+    th {
+    display: none;
+  }
 
-  .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
-    width: 100%;
-    overflow-x: scroll;
+  .cart
+    #main
+    .cart-grid
+    .cart-grid-body
+    .cart-container
+    .group_title
+    table
+    tbody
+    tr
+    td
+    .qty {
+    display: none;
+  }
+
+  .cart
+    #main
+    .cart-grid
+    .cart-grid-body
+    .cart-container
+    .group_title
+    table
+    tbody
+    tr
+    td
+    .fa-trash {
+    display: none;
+  }
+  .cart
+    #main
+    .cart-grid
+    .cart-grid-body
+    .cart-container
+    .group_title
+    table
+    tbody
+    tr
+    td
+    .product-price {
+    display: none;
   }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
     display: none;
@@ -305,5 +353,12 @@
   }
   .block_content-right .wlp_bought_list .Wishlist {
     width: 47%;
+  }
+
+  .overflow_Container table{
+    table-layout: fixed;
+  }
+  .overflow_Container table tbody tr td{
+    width: 100px;
   }
 }

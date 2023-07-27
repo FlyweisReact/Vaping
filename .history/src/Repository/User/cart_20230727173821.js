@@ -106,4 +106,4 @@ const getOrder = async () => {
   }
 };
 
-export { getCart, addItemCart, placeOrder ,getOrder };
+export { getCart, addItemCart, placeOrder };
