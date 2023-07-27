@@ -56,6 +56,7 @@ const LoginUser = (payload, navigate) => {
       const response = await axios.post(`${BaseUrl}api/v1/user/login`, payload);
       const data = response.data.data;
       localStorage.setItem("Token", response.data.accessToken);
+      
       console.log(localStorage.getItem("Token"))
       dispatch(Login(data));
       Store.addNotification({
