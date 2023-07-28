@@ -28,13 +28,12 @@ const Orders = () => {
   }, []);
 
   const getImageLink = (item) => {
-    if (item?.productId?.colorActive === true) {
-      return item?.productColorId?.img;
+    if (item?.colorActive === true) {
+      return item?.colors?.[0]?.img;
     } else {
-      return item?.productId?.img;
+      return item?.img;
     }
   };
-
 
   return (
     <div>
@@ -106,7 +105,7 @@ const Orders = () => {
                                           <span className="big-container">
                                             <span className="img-container">
                                               <img
-                                                src={getImageLink(i)}
+                                                src={getImageLink(i.productId)}
                                                 alt=""
                                                 className="img-fluid"
                                               />

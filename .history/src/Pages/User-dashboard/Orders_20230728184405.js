@@ -28,13 +28,12 @@ const Orders = () => {
   }, []);
 
   const getImageLink = (item) => {
-    if (item?.productId?.colorActive === true) {
-      return item?.productColorId?.img;
+    if (item?.colorActive === true) {
+      return item?.colors?.[0]?.img;
     } else {
-      return item?.productId?.img;
+      return item?.img;
     }
   };
-
 
   return (
     <div>
