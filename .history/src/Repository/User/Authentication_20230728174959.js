@@ -58,6 +58,7 @@ const LoginUser = (payload, navigate) => {
       window.localStorage.setItem("Token", response.data.accessToken);
       console.info(window.localStorage.getItem("Token"), "Token");
       dispatch(Login(data));
+
       Store.addNotification({
         title: "Success !",
         message: "Welcome Back",
