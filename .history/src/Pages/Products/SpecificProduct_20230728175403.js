@@ -285,7 +285,6 @@ const SpecificProduct = () => {
                               onClick={() => {
                                 getProductSize(i._id);
                                 setColorId(i._id);
-                                setImg(i.img)
                               }}
                             >
                               <div

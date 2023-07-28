@@ -288,6 +288,7 @@ const SpecificProduct = () => {
                                 setImg(i.img)
                               }}
                             >
+                              {console.log(i , "Item")}
                               <div
                                 style={{
                                   backgroundColor: `${i.color}`,

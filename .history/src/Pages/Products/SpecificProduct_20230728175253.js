@@ -224,7 +224,7 @@ const SpecificProduct = () => {
                 <div className="product-list ">
                   {product?.colors?.map((item, index) => (
                     <div className="item thumb-container" key={index}>
-                  
+                    
                       <img
                         class="thumb js-thumb  selected "
                         src={item?.img}
@@ -285,7 +285,6 @@ const SpecificProduct = () => {
                               onClick={() => {
                                 getProductSize(i._id);
                                 setColorId(i._id);
-                                setImg(i.img)
                               }}
                             >
                               <div

@@ -285,9 +285,9 @@ const SpecificProduct = () => {
                               onClick={() => {
                                 getProductSize(i._id);
                                 setColorId(i._id);
-                                setImg(i.img)
                               }}
                             >
+                              {console.log(i , "Item")}
                               <div
                                 style={{
                                   backgroundColor: `${i.color}`,
