@@ -14,6 +14,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { CartItems } from "../../Store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import {PaymentElement} from '@stripe/react-stripe-js';
+
+
+const stripePromise = loadStripe(
+  "pk_test_51NYnaISGUdCg6ljtoAiKIBOUFoZePxplk65z8FjHXyvWx3bSfRWxYMd1vv5Qh2AYweuolrIqxwLX6XmsZ41ueyAC00MBUskGaO"
+);
 
 const Cart = () => {
   const [Items, setItems] = useState({});
@@ -71,6 +79,10 @@ const Cart = () => {
   const updateProductQuantity = async (products_id, quantity) => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
+  };
+
+  const options = {
+    clientSecret: "{{CLIENT_SECRET}}",
   };
 
   return (
@@ -317,6 +329,13 @@ const Cart = () => {
           ) : (
             ""
           )}
+
+          <Elements stripe={stripePromise} options={options}>
+          <form>
+      <PaymentElement />
+      <button>Submit</button>
+    </form>>
+          </Elements>
         </div>
       </div>
     </>

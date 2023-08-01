@@ -15,6 +15,8 @@ import { CartItems } from "../../Store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 
+
+
 const Cart = () => {
   const [Items, setItems] = useState({});
   const [address, setAddress] = useState([]);
@@ -71,6 +73,29 @@ const Cart = () => {
   const updateProductQuantity = async (products_id, quantity) => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
+  };
+
+  const CARD_ELEMENT_OPTIONS = {
+    iconStyle: "solid",
+    hidePostalCode: true,
+    style: {
+      base: {
+        iconColor: "rgb(240, 57, 122)",
+        color: "rgb(240, 57, 122)",
+        fontSize: "16px",
+        fontFamily: '"Open Sans", sans-serif',
+        fontSmoothing: "antialiased",
+        "::placeholder": {
+          color: "#CFD7DF",
+        },
+      },
+      invalid: {
+        color: "#e5424d",
+        ":focus": {
+          color: "#303238",
+        },
+      },
+    },
   };
 
   return (
@@ -317,6 +342,8 @@ const Cart = () => {
           ) : (
             ""
           )}
+
+  
         </div>
       </div>
     </>

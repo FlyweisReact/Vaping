@@ -5,7 +5,7 @@ import { Store } from "react-notifications-component";
 import { getCartItems } from "../../Store/Slices/cartSlice";
 const BaseUrl = "https://krish-vapes-backend.vercel.app/";
 
-const token = localStorage.getItem("Token");
+const token = .localStorage.getItem("Token");
 const Auth = {
   headers: {
     Authorization: `Bearer ${token}`,

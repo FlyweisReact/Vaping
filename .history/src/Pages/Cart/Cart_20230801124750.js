@@ -15,6 +15,13 @@ import { CartItems } from "../../Store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY);
+
+
+
 const Cart = () => {
   const [Items, setItems] = useState({});
   const [address, setAddress] = useState([]);
@@ -72,6 +79,8 @@ const Cart = () => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
   };
+
+
 
   return (
     <>
@@ -317,6 +326,7 @@ const Cart = () => {
           ) : (
             ""
           )}
+
         </div>
       </div>
     </>

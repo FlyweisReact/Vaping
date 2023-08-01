@@ -14,6 +14,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { CartItems } from "../../Store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import { loadStripe } from "@stripe/stripe-js";
+import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
+import { Elements } from '@stripe/react-stripe-js';
+
 
 const Cart = () => {
   const [Items, setItems] = useState({});
@@ -71,6 +75,31 @@ const Cart = () => {
   const updateProductQuantity = async (products_id, quantity) => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
+  };
+
+  const stripePromise = loadStripe(
+    "pk_test_51NYnaISGUdCg6ljtoAiKIBOUFoZePxplk65z8FjHXyvWx3bSfRWxYMd1vv5Qh2AYweuolrIqxwLX6XmsZ41ueyAC00MBUskGaO"
+  );
+
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const handleSubmit = async () => {
+    if (!stripe || !elements) {
+      return;
+    }
+
+    const cardElement = elements.getElement(CardElement);
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+    });
+
+    if (error) {
+      console.error(error);
+    } else {
+      console.log("PaymentMethod:", paymentMethod);
+    }
   };
 
   return (
@@ -235,6 +264,13 @@ const Cart = () => {
               </div>
             </section>
           </div>
+
+          <form onSubmit={handleSubmit}>
+            <CardElement />
+            <button type="submit" disabled={!stripe}>
+              Pay
+            </button>
+          </form>
 
           {addressSelector === true ? (
             <div className="cart">

@@ -73,6 +73,8 @@ const Cart = () => {
     dispatch(updateQuantityCart(payload));
   };
 
+
+
   return (
     <>
       <div>
@@ -317,6 +319,7 @@ const Cart = () => {
           ) : (
             ""
           )}
+
         </div>
       </div>
     </>

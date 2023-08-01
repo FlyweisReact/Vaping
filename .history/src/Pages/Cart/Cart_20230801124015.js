@@ -14,6 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { CartItems } from "../../Store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 
 const Cart = () => {
   const [Items, setItems] = useState({});
@@ -72,6 +74,7 @@ const Cart = () => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
   };
+
 
   return (
     <>
@@ -235,6 +238,7 @@ const Cart = () => {
               </div>
             </section>
           </div>
+
 
           {addressSelector === true ? (
             <div className="cart">

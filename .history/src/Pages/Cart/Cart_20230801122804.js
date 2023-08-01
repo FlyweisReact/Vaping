@@ -5,6 +5,7 @@ import Breadcrumb from "../../Component/Breadcrumb";
 import Navbar from "../../Navbar/Navbar";
 import {
   deleteProductCart,
+  getCart,
   placeOrder,
   updateQuantityCart,
 } from "../../Repository/User/cart";
@@ -14,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CartItems } from "../../Store/Slices/cartSlice";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import { loadStripe } from '@stripe/stripe-js';
 
 const Cart = () => {
   const [Items, setItems] = useState({});
@@ -72,6 +74,9 @@ const Cart = () => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
   };
+
+
+  const stripePromise = loadStripe('YOUR_PUBLISHABLE_KEY');
 
   return (
     <>
