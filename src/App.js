@@ -27,6 +27,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import CreateAddress from "./Pages/User-dashboard/CreateAddress";
+import Success from "./Pages/PaymentResult/Success";
+import Failure from "./Pages/PaymentResult/Failure";
 
 const App = () => {
   return (
@@ -60,6 +62,8 @@ const App = () => {
             <Route path="/order" element={<Orders />} />
             <Route path="/mywishlist" element={<Wishlist />} />
             <Route path="/create-address" element={<CreateAddress />} />
+            <Route path="/order-success/:id" element={<Success />} />
+            <Route path="/order-failure/:id" element={<Failure />} />
           </Routes>
           <Footer />
         </div>

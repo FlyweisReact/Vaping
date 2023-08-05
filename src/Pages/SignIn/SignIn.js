@@ -14,7 +14,7 @@ const SignIn = () => {
   const payload = { email, password };
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     dispatch(LoginUser(payload, navigate));
   };

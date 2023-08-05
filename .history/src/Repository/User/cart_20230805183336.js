@@ -178,7 +178,7 @@ const updateQuantityCart = (payload) => {
       const response = await axios.put(
         `${BaseUrl}api/v1/user/updateQuantity`,
         payload,
-        {headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}}
+        {headers:{Authorization : `Bearer ${localStorage.getItem()}`}}
       );
       const msg = response.data.message;
       Store.addNotification({

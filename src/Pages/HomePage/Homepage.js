@@ -89,6 +89,13 @@ const Homepage = () => {
     getBlogs();
     getSubCategories();
   }, []);
+  const [search, setSearch] = useState("");
+  const searchD = !search ? products :
+  products?.filter((it, i)=>{
+    return (
+      it?.name?.toLowerCase()?.includes(query?.toLowerCase())
+    );
+  })
 
   return (
     <>
@@ -167,8 +174,11 @@ const Homepage = () => {
                 On Sale
               </button>
             </div>
-
-            <Product products={products} loading={productLoading} />
+            <div className="search-cont">
+              <i className="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Enter Search Keyword" onChange={(e)=>setSearch(e.target.value)} />
+            </div>
+            <Product products={searchD} loading={productLoading} />
 
             <div className="Banner_Img">
               {bigBanner ? (

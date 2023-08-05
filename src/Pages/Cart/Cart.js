@@ -12,8 +12,9 @@ import { getAllAddress } from "../../Repository/User/Addresses";
 import { Store } from "react-notifications-component";
 import { useDispatch, useSelector } from "react-redux";
 import { CartItems } from "../../Store/Slices/cartSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import axios from "axios";
 
 const Cart = () => {
   const [Items, setItems] = useState({});
@@ -22,6 +23,8 @@ const Cart = () => {
   const [addressId, setAddressId] = useState(null);
   const cartItem = useSelector(CartItems);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const getAddress = async () => {
     try {
@@ -43,9 +46,11 @@ const Cart = () => {
     }
   };
 
+  const [orderId, setOrderId] = useState("");
+
   const PlaceOrder = async () => {
-    if (addressId) {
-      await placeOrder(addressId);
+    if (orderId) {
+      await placeOrder(orderId);
       setAddressSelector(false);
     } else {
       Store.addNotification({
@@ -64,6 +69,21 @@ const Cart = () => {
     }
   };
 
+  const placeOrder = async(orderId)=>{
+    const url = `https://krish-vapes-backend.vercel.app/api/v1/user/placeOrder/${orderId}`;
+    try{
+      console.log(orderId);
+      const {data} = await axios.post(url,{},{
+        headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}
+      })
+      console.log(data?.data?.session?.url);
+      navigate(data?.session?.url);
+      setOrderId("");
+    }catch(e){
+      console.log(e)
+    }
+  }
+
   const deleteHandler = (cartProductId) => {
     dispatch(deleteProductCart(cartProductId));
   };
@@ -72,6 +92,21 @@ const Cart = () => {
     const payload = { products_id, quantity };
     dispatch(updateQuantityCart(payload));
   };
+
+  const checkOut = async()=>{
+    const url = "https://krish-vapes-backend.vercel.app/api/v1/user/checkout";
+    try{
+      const {data} = await axios.post(url,{addressId}, {
+        headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}
+      })
+      console.log(data?.data?.orderId);
+      setOrderId(data?.data?.orderId);
+      placeOrder(data?.data?.orderId);
+
+    }catch(err){
+      console.log(err.message);
+    }
+  }
 
   return (
     <>
@@ -208,7 +243,11 @@ const Cart = () => {
 
                           <div className="summary">
                             <p>Amount To Be Paid:</p>
-                            <p className="value">£{Items?.paidAmount} </p>
+                            <p className="value">£{Items?.totalAmount} </p>
+                          </div>
+                          <div className="summary">
+                            <p>Tax To Be Paid:</p>
+                            <p className="value">£{Items?.tax} </p>
                           </div>
 
                           <div className="empty"></div>
@@ -218,7 +257,7 @@ const Cart = () => {
                               {" "}
                               <span className="upper">TOTAL</span> (tax incl.)
                             </p>
-                            <p className="value"> £{Items?.totalAmount} </p>
+                            <p className="value"> £{Items?.paidAmount} </p>
                           </div>
 
                           <button
@@ -266,10 +305,6 @@ const Cart = () => {
                             <thead>
                               <tr>
                                 <th></th>
-                                <th>Alias</th>
-                                <th>Fullname</th>
-                                <th>Company</th>
-                                <th>Vat Number</th>
                                 <th>Address</th>
                                 <th>Address Complement</th>
                                 <th>City</th>
@@ -287,10 +322,6 @@ const Cart = () => {
                                       onClick={(e) => setAddressId(i._id)}
                                     />
                                   </td>
-                                  <td>{i.alias}</td>
-                                  <td>{i.firstName + " " + i.lastName}</td>
-                                  <td>{i.company}</td>
-                                  <td>{i.vatNumber}</td>
                                   <td>{i.address}</td>
                                   <td>{i.addressComplement}</td>
                                   <td>{i.city}</td>
@@ -304,7 +335,7 @@ const Cart = () => {
                         </div>
                         <button
                           className="continue_shopping"
-                          onClick={() => PlaceOrder()}
+                          onClick={checkOut}
                         >
                           Checkout
                         </button>

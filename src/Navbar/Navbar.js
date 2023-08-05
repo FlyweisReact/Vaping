@@ -123,6 +123,7 @@ const Navbar = () => {
     dispatch(deleteProductCart(cartProductId));
   };
 
+
   return (
     <>
       <Sidebar show={show} onHide={handleClose} />
@@ -138,15 +139,17 @@ const Navbar = () => {
           <div className="container">
             <div className="header-center">
               <div className="three-sec-cont">
-                <div className="left-cont">
+                {/* <div className="left-cont">
                   <i className="fa-solid fa-magnifying-glass"></i>
                   <input type="text" placeholder="Enter Search Keyword" />
-                </div>
+                </div> */}
                 <div className="mid-cont">
                   <Link to="/">
-                    <img src="./Image/2.png" alt="logo" />
+                    <img src="./Image/2.png" style={{display:"block", margin:"auto"}} alt="logo" />
                   </Link>
                 </div>
+
+                <p className="logoImg">KRISH WHOLESALER</p>
 
                 <i
                   className="fa-solid fa-bars-staggered"

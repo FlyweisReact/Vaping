@@ -6,11 +6,6 @@ import { createAddress } from "../../Repository/User/Addresses";
 import Profilebar from "./Profilebar";
 
 const CreateAddress = () => {
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [alias, setAlias] = useState(null);
-  const [company, setCompany] = useState(null);
-  const [vatNumber, setVatNumber] = useState(null);
   const [address, setAddress] = useState(null);
   const [addressComplement, setAddressComplement] = useState(null);
   const [city, setCity] = useState(null);
@@ -19,11 +14,6 @@ const CreateAddress = () => {
   const [phone, setPhone] = useState(null);
 
   const payload = {
-    firstName,
-    lastName,
-    alias,
-    company,
-    vatNumber,
     address,
     addressComplement,
     city,
@@ -71,79 +61,6 @@ const CreateAddress = () => {
 
               <form onSubmit={handleSubmit}>
                 <section>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Alias<span style={{ color: "red" }}>*</span>{" "}
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        placeholder="Alias"
-                        required
-                        onChange={(e) => setAlias(e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      First Name <span style={{ color: "red" }}>*</span>{" "}
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        placeholder="First Name"
-                        required
-                        onChange={(e) => setFirstName(e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Last name <span style={{ color: "red" }}>*</span>{" "}
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        placeholder="Last name"
-                        required
-                        onChange={(e) => setLastName(e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">Company</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        placeholder="Company"
-                        onChange={(e) => setCompany(e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">VAT number</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        placeholder="VAT number"
-                        onChange={(e) => setVatNumber(e.target.value)}
-                      />
-                    </div>
-                  </div>
 
                   <div className="form-group Gender_Group">
                     <label className="form-control-label">

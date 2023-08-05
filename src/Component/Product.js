@@ -10,7 +10,8 @@ import Rating from "./Rating";
 const Product = ({ products, loading }) => {
   const quantity = 1;
   const dispatch = useDispatch();
-
+  const token = localStorage.getItem("Token");
+  console.log(token);
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
       return item?.colors?.[0]?.img;
@@ -56,9 +57,9 @@ const Product = ({ products, loading }) => {
         {products?.map((item, index) => (
           <div className="Main" key={index}>
             <div className="thumbnail">
-              <Link to={`/product/${item?._id}`}>
+              { <Link to={token===null ? '/login'  :`/product/${item?._id}`}>
                 <img src={getImageLink(item)} alt={item?.name} />
-              </Link>
+              </Link>}
             </div>
             <div className="product-groups">
               <div className="product-description">
@@ -73,14 +74,15 @@ const Product = ({ products, loading }) => {
             </div>
 
             <div className="product-group-price">
-              <div className="product-price-and-shipping">
+              {token !==null ? <div className="product-price-and-shipping">
                 <span className="price">
-                  {item?.discountPrice
+                  { item?.discountPrice
                     ? `£ ${item?.discountPrice}`
-                    : `£${item?.price}`}
+                    : `£${item?.price}`
+                  }
                 </span>
-                <span className="regular-price">£{item?.price}</span>
-              </div>
+               <span className="regular-price">£{item?.price}</span> 
+              </div> : ""}
             </div>
 
             <div className="group-buttons">

@@ -196,9 +196,43 @@ const Identity = () => {
                         placeholder={FiledChooser(Details?.dob, "Birthdate")}
                         onChange={(e) => setDob(e.target.value)}
                       />
-                      <span className="comment">(E.g.: 05/31/1970)</span>
                     </div>
                   </div>
+
+                  <div className="form-group Gender_Group">
+                    <label className="form-control-label">
+                      Company
+                      <span style={{ color: "red" }}>*</span>{" "}
+                    </label>
+
+                    <div className="form-control-valign">
+                      <input
+                        className="Input"
+                        type="text"
+                        placeholder={FiledChooser(Details?.company, "Company")}
+                        onChange={(e) => setDob(e.target.value)}
+                      />
+
+                    </div>
+                  </div>
+
+                  <div className="form-group Gender_Group">
+                    <label className="form-control-label">
+                      VAT Number
+                      <span style={{ color: "red" }}>*</span>{" "}
+                    </label>
+
+                    <div className="form-control-valign">
+                      <input
+                        className="Input"
+                        type="text"
+                        placeholder={FiledChooser(Details?.vatNumber, "VAT Number")}
+                        onChange={(e) => setDob(e.target.value)}
+                      />
+      
+                    </div>
+                  </div>
+
 
                   <div className="form-group Gender_Group">
                     <label className="form-control-label" />

@@ -26,7 +26,7 @@ const createAddress = async (payload) => {
     const response = await axios.post(
       `${BaseUrl}api/v1/user/addAdress`,
       payload,
-      Auth
+      {headers:{Authorization: `Bearer ${localStorage.getItem("Token")}`}}
     );
     const msg = response.data.message;
     Store.addNotification({

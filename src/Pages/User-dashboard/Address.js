@@ -106,7 +106,7 @@ const Address = () => {
               {data?.length < 1 || !data ? (
                 <form onSubmit={handleSubmit}>
                   <section>
-                    <div className="form-group Gender_Group">
+                    {/* <div className="form-group Gender_Group">
                       <label className="form-control-label">
                         Alias<span style={{ color: "red" }}>*</span>{" "}
                       </label>
@@ -120,9 +120,9 @@ const Address = () => {
                           onChange={(e) => setAlias(e.target.value)}
                         />
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div className="form-group Gender_Group">
+                    {/* <div className="form-group Gender_Group">
                       <label className="form-control-label">
                         First Name <span style={{ color: "red" }}>*</span>{" "}
                       </label>
@@ -136,9 +136,9 @@ const Address = () => {
                           onChange={(e) => setFirstName(e.target.value)}
                         />
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div className="form-group Gender_Group">
+                    {/* <div className="form-group Gender_Group">
                       <label className="form-control-label">
                         Last name <span style={{ color: "red" }}>*</span>{" "}
                       </label>
@@ -152,8 +152,8 @@ const Address = () => {
                           onChange={(e) => setLastName(e.target.value)}
                         />
                       </div>
-                    </div>
-
+                    </div> */}
+{/* 
                     <div className="form-group Gender_Group">
                       <label className="form-control-label">Company</label>
 
@@ -178,7 +178,7 @@ const Address = () => {
                           onChange={(e) => setVatNumber(e.target.value)}
                         />
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="form-group Gender_Group">
                       <label className="form-control-label">

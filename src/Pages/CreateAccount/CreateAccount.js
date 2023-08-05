@@ -20,7 +20,15 @@ const CreateAccount = () => {
   const [password, setPassword] = useState(null);
   const [dob, setDob] = useState(null);
   const [courtesyTitle, setCourtesyTitle] = useState(null);
-  const payload = { firstName, lastName, email, password, dob, courtesyTitle };
+  const [company, setCompany] = useState("");
+  const [vatNumber, setVatNumber] = useState("");
+  const [country, setCountry] = useState("");
+  const [phone, setPhone] = useState("");
+  const [vatUsed, setVatUsed] = useState("false");
+  const payload = vatUsed==="true" ? { firstName, lastName, email, password, dob, courtesyTitle, company, country, phone,vatUsed, vatNumber }
+    :
+    { firstName, lastName, email, password, dob, courtesyTitle, company, country, phone,vatUsed}
+  ;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -120,13 +128,61 @@ const CreateAccount = () => {
               <div className="form-group">
                 <i className="fa-solid fa-calendar-days"></i>
                 <input
-                  type="text"
+                  type="date"
                   placeholder="Birthdate"
                   required
                   onChange={(e) => setDob(e.target.value)}
                 />
               </div>
-              <p className="form-control-comment">(E.g.: 05/31/1970)</p>
+              <div className="form-group">
+                <i className="fa-solid fa-calendar-days"></i>
+                <input
+                  type="text"
+                  placeholder="Company"
+                  required
+                  onChange={(e) => setCompany(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <select onChange={(e)=>setVatUsed(e.target.value)}>
+                  <option value="">Do you have your VAT number</option>
+                  <option value="false">False</option>
+                  <option value="true">True</option>
+                </select>
+              </div>
+              {
+                vatUsed==="true" ? 
+                (
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      style={{width:"100%"}}
+                      placeholder="VAT Number (if available) "
+                      onChange={(e) => setVatNumber(e.target.value)}
+                    />
+                  </div>
+                )
+              :
+                ""
+              }
+              <div className="form-group">
+                <input
+                  type="text"
+                  placeholder="Country"
+                  required
+                  onChange={(e) => setCountry(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                
+                <input
+                  type="text"
+                  placeholder="Telephone No."
+                  required
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+              {/* <p className="form-control-comment">(E.g.: 05/31/1970)</p> */}
 
               <button type="submit">Register </button>
             </form>

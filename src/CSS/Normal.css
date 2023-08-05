@@ -534,6 +534,14 @@
   border: none;
   outline: none;
 }
+.block-form-login .login-form .form-group select {
+  height: 46px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
 
 .block-form-login .login-form .form-group i {
   padding: 10px;
@@ -1802,3 +1810,29 @@
 
 }
 
+.logoImg{
+  color:#fff;
+  text-decoration: none;
+}
+
+
+.search-cont{
+  border:1px solid #333;
+  height:40px;
+  width:40%;
+  margin-left:50%;
+  border-radius:8px;
+  margin-top:20px;
+}
+.search-cont i{
+  margin-left:5%;
+  margin-top:10px;
+}
+.search-cont input{
+  border:none;
+  margin-left:5%;
+}
+
+.search-cont input:focus{
+  outline:none;
+}
