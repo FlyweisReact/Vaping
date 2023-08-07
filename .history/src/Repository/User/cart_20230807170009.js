@@ -83,7 +83,7 @@ const placeOrder = async (payload) => {
       {},
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("Token")}`,
+          Authorization: `Bearer ${token}`,
         },
       }
     );
@@ -121,7 +121,7 @@ const placeOrder = async (payload) => {
 const getOrder = async () => {
   try {
     const response = await axios.get(`${BaseUrl}api/v1/user/Orders`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+      headers: { Authorization: `Bearer ${token}` },
     });
     return response.data.data;
   } catch (e) {
@@ -136,7 +136,7 @@ const deleteProductCart = (payload) => {
         `${BaseUrl}api/v1/user/deleteProductfromCart/${payload}`,
         {},
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
       const msg = response.data.message;
@@ -181,7 +181,7 @@ const updateQuantityCart = (payload) => {
         `${BaseUrl}api/v1/user/updateQuantity`,
         payload,
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
       const msg = response.data.message;

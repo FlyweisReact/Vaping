@@ -120,7 +120,7 @@ const Cart = () => {
                 {/* Left */}
 
                 {Items?.products?.length === 0 || !Items?.products ? (
-                  <Alert style={{width : '100%'}} variant="danger">
+                  <Alert  variant="danger">
                     Add Products In Cart First !
                   </Alert>
                 ) : (

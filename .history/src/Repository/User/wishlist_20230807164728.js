@@ -2,65 +2,32 @@
 
 import axios from "axios";
 import { Store } from "react-notifications-component";
-const BaseUrl = "https://krish-vapes-backend.vercel.app/";
 
-const getAllAddress = async () => {
+const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const token = localStorage.getItem("Token");
+
+const getWishlit = async () => {
   try {
-    const response = await axios.get(`${BaseUrl}api/v1/user/getAdress`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+    const response = await axios.get(`${BaseUrl}api/v1/user/myWishlist`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
-    return response.data.data;
+    return response.data.wishlist.products;
   } catch (e) {
     console.log(e);
   }
 };
 
-const createAddress = async (payload) => {
+const deleteWishlit = async (payload) => {
   try {
     const response = await axios.post(
-      `${BaseUrl}api/v1/user/addAdress`,
-      payload,
-      { headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` } }
-    );
-    const msg = response.data.message;
-    Store.addNotification({
-      title: "Created !",
-      message: msg,
-      type: "success",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-  } catch (e) {
-    console.log(e);
-    const err = e?.response?.data?.message;
-    Store.addNotification({
-      title: "Error !",
-      message: err,
-      type: "danger",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-  }
-};
-
-const deleteAddress = async (payload) => {
-  try {
-    const response = await axios.delete(
-      `${BaseUrl}api/v1/user/deleteAdress/${payload}`,
+      `${BaseUrl}api/v1/user/removeFromWishlist/${payload}`,
+      {},
       {
-        headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
     );
     const msg = response.data.message;
@@ -78,11 +45,10 @@ const deleteAddress = async (payload) => {
       },
     });
   } catch (e) {
-    console.log(e);
-    const err = e?.response?.data?.message;
+    const msg = e?.response?.data?.message;
     Store.addNotification({
       title: "Error !",
-      message: err,
+      message: msg,
       type: "danger",
       insert: "top",
       container: "top-center",
@@ -96,4 +62,47 @@ const deleteAddress = async (payload) => {
   }
 };
 
-export { getAllAddress, createAddress, deleteAddress };
+const addItemWishlist = async (payload) => {
+  try {
+    const response = await axios.post(
+      `${BaseUrl}api/v1/user/createWishlist/${payload}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const msg = response.data.message;
+    Store.addNotification({
+      title: "Success !",
+      message: msg,
+      type: "success",
+      insert: "top",
+      container: "top-center",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 1000,
+        onScreen: true,
+      },
+    });
+  } catch (e) {
+    const msg = e?.response?.data?.message;
+    Store.addNotification({
+      title: "Error !",
+      message: msg,
+      type: "danger",
+      insert: "top",
+      container: "top-center",
+      animationIn: ["animate__animated", "animate__fadeIn"],
+      animationOut: ["animate__animated", "animate__fadeOut"],
+      dismiss: {
+        duration: 1000,
+        onScreen: true,
+      },
+    });
+  }
+};
+
+export { getWishlit, addItemWishlist, deleteWishlit };

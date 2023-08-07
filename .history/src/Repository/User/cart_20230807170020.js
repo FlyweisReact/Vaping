@@ -181,7 +181,7 @@ const updateQuantityCart = (payload) => {
         `${BaseUrl}api/v1/user/updateQuantity`,
         payload,
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
       const msg = response.data.message;

@@ -6,6 +6,11 @@ import { getCartItems } from "../../Store/Slices/cartSlice";
 const BaseUrl = "https://krish-vapes-backend.vercel.app/";
 
 const token = localStorage.getItem("Token");
+const Auth = {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+};
 
 const getSize = async (payload) => {
   try {
@@ -21,9 +26,9 @@ const getSize = async (payload) => {
 const getCart = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`${BaseUrl}api/v1/user/getCart`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-      });
+      const response = await axios.get(`${BaseUrl}api/v1/user/getCart`,
+      {headers:{Authorization:`Bearer ${localStorage.getItem("Token")}`}}
+      );
       const data = response.data.data;
       dispatch(getCartItems(data));
     } catch (e) {
@@ -38,9 +43,7 @@ const addItemCart = (payload) => {
       const response = await axios.post(
         `${BaseUrl}api/v1/user/addToCart`,
         payload,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-        }
+        {headers:{Authorization: `Bearer ${localStorage.getItem("Token")}`}}
       );
       const msg = response.data.message;
       Store.addNotification({
@@ -78,13 +81,13 @@ const addItemCart = (payload) => {
 
 const placeOrder = async (payload) => {
   try {
+    console.log(payload);
     const response = await axios.post(
-      `${BaseUrl}api/v1/user/placeOrder/${payload}`,
-      {},
+      `${BaseUrl}api/v1/user/placeOrder/${payload}`,{},
       {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("Token")}`,
-        },
+        headers:{
+          Authorization : `Bearer ${localStorage.getItem("Token")}`
+        }
       }
     );
     Store.addNotification({
@@ -120,9 +123,7 @@ const placeOrder = async (payload) => {
 
 const getOrder = async () => {
   try {
-    const response = await axios.get(`${BaseUrl}api/v1/user/Orders`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-    });
+    const response = await axios.get(`${BaseUrl}api/v1/user/Orders`, Auth);
     return response.data.data;
   } catch (e) {
     console.log(e);
@@ -135,9 +136,7 @@ const deleteProductCart = (payload) => {
       const response = await axios.put(
         `${BaseUrl}api/v1/user/deleteProductfromCart/${payload}`,
         {},
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-        }
+        {headers:{Authorization:`Bearer ${localStorage.getItem("Token")}`}}
       );
       const msg = response.data.message;
       Store.addNotification({
@@ -180,9 +179,7 @@ const updateQuantityCart = (payload) => {
       const response = await axios.put(
         `${BaseUrl}api/v1/user/updateQuantity`,
         payload,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-        }
+        {headers:{Authorization:`Bearer ${localStorage.getItem("Token")}`}}
       );
       const msg = response.data.message;
       Store.addNotification({

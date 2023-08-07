@@ -19,7 +19,7 @@ const authSlice = createSlice({
     LOGOUT: (state) => {
       state.user = null;
       state.isAuthenticated = false;
-      localStorage.clear();
+      localStorage.clear()
     },
     UPDATE_PROFILE: (state, action) => {
       state.user = action.payload;
@@ -29,7 +29,7 @@ const authSlice = createSlice({
   },
 });
 
-export const { Login, LOGOUT, UPDATE_PROFILE } = authSlice.actions;
+export const { Login, LOGOUT , UPDATE_PROFILE } = authSlice.actions;
 
 export const isAuthenticated = (state) => state.auth.isAuthenticated;
 export const user = (state) => state.auth.user;

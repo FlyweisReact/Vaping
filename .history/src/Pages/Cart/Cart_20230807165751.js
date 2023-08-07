@@ -23,7 +23,7 @@ const Cart = () => {
   const [addressId, setAddressId] = useState(null);
   const cartItem = useSelector(CartItems);
   const dispatch = useDispatch();
-
+  
   const getAddress = async () => {
     try {
       const res = await getAllAddress();
@@ -120,7 +120,7 @@ const Cart = () => {
                 {/* Left */}
 
                 {Items?.products?.length === 0 || !Items?.products ? (
-                  <Alert style={{width : '100%'}} variant="danger">
+                  <Alert className="w-100" variant="danger">
                     Add Products In Cart First !
                   </Alert>
                 ) : (

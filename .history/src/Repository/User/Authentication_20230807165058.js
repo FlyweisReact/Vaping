@@ -4,6 +4,7 @@ import axios from "axios";
 import { Login, UPDATE_PROFILE } from "../../Store/Slices/authSlice";
 
 const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const token = localStorage.getItem("Token");
 
 const RegisterUser = async (payload, navigate) => {
   try {
@@ -54,7 +55,7 @@ const LoginUser = (payload, navigate) => {
         navigate("/");
       } else {
         const data = response.data.data;
-        localStorage.setItem("Token", response.data.accessToken);
+        window.localStorage.setItem("Token", response.data.accessToken);
         dispatch(Login(data));
         Store.addNotification({
           title: "Success !",
@@ -97,7 +98,7 @@ const UpdateUser = (payload) => {
         `${BaseUrl}api/v1/user/update`,
         payload,
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
       const data = response.data.data;
