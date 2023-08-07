@@ -1,6 +1,28 @@
 import React, {useEffect} from "react";
+import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
 
 const Success = ()=>{
+
+    const navigate = useNavigate();
+    const token = localStorage.getItem("Token");
+    const {id} = useParams();
+    const getOrder = async()=>{
+        const url = `https://krish-vapes-backend.vercel.app/api/v1/user/successOrder/${id}`;
+        try{
+            const {data} = await axios.get(url, {
+                headers:{Authorization:`Bearer ${token}`}
+            })
+            navigate("/");
+        }catch(e){
+            console.log(e);
+        }
+    }
+    useEffect(()=>{
+        getOrder();
+    })
+
+
     return (
         <>
         <div className="payment-success-container">

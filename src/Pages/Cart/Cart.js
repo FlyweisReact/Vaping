@@ -30,6 +30,7 @@ const Cart = () => {
     try {
       const res = await getAllAddress();
       setAddress(res);
+      console.log(res);
     } catch {}
   };
 
@@ -76,8 +77,8 @@ const Cart = () => {
       const {data} = await axios.post(url,{},{
         headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}
       })
-      console.log(data?.data?.session?.url);
-      navigate(data?.session?.url);
+      console.log(data?.session?.url);
+      window.location.href=data?.session?.url;
       setOrderId("");
     }catch(e){
       console.log(e)

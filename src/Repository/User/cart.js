@@ -27,7 +27,9 @@ const getSize = async (payload) => {
 const getCart = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`${BaseUrl}api/v1/user/getCart`, Auth);
+      const response = await axios.get(`${BaseUrl}api/v1/user/getCart`,
+      {headers:{Authorization:`Bearer ${localStorage.getItem("Token")}`}}
+      );
       const data = response.data.data;
       dispatch(getCartItems(data));
     } catch (e) {
@@ -135,7 +137,7 @@ const deleteProductCart = (payload) => {
       const response = await axios.put(
         `${BaseUrl}api/v1/user/deleteProductfromCart/${payload}`,
         {},
-        Auth
+        {headers:{Authorization:`Bearer ${localStorage.getItem("Token")}`}}
       );
       const msg = response.data.message;
       Store.addNotification({
@@ -178,7 +180,7 @@ const updateQuantityCart = (payload) => {
       const response = await axios.put(
         `${BaseUrl}api/v1/user/updateQuantity`,
         payload,
-        {headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}}
+        {headers:{Authorization:`Bearer ${localStorage.getItem("Token")}`}}
       );
       const msg = response.data.message;
       Store.addNotification({

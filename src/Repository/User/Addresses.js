@@ -14,7 +14,9 @@ const Auth = {
 
 const getAllAddress = async () => {
   try {
-    const response = await axios.get(`${BaseUrl}api/v1/user/getAdress`, Auth);
+    const response = await axios.get(`${BaseUrl}api/v1/user/getAdress`, {
+      headers:{Authorization : `Bearer ${token}`}
+    });
     return response.data.data;
   } catch (e) {
     console.log(e);

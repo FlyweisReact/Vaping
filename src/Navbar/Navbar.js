@@ -27,6 +27,8 @@ const Navbar = () => {
   const [Items, setItems] = useState({});
   const cartItem = useSelector(CartItems);
 
+  const token = localStorage.getItem("Token");
+
   const getContact = async () => {
     try {
       const res = await ContactDetail();
@@ -172,13 +174,13 @@ const Navbar = () => {
                   </div>
 
                   <div className="mini-cart">
-                    <Link to="/mywishlist">
+                    <Link to={token===null ? "/login" :"/mywishlist"}>
                       <i className="fa-regular fa-heart"></i>
                     </Link>
-                    <Link to="/cart" onMouseEnter={() => handleToggleOpen()}>
+                    <Link to={token===null ? "/login" : "/cart"} onMouseEnter={() => handleToggleOpen()}>
                       <i className="fa-solid fa-cart-shopping"></i>
                     </Link>
-
+                  { token===null? "" :
                     <motion.div
                       initial={{
                         height: 0,
@@ -283,6 +285,8 @@ const Navbar = () => {
                         )}
                       </motion.div>
                     </motion.div>
+
+                  }
                   </div>
                 </div>
               </div>
