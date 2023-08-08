@@ -11,8 +11,11 @@ import Rating from "./Rating";
 const Product = ({ products, loading }) => {
   const quantity = 1;
   const dispatch = useDispatch();
+  const token = localStorage.getItem("Token");
+
   const isLoggedIn = useSelector(isAuthenticated);
 
+  console.log(isLoggedIn, "dsa");
 
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
@@ -82,7 +85,7 @@ const Product = ({ products, loading }) => {
             </div>
 
             <div className="product-group-price">
-              {isLoggedIn ? (
+              {token !== null ? (
                 <div className="product-price-and-shipping">
                   <span className="price">
                     {item?.discountPrice

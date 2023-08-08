@@ -22,6 +22,7 @@
   }
   .products-container {
     width: 100%;
+    border: 1px solid black;
   }
   .HomePage .Container .Banner_Img {
     width: 100%;
@@ -111,7 +112,7 @@
     margin-top: 10px;
   }
   .products-container .Main {
-    width: 100%;
+    width: 47%;
   }
   .HomePage .Container .Blog-posts {
     display: none;

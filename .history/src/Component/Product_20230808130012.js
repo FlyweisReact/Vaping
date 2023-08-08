@@ -11,8 +11,11 @@ import Rating from "./Rating";
 const Product = ({ products, loading }) => {
   const quantity = 1;
   const dispatch = useDispatch();
+  const token = localStorage.getItem("Token");
+
   const isLoggedIn = useSelector(isAuthenticated);
 
+  console.log(isLoggedIn , "isLoo")
 
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
@@ -87,12 +90,16 @@ const Product = ({ products, loading }) => {
                   <span className="price">
                     {item?.discountPrice
                       ? `£ ${item?.discountPrice}`
-                      : `£${item?.price}`}
+                      : `£${item?.price}`}sas
                   </span>
                   <span className="regular-price">£{item?.price}</span>
                 </div>
               ) : (
-                ""
+                <div className="product-price-and-shipping">
+                  <span className="price">
+                   ddd
+                  </span>
+                </div>
               )}
             </div>
 

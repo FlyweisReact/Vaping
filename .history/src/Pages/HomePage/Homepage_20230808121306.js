@@ -91,13 +91,12 @@ const Homepage = () => {
   }, []);
 
   const [search, setSearch] = useState("");
-
   const searchD = !search
     ? products
-    : products?.filter((i) =>
-        i?.name?.toLowerCase().includes(search?.toLowerCase())
-      );
-      
+    : products?.filter((it, i) => {
+        return it?.name?.toLowerCase()?.includes(query?.toLowerCase());
+      });
+
   return (
     <>
       <div>
@@ -175,7 +174,6 @@ const Homepage = () => {
                 On Sale
               </button>
             </div>
-
             <div className="search-cont">
               <i className="fa-solid fa-magnifying-glass"></i>
               <input
@@ -185,6 +183,8 @@ const Homepage = () => {
               />
             </div>
 
+
+            
             <Product products={searchD} loading={productLoading} />
 
             <div className="Banner_Img">

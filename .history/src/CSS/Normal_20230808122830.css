@@ -1818,12 +1818,14 @@
 
 .search-cont{
   border:1px solid #333;
-  height:40px;
-  max-width:600px;
-  margin-left:50%;
+  /* height:40px; */
   border-radius:8px;
   margin-top:20px;
-  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 500px;
+  display: flex;
+  justify-content: flex-end;
+
 }
 .search-cont i{
   margin-left:5%;

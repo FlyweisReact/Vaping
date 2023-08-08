@@ -97,7 +97,9 @@ const Homepage = () => {
     : products?.filter((i) =>
         i?.name?.toLowerCase().includes(search?.toLowerCase())
       );
-      
+
+  
+
   return (
     <>
       <div>

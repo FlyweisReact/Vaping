@@ -97,7 +97,11 @@ const Homepage = () => {
     : products?.filter((i) =>
         i?.name?.toLowerCase().includes(search?.toLowerCase())
       );
-      
+
+  console.log(searchD , search, "Products);
+
+  
+
   return (
     <>
       <div>

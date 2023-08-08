@@ -94,10 +94,12 @@ const Homepage = () => {
 
   const searchD = !search
     ? products
-    : products?.filter((i) =>
-        i?.name?.toLowerCase().includes(search?.toLowerCase())
-      );
-      
+    : products.filter((i) => {
+        return i.name.toLowerCase()?.includes(search.toLowerCase());
+      });
+
+      console.log(products , "Products")
+
   return (
     <>
       <div>
@@ -184,6 +186,8 @@ const Homepage = () => {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
+
+
 
             <Product products={searchD} loading={productLoading} />
 

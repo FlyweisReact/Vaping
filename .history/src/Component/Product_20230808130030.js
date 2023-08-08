@@ -11,6 +11,8 @@ import Rating from "./Rating";
 const Product = ({ products, loading }) => {
   const quantity = 1;
   const dispatch = useDispatch();
+  const token = localStorage.getItem("Token");
+
   const isLoggedIn = useSelector(isAuthenticated);
 
 

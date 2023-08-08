@@ -65,7 +65,7 @@ const Blogs = () => {
               <div className="post-description">
                 <div>{item?.description}</div>
 
-                {/* <span className="more">
+                <span className="more">
                   <a
                     title="Lorem ipsum dolor sit amet, consectetur"
                     href="/"
@@ -73,7 +73,7 @@ const Blogs = () => {
                   >
                     Read More
                   </a>
-                </span> */}
+                </span>
               </div>
             </div>
           ))}

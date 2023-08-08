@@ -11,8 +11,9 @@ import Rating from "./Rating";
 const Product = ({ products, loading }) => {
   const quantity = 1;
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(isAuthenticated);
+  const token = localStorage.getItem("Token");
 
+  const isLoggedIn = useSelector(isAuthenticated);
 
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
@@ -59,15 +60,14 @@ const Product = ({ products, loading }) => {
         {products?.map((item, index) => (
           <div className="Main" key={index}>
             <div className="thumbnail">
-              {isLoggedIn ? (
-                <Link to={`/product/${item?._id}`}>
+            {
+              isLoggedIn
+            }
+              {
+                <Link to={token === null ? "/login" : `/product/${item?._id}`}>
                   <img src={getImageLink(item)} alt={item?.name} />
                 </Link>
-              ) : (
-                <Link to="/login">
-                  <img src={getImageLink(item)} alt={item?.name} />
-                </Link>
-              )}
+              }
             </div>
             <div className="product-groups">
               <div className="product-description">
@@ -82,7 +82,7 @@ const Product = ({ products, loading }) => {
             </div>
 
             <div className="product-group-price">
-              {isLoggedIn ? (
+              {token !== null ? (
                 <div className="product-price-and-shipping">
                   <span className="price">
                     {item?.discountPrice

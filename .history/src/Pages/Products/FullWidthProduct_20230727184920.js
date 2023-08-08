@@ -44,7 +44,7 @@ const FullWidthProduct = () => {
           <Product products={product} />
         </div>
 
-        {/* <Pagination /> */}
+        <Pagination />
       </div>
     </>
   );

@@ -11,7 +11,6 @@ const About = () => {
     try {
       const res = await AboutCompany();
       setData(res);
-      console.log(res , "red")
     } catch {}
   };
 

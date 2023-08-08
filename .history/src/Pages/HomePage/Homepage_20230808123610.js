@@ -93,11 +93,28 @@ const Homepage = () => {
   const [search, setSearch] = useState("");
 
   const searchD = !search
-    ? products
-    : products?.filter((i) =>
+  ? products
+  : products?.filter(
+      (i) =>
         i?.name?.toLowerCase().includes(search?.toLowerCase())
-      );
+    );
+
+      console.log(products , "Products")
+
+
       
+  const filterData = !query
+  ? products
+  : products?.filter(
+      (i) =>
+        i?.tradeName?.toLowerCase().includes(query?.toLowerCase()) ||
+        i?.phoneNumber
+          ?.toString()
+          ?.toLowerCase()
+          .includes(query?.toLowerCase())
+    );
+
+
   return (
     <>
       <div>
@@ -184,6 +201,8 @@ const Homepage = () => {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
+
+
 
             <Product products={searchD} loading={productLoading} />
 

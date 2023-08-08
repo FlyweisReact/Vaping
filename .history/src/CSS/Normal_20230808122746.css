@@ -1817,13 +1817,13 @@
 
 
 .search-cont{
-  border:1px solid #333;
+  /* border:1px solid #333;
   height:40px;
-  max-width:600px;
-  margin-left:50%;
+  max-width:500px;
   border-radius:8px;
   margin-top:20px;
-  margin-right: 20px;
+  margin-bottom: 20px; */
+
 }
 .search-cont i{
   margin-left:5%;

@@ -94,10 +94,10 @@ const Homepage = () => {
 
   const searchD = !search
     ? products
-    : products?.filter((i) =>
-        i?.name?.toLowerCase().includes(search?.toLowerCase())
-      );
-      
+    : products?.filter((i) => i.name === search);
+
+  console.log(products, "Products");
+
   return (
     <>
       <div>

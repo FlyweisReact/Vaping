@@ -91,13 +91,12 @@ const Homepage = () => {
   }, []);
 
   const [search, setSearch] = useState("");
-
   const searchD = !search
     ? products
-    : products?.filter((i) =>
-        i?.name?.toLowerCase().includes(search?.toLowerCase())
-      );
-      
+    : products?.filter((it) => {
+        return it?.name?.toLowerCase()?.includes(query?.toLowerCase());
+      });
+
   return (
     <>
       <div>
@@ -175,7 +174,6 @@ const Homepage = () => {
                 On Sale
               </button>
             </div>
-
             <div className="search-cont">
               <i className="fa-solid fa-magnifying-glass"></i>
               <input
@@ -184,6 +182,8 @@ const Homepage = () => {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
+
+
 
             <Product products={searchD} loading={productLoading} />
 
