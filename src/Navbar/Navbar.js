@@ -38,7 +38,7 @@ const Navbar = () => {
   useEffect(() => {
     setItems(cartItem);
     getContact();
-    setTotal(cartItem.totalItem);
+    setTotal(cartItem?.totalItem);
   }, [cartItem]);
 
   const handleToggleOpen = () => {
