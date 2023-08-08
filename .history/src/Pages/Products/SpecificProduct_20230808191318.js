@@ -168,7 +168,9 @@ const SpecificProduct = () => {
                     </div>
 
                     <div className="product-information">
-                      <Skeleton loading={true} active />
+                      <p>
+                        <Skeleton loading={true} active />
+                      </p>
                     </div>
 
                     <div className="pro-cate">
@@ -222,6 +224,7 @@ const SpecificProduct = () => {
                 <div className="product-list ">
                   {product?.colors?.map((item, index) => (
                     <div className="item thumb-container" key={index}>
+                  
                       <img
                         className="thumb js-thumb  selected "
                         src={item?.img}
@@ -282,7 +285,7 @@ const SpecificProduct = () => {
                               onClick={() => {
                                 getProductSize(i._id);
                                 setColorId(i._id);
-                                setImg(i.img);
+                                setImg(i.img)
                               }}
                             >
                               <div
@@ -345,8 +348,8 @@ const SpecificProduct = () => {
                                 id="quantity_wanted"
                                 min="1"
                                 max="200"
-                                placeholder={quantity}
-                                disabled
+                                placeholder={}
+                                value={quantity}
                               />
 
                               <span className="input-group-btn-vertical">

@@ -106,7 +106,80 @@ const Address = () => {
               {data?.length < 1 || !data ? (
                 <form onSubmit={handleSubmit}>
                   <section>
-                
+                    {/* <div className="form-group Gender_Group">
+                      <label className="form-control-label">
+                        Alias<span style={{ color: "red" }}>*</span>{" "}
+                      </label>
+
+                      <div className="form-control-valign">
+                        <input
+                          className="Input"
+                          type="text"
+                          placeholder="Alias"
+                          required
+                          onChange={(e) => setAlias(e.target.value)}
+                        />
+                      </div>
+                    </div> */}
+
+                    {/* <div className="form-group Gender_Group">
+                      <label className="form-control-label">
+                        First Name <span style={{ color: "red" }}>*</span>{" "}
+                      </label>
+
+                      <div className="form-control-valign">
+                        <input
+                          className="Input"
+                          type="text"
+                          placeholder="First Name"
+                          required
+                          onChange={(e) => setFirstName(e.target.value)}
+                        />
+                      </div>
+                    </div> */}
+
+                    {/* <div className="form-group Gender_Group">
+                      <label className="form-control-label">
+                        Last name <span style={{ color: "red" }}>*</span>{" "}
+                      </label>
+
+                      <div className="form-control-valign">
+                        <input
+                          className="Input"
+                          type="text"
+                          placeholder="Last name"
+                          required
+                          onChange={(e) => setLastName(e.target.value)}
+                        />
+                      </div>
+                    </div> */}
+{/* 
+                    <div className="form-group Gender_Group">
+                      <label className="form-control-label">Company</label>
+
+                      <div className="form-control-valign">
+                        <input
+                          className="Input"
+                          type="text"
+                          placeholder="Company"
+                          onChange={(e) => setCompany(e.target.value)}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group Gender_Group">
+                      <label className="form-control-label">VAT number</label>
+
+                      <div className="form-control-valign">
+                        <input
+                          className="Input"
+                          type="text"
+                          placeholder="VAT number"
+                          onChange={(e) => setVatNumber(e.target.value)}
+                        />
+                      </div>
+                    </div> */}
+
                     <div className="form-group Gender_Group">
                       <label className="form-control-label">
                         Address <span style={{ color: "red" }}>*</span>{" "}

@@ -72,7 +72,7 @@ const Wishlist = () => {
 
           <div className="right-container">
             <div className="block_content-right">
-              <div className="title_account_second">Wishlist</div>
+              <div class="title_account_second">Wishlist</div>
 
               <div className="wlp_bought_list">
                 {loading ? (

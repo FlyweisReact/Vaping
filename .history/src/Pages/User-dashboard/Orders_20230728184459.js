@@ -66,7 +66,7 @@ const Orders = () => {
 
           <div className="right-container">
             <div className="block_content-right">
-              <div className="title_account_second">Order history</div>
+              <div class="title_account_second">Order history</div>
 
               <section>
                 {loading ? (

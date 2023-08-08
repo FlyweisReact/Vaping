@@ -56,7 +56,7 @@ const Blogs = () => {
                 </span>
 
                 <div className="pipe"></div>
-                <span className="author">
+                <span class="author">
                   <i className="fa fa-user"></i>
                   {item?.userId?.fullName}
                 </span>

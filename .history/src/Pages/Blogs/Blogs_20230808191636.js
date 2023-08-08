@@ -43,27 +43,37 @@ const Blogs = () => {
 
                 <div className="pipe"></div>
 
-                <span className="comment">
-                  <i className="fa fa-comment-o"></i>
+                <span class="comment">
+                  <i class="fa fa-comment-o"></i>
                   <a title="0 Comments" href="/">
                     {item?.commentCount} Comments
                   </a>
                 </span>
 
                 <div className="pipe"></div>
-                <span className="viewed">
-                  <i className="fa fa-eye"></i>Views ( {item?.viewCount} )
+                <span class="viewed">
+                  <i class="fa fa-eye"></i>Views ( {item?.viewCount} )
                 </span>
 
                 <div className="pipe"></div>
-                <span className="author">
-                  <i className="fa fa-user"></i>
+                <span itemprop="author" class="author">
+                  <i class="fa fa-user"></i>
                   {item?.userId?.fullName}
                 </span>
               </div>
 
               <div className="post-description">
                 <div>{item?.description}</div>
+
+                {/* <span className="more">
+                  <a
+                    title="Lorem ipsum dolor sit amet, consectetur"
+                    href="/"
+                    class="r_more"
+                  >
+                    Read More
+                  </a>
+                </span> */}
               </div>
             </div>
           ))}

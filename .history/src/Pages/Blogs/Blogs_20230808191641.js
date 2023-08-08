@@ -56,14 +56,24 @@ const Blogs = () => {
                 </span>
 
                 <div className="pipe"></div>
-                <span className="author">
-                  <i className="fa fa-user"></i>
+                <span itemprop="author" class="author">
+                  <i class="fa fa-user"></i>
                   {item?.userId?.fullName}
                 </span>
               </div>
 
               <div className="post-description">
                 <div>{item?.description}</div>
+
+                {/* <span className="more">
+                  <a
+                    title="Lorem ipsum dolor sit amet, consectetur"
+                    href="/"
+                    class="r_more"
+                  >
+                    Read More
+                  </a>
+                </span> */}
               </div>
             </div>
           ))}

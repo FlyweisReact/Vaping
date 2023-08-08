@@ -47,7 +47,7 @@ const Contact = () => {
         allowFullScreen=""
         loading="lazy"
         title="GetInTouch"
-        referrerPolicy="no-referrer-when-downgrade"
+        referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
       <div className="container-width">

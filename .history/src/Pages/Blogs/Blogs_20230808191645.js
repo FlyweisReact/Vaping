@@ -56,7 +56,7 @@ const Blogs = () => {
                 </span>
 
                 <div className="pipe"></div>
-                <span className="author">
+                <span itemprop="author" class="author">
                   <i className="fa fa-user"></i>
                   {item?.userId?.fullName}
                 </span>
@@ -64,6 +64,8 @@ const Blogs = () => {
 
               <div className="post-description">
                 <div>{item?.description}</div>
+
+           
               </div>
             </div>
           ))}
