@@ -197,10 +197,10 @@ const CreateAccount = () => {
               </div>
               <div className="form-group">
                 <input
-                  type="tel"
+                  type="text"
                   placeholder="Telephone No."
                   required
-                  pattern="[0-9]{12}"
+                  pattern=""
                   onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
