@@ -48,23 +48,25 @@ const LoginUser = (payload, navigate) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(`${BaseUrl}api/v1/user/login`, payload);
-      const data = response.data.data;
-      localStorage.setItem("Token", response.data.accessToken);
-      dispatch(Login(data));
-      Store.addNotification({
-        title: "Success !",
-        message: "Welcome Back",
-        type: "success",
-        insert: "top",
-        container: "top-center",
-        animationIn: ["animate__animated", "animate__fadeIn"],
-        animationOut: ["animate__animated", "animate__fadeOut"],
-        dismiss: {
-          duration: 1000,
-          onScreen: true,
-        },
-      });
-      navigate("/identity");
+   
+        const data = response.data.data;
+        localStorage.setItem("Token", response.data.accessToken);
+        dispatch(Login(data));
+        Store.addNotification({
+          title: "Success !",
+          message: "Welcome Back",
+          type: "success",
+          insert: "top",
+          container: "top-center",
+          animationIn: ["animate__animated", "animate__fadeIn"],
+          animationOut: ["animate__animated", "animate__fadeOut"],
+          dismiss: {
+            duration: 1000,
+            onScreen: true,
+          },
+        });
+        navigate("/identity");
+     
     } catch (e) {
       const msg = e?.response?.data?.message;
       Store.addNotification({
@@ -128,68 +130,13 @@ const UpdateUser = (payload) => {
   };
 };
 
-const GetOtp = async (payload, navigate) => {
+const GetOtp = async (payload) => {
   try {
     const response = await axios.post(
       `${BaseUrl}api/v1/user/forgetPassword`,
       payload
     );
-    const msg = response.data.message;
-    Store.addNotification({
-      title: "Success !",
-      message: msg,
-      type: "success",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-    navigate("/recover-password");
-  } catch (e) {
-    console.log(e);
-    const msg = e?.response?.data?.msg;
-    Store.addNotification({
-      title: "Invalid !",
-      message: msg,
-      type: "danger",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-  }
-};
-
-const ResetPassword = async (payload, navigate) => {
-  try {
-    const response = await axios.post(
-      `${BaseUrl}api/v1/user/changePassword`,
-      payload
-    );
-    const msg = response.data.message;
-    Store.addNotification({
-      title: "Success !",
-      message: msg,
-      type: "success",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-    navigate("/login");
-  } catch (e) {
+  } catch {
     const msg = e?.response?.data?.message;
     Store.addNotification({
       title: "Invalid !",
@@ -207,4 +154,4 @@ const ResetPassword = async (payload, navigate) => {
   }
 };
 
-export { RegisterUser, LoginUser, UpdateUser, GetOtp, ResetPassword };
+export { RegisterUser, LoginUser, UpdateUser };

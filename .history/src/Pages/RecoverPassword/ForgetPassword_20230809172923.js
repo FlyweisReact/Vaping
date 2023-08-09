@@ -1,21 +1,20 @@
 /** @format */
 
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Breadcrumb from "../../Component/Breadcrumb";
 import Navbar from "../../Navbar/Navbar";
+import { Store } from "react-notifications-component";
 import { GetOtp } from "../../Repository/User/Authentication";
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState(null);
-  const navigate = useNavigate();
 
   const payload = { email };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Recovery-Email", email);
-    GetOtp(payload, navigate);
+    GetOtp(payload);
   };
 
   React.useEffect(() => {
@@ -40,7 +39,6 @@ const ForgetPassword = () => {
             <form onSubmit={handleSubmit}>
               <input
                 type="email"
-                name="email"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />

@@ -168,7 +168,7 @@ const GetOtp = async (payload, navigate) => {
   }
 };
 
-const ResetPassword = async (payload, navigate) => {
+const RecoverPassword = async (payload, navigate) => {
   try {
     const response = await axios.post(
       `${BaseUrl}api/v1/user/changePassword`,
@@ -188,9 +188,8 @@ const ResetPassword = async (payload, navigate) => {
         onScreen: true,
       },
     });
-    navigate("/login");
   } catch (e) {
-    const msg = e?.response?.data?.message;
+    const msg = e?.response?.data?.msg;
     Store.addNotification({
       title: "Invalid !",
       message: msg,
@@ -207,4 +206,4 @@ const ResetPassword = async (payload, navigate) => {
   }
 };
 
-export { RegisterUser, LoginUser, UpdateUser, GetOtp, ResetPassword };
+export { RegisterUser, LoginUser, UpdateUser, GetOtp, RecoverPassword };

@@ -985,7 +985,6 @@
 .AboutUs img {
   width: 100%;
   height: auto;
-  max-height: 959px;
 }
 .About_Us-Content {
   padding: 20px;
@@ -1032,7 +1031,6 @@
   height: auto;
   display: block;
   margin: auto;
-  max-height: 351px;
 }
 
 /* BLogs */
@@ -1044,7 +1042,7 @@
   display: block;
   margin: auto;
   max-width: 100%;
-  max-height: 351px;
+  max-height: ;
 }
 
 .sdsarticleHeader {

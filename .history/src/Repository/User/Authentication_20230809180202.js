@@ -190,7 +190,7 @@ const ResetPassword = async (payload, navigate) => {
     });
     navigate("/login");
   } catch (e) {
-    const msg = e?.response?.data?.message;
+    const msg = e?.response?.data?.msg;
     Store.addNotification({
       title: "Invalid !",
       message: msg,

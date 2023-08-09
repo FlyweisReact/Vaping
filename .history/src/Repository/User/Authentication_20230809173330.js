@@ -128,13 +128,13 @@ const UpdateUser = (payload) => {
   };
 };
 
-const GetOtp = async (payload, navigate) => {
+const GetOtp = async (payload) => {
   try {
     const response = await axios.post(
       `${BaseUrl}api/v1/user/forgetPassword`,
       payload
     );
-    const msg = response.data.message;
+    const msg = response.data.data.message;
     Store.addNotification({
       title: "Success !",
       message: msg,
@@ -148,9 +148,8 @@ const GetOtp = async (payload, navigate) => {
         onScreen: true,
       },
     });
-    navigate("/recover-password");
   } catch (e) {
-    console.log(e);
+    console.log(e)
     const msg = e?.response?.data?.msg;
     Store.addNotification({
       title: "Invalid !",
@@ -168,43 +167,4 @@ const GetOtp = async (payload, navigate) => {
   }
 };
 
-const ResetPassword = async (payload, navigate) => {
-  try {
-    const response = await axios.post(
-      `${BaseUrl}api/v1/user/changePassword`,
-      payload
-    );
-    const msg = response.data.message;
-    Store.addNotification({
-      title: "Success !",
-      message: msg,
-      type: "success",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-    navigate("/login");
-  } catch (e) {
-    const msg = e?.response?.data?.message;
-    Store.addNotification({
-      title: "Invalid !",
-      message: msg,
-      type: "danger",
-      insert: "top",
-      container: "top-center",
-      animationIn: ["animate__animated", "animate__fadeIn"],
-      animationOut: ["animate__animated", "animate__fadeOut"],
-      dismiss: {
-        duration: 1000,
-        onScreen: true,
-      },
-    });
-  }
-};
-
-export { RegisterUser, LoginUser, UpdateUser, GetOtp, ResetPassword };
+export { RegisterUser, LoginUser, UpdateUser ,GetOtp };

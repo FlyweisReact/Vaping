@@ -128,7 +128,7 @@ const UpdateUser = (payload) => {
   };
 };
 
-const GetOtp = async (payload, navigate) => {
+const GetOtp = async (payload , navigate) => {
   try {
     const response = await axios.post(
       `${BaseUrl}api/v1/user/forgetPassword`,
@@ -148,9 +148,9 @@ const GetOtp = async (payload, navigate) => {
         onScreen: true,
       },
     });
-    navigate("/recover-password");
+    navigate('/recover-password')
   } catch (e) {
-    console.log(e);
+    console.log(e)
     const msg = e?.response?.data?.msg;
     Store.addNotification({
       title: "Invalid !",
@@ -168,7 +168,7 @@ const GetOtp = async (payload, navigate) => {
   }
 };
 
-const ResetPassword = async (payload, navigate) => {
+const RecoverPassword = async (payload , navigate) => {
   try {
     const response = await axios.post(
       `${BaseUrl}api/v1/user/changePassword`,
@@ -188,9 +188,10 @@ const ResetPassword = async (payload, navigate) => {
         onScreen: true,
       },
     });
-    navigate("/login");
+    navigate('/recover-password')
   } catch (e) {
-    const msg = e?.response?.data?.message;
+    console.log(e)
+    const msg = e?.response?.data?.msg;
     Store.addNotification({
       title: "Invalid !",
       message: msg,
@@ -207,4 +208,4 @@ const ResetPassword = async (payload, navigate) => {
   }
 };
 
-export { RegisterUser, LoginUser, UpdateUser, GetOtp, ResetPassword };
+export { RegisterUser, LoginUser, UpdateUser ,GetOtp };

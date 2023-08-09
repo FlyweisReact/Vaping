@@ -29,7 +29,6 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import CreateAddress from "./Pages/User-dashboard/CreateAddress";
 import Success from "./Pages/PaymentResult/Success";
 import Failure from "./Pages/PaymentResult/Failure";
-import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 
 const App = () => {
   return (
@@ -65,7 +64,6 @@ const App = () => {
             <Route path="/create-address" element={<CreateAddress />} />
             <Route path="/order-success/:id" element={<Success />} />
             <Route path="/order-failure/:id" element={<Failure />} />
-            <Route path="/recover-password" element={<RecoverPassword />} />
           </Routes>
           <Footer />
         </div>

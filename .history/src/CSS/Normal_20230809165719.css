@@ -306,6 +306,7 @@
   transition: all 0.35s ease;
   max-width: 100%;
   cursor: pointer;
+  max-height: ;
 }
 .HomePage .Container .post-item .post-image img:hover {
   transform: scale(1.01);
@@ -985,7 +986,6 @@
 .AboutUs img {
   width: 100%;
   height: auto;
-  max-height: 959px;
 }
 .About_Us-Content {
   padding: 20px;
@@ -1032,7 +1032,6 @@
   height: auto;
   display: block;
   margin: auto;
-  max-height: 351px;
 }
 
 /* BLogs */
@@ -1044,7 +1043,6 @@
   display: block;
   margin: auto;
   max-width: 100%;
-  max-height: 351px;
 }
 
 .sdsarticleHeader {

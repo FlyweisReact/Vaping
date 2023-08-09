@@ -1,21 +1,37 @@
 /** @format */
 
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Breadcrumb from "../../Component/Breadcrumb";
 import Navbar from "../../Navbar/Navbar";
-import { GetOtp } from "../../Repository/User/Authentication";
+import { Store } from "react-notifications-component";
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState(null);
-  const navigate = useNavigate();
 
-  const payload = { email };
+  const payload = { email }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Recovery-Email", email);
-    GetOtp(payload, navigate);
+    GetOtp
+    try{
+      
+    }catch{}
+    if (email) {
+      Store.addNotification({
+        title: "",
+        message: "Resent Link Sent To Your Registered Email",
+        type: "success",
+        insert: "top",
+        container: "top-center",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+          duration: 5000,
+          onScreen: true,
+        },
+      });
+    }
   };
 
   React.useEffect(() => {
@@ -40,7 +56,6 @@ const ForgetPassword = () => {
             <form onSubmit={handleSubmit}>
               <input
                 type="email"
-                name="email"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />

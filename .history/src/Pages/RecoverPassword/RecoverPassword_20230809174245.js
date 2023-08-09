@@ -1,21 +1,19 @@
 /** @format */
 
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Breadcrumb from "../../Component/Breadcrumb";
 import Navbar from "../../Navbar/Navbar";
 import { GetOtp } from "../../Repository/User/Authentication";
 
-const ForgetPassword = () => {
+const RecoverPassword = () => {
   const [email, setEmail] = useState(null);
-  const navigate = useNavigate();
 
   const payload = { email };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Recovery-Email", email);
-    GetOtp(payload, navigate);
+    GetOtp(payload);
   };
 
   React.useEffect(() => {
@@ -26,7 +24,7 @@ const ForgetPassword = () => {
     <>
       <div>
         <Navbar />
-        <Breadcrumb title={"Reset your password"} />
+        <Breadcrumb title={"Recover your password"} />
         <div className="container-width">
           <p className="send-renew-password-link">
             Please enter the email address you used to register. You will
@@ -59,4 +57,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default RecoverPassword;

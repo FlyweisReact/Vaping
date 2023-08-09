@@ -14,7 +14,7 @@ const ForgetPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Recovery-Email", email);
+    
     GetOtp(payload, navigate);
   };
 

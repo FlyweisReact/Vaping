@@ -8,14 +8,13 @@ import { GetOtp } from "../../Repository/User/Authentication";
 
 const ForgetPassword = () => {
   const [email, setEmail] = useState(null);
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const payload = { email };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Recovery-Email", email);
-    GetOtp(payload, navigate);
+    GetOtp(payload);
   };
 
   React.useEffect(() => {
