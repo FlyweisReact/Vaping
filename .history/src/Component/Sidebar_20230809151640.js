@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "react-notifications-component";
@@ -10,7 +10,6 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import { AllSubCat } from "../Repository/User/Cat";
 
 const Sidebar = (props) => {
   const token = localStorage.getItem("token");
@@ -115,26 +114,16 @@ const Sidebar = (props) => {
                   </AccordionItemButton>
                   <AccordionItemPanel>
                     <Accordion allowMultipleExpanded={false} allowZeroExpanded>
-                      {subCategory?.map((item, index) => (
-                        <AccordionItem key={index}>
-                          <AccordionItemButton>
-                            <a> {item?.category?.name} </a>
-                          </AccordionItemButton>
-                          <AccordionItemPanel>
-                            {item?.subCategory?.map((list) => (
-                              <p key={list?._id}>
-                                {" "}
-                                <Link
-                                  to={`/category_product/${list._id}/${list.name}`}
-                                >
-                                  {" "}
-                                  {list?.name}{" "}
-                                </Link>
-                              </p>
-                            ))}
-                          </AccordionItemPanel>
-                        </AccordionItem>
-                      ))}
+                      <AccordionItem>
+                        <AccordionItemButton>
+                          <a>Vaping</a>
+                        </AccordionItemButton>
+                        <AccordionItemPanel>
+                          <p>Lorem Ipsum</p>
+                          <p>Lorem Ipsum</p>
+                          <p>Lorem Ipsum</p>
+                        </AccordionItemPanel>
+                      </AccordionItem>
                     </Accordion>
                   </AccordionItemPanel>
                 </AccordionItem>

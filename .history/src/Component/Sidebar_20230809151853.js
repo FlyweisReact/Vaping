@@ -122,16 +122,14 @@ const Sidebar = (props) => {
                           </AccordionItemButton>
                           <AccordionItemPanel>
                             {item?.subCategory?.map((list) => (
-                              <p key={list?._id}>
+                              <p >
                                 {" "}
-                                <Link
-                                  to={`/category_product/${list._id}/${list.name}`}
-                                >
-                                  {" "}
-                                  {list?.name}{" "}
-                                </Link>
+                                <Link to="/"> {list?.name} </Link>
                               </p>
                             ))}
+                            <p>Lorem Ipsum</p>
+                            <p>Lorem Ipsum</p>
+                            <p>Lorem Ipsum</p>
                           </AccordionItemPanel>
                         </AccordionItem>
                       ))}

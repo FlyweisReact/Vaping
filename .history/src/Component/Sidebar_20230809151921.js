@@ -125,13 +125,12 @@ const Sidebar = (props) => {
                               <p key={list?._id}>
                                 {" "}
                                 <Link
-                                  to={`/category_product/${list._id}/${list.name}`}
-                                >
-                                  {" "}
-                                  {list?.name}{" "}
-                                </Link>
+                                      to={`/category_product/${list._id}/${list.name}`}> {list?.name} </Link>
                               </p>
                             ))}
+                            <p>Lorem Ipsum</p>
+                            <p>Lorem Ipsum</p>
+                            <p>Lorem Ipsum</p>
                           </AccordionItemPanel>
                         </AccordionItem>
                       ))}

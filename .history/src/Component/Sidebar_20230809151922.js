@@ -132,6 +132,9 @@ const Sidebar = (props) => {
                                 </Link>
                               </p>
                             ))}
+                            <p>Lorem Ipsum</p>
+                            <p>Lorem Ipsum</p>
+                            <p>Lorem Ipsum</p>
                           </AccordionItemPanel>
                         </AccordionItem>
                       ))}
