@@ -11,7 +11,7 @@
     flex-wrap: wrap;
   }
   .HomePage .Container .Banner_Two_Sec .img-container {
-    width: 48% !important;
+    width: 47% !important;
   }
   .HomePage .Container .Banner_Two_Sec .img-container img {
     width: 100% !important;
@@ -111,7 +111,7 @@
     margin-top: 10px;
   }
   .products-container .Main {
-    width: 45%;
+    width: 47.5%;
   }
   .HomePage .Container .Blog-posts {
     display: none;
