@@ -7,7 +7,6 @@ import axios from "axios";
 const Success = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("Token");
-  console.log(token , "Dsad")
   const { id } = useParams();
   const getOrder = async () => {
     const url = `https://krish-vapes-backend.vercel.app/api/v1/user/successOrder/${id}`;
