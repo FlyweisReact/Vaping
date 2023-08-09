@@ -11,7 +11,6 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import { AllSubCat } from "../Repository/User/Cat";
-import logo from '../Navbar/2.png'
 
 const Sidebar = (props) => {
   const token = localStorage.getItem("token");
@@ -100,7 +99,7 @@ const Sidebar = (props) => {
             onClick={() => props.onHide()}
           ></i>
           <Link to="/">
-            <img src={logo} alt="logo" className="logo" />
+            <img src="./Image/2.png" alt="logo" className="logo" />
           </Link>
 
           <ul>
@@ -123,7 +122,10 @@ const Sidebar = (props) => {
                           </AccordionItemButton>
                           <AccordionItemPanel>
                             {item?.subCategory?.map((list) => (
-                              <p key={list?._id} className="Special_Link">
+                              <li
+                                key={list?._id}
+                                style={{ border: "1px solid black" , textAlign : 'left' }}
+                              >
                                 {" "}
                                 <Link
                                   to={`/category_product/${list._id}/${list.name}`}
@@ -131,7 +133,7 @@ const Sidebar = (props) => {
                                   {" "}
                                   {list?.name}{" "}
                                 </Link>
-                              </p>
+                              </li>
                             ))}
                           </AccordionItemPanel>
                         </AccordionItem>

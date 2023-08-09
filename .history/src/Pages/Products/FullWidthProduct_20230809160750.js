@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../../Component/Breadcrumb";
 import Product from "../../Component/Product";
@@ -11,16 +11,11 @@ const FullWidthProduct = () => {
   const { id, name } = useParams();
   const [product, setProduct] = useState([]);
 
-  const fetchHandler = useCallback(async () => {
-    try {
-      const res = await subCategoryProduct(id);
-      setProduct(res.docs);
-    } catch {}
-  }, [id]);
+  const fetchHandler =useCa
 
   useEffect(() => {
     fetchHandler();
-  }, [fetchHandler]);
+  }, [id]);
 
   return (
     <>

@@ -129,7 +129,7 @@ const Product = ({ products, loading }) => {
       </div>
     )
   ) : (
-    <Alert className="mt-3 w-75 d-block m-auto mb-3" variant="danger">
+    <Alert className="mt-3 w-75 d-block m-auto mb-2" variant="danger">
       No Product Found
     </Alert>
   );

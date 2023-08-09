@@ -1,8 +1,9 @@
 /** @format */
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../../Component/Breadcrumb";
+import Pagination from "../../Component/Pagination";
 import Product from "../../Component/Product";
 import Navbar from "../../Navbar/Navbar";
 import { subCategoryProduct } from "../../Repository/User/Product";
@@ -11,16 +12,16 @@ const FullWidthProduct = () => {
   const { id, name } = useParams();
   const [product, setProduct] = useState([]);
 
-  const fetchHandler = useCallback(async () => {
+  const fetchHandler = async () => {
     try {
       const res = await subCategoryProduct(id);
       setProduct(res.docs);
     } catch {}
-  }, [id]);
+  };
 
   useEffect(() => {
     fetchHandler();
-  }, [fetchHandler]);
+  }, [id]);
 
   return (
     <>
@@ -35,7 +36,7 @@ const FullWidthProduct = () => {
                 <span> FILTER</span>
               </span>
               <span className="toggle_filter ">
-                |<span> There are {product?.length} products.</span>
+                |<span> There are {product?.length} products</span>
               </span>
             </div>
           </div>

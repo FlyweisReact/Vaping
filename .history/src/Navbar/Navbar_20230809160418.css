@@ -516,8 +516,8 @@
 .sidebar ul li a:hover {
   color: #f12b2b;
 }
-.Special_Link a {
-  padding: 0  !important;
+.Special_Link {
+  padding: 0 Im !important;
 }
 .sidebar ul li .accordion {
   --bs-accordion-bg: none !important ;

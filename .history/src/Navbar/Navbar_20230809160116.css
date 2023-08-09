@@ -510,15 +510,13 @@
   font-weight: 700;
   margin: 0;
   cursor: pointer;
-  text-transform: uppercase;
+  text-transform: uppercase
 }
 
 .sidebar ul li a:hover {
   color: #f12b2b;
 }
-.Special_Link a {
-  padding: 0  !important;
-}
+
 .sidebar ul li .accordion {
   --bs-accordion-bg: none !important ;
   --bs-accordion-border-color: none !important ;

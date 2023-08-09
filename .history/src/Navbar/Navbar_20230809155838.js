@@ -11,7 +11,7 @@ import { ContactDetail } from "../Repository/User/ContactDetail";
 import { AllSubCat } from "../Repository/User/Cat";
 import { deleteProductCart } from "../Repository/User/cart";
 import { CartItems } from "../Store/Slices/cartSlice";
-import logo from "./2.png";
+import logo from './'
 
 const Navbar = () => {
   const isLoggedIn = useSelector(isAuthenticated);
@@ -144,7 +144,7 @@ const Navbar = () => {
                 <div className="mid-cont">
                   <Link to="/">
                     <img
-                      src={logo}
+                      src="./Image/2.png"
                       style={{ display: "block", margin: "auto" }}
                       alt="logo"
                     />
@@ -190,7 +190,11 @@ const Navbar = () => {
                     {isLoggedIn ? (
                       <Link to="/cart" onMouseEnter={() => handleToggleOpen()}>
                         <span className="cart-badge">
-                          {isLoggedIn ? <span> {total} </span> : ""}
+                          {isLoggedIn ? (
+                            <span> {total} </span>
+                          ) : (
+                            ""
+                          )}
 
                           <i className="fa-solid fa-cart-shopping"></i>
                         </span>

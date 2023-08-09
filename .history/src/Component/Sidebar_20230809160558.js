@@ -11,7 +11,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import { AllSubCat } from "../Repository/User/Cat";
-import logo from '../Navbar/2.png'
+import logo from '../Navbar/'
 
 const Sidebar = (props) => {
   const token = localStorage.getItem("token");
@@ -100,7 +100,7 @@ const Sidebar = (props) => {
             onClick={() => props.onHide()}
           ></i>
           <Link to="/">
-            <img src={logo} alt="logo" className="logo" />
+            <img src="./Image/2.png" alt="logo" className="logo" />
           </Link>
 
           <ul>

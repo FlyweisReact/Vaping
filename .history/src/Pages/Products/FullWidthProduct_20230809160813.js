@@ -16,7 +16,7 @@ const FullWidthProduct = () => {
       const res = await subCategoryProduct(id);
       setProduct(res.docs);
     } catch {}
-  }, [id]);
+  }, []);
 
   useEffect(() => {
     fetchHandler();

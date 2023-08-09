@@ -518,6 +518,7 @@
 }
 .Special_Link a {
   padding: 0  !important;
+  text-align: ;
 }
 .sidebar ul li .accordion {
   --bs-accordion-bg: none !important ;

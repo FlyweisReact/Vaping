@@ -100,7 +100,7 @@ const Sidebar = (props) => {
             onClick={() => props.onHide()}
           ></i>
           <Link to="/">
-            <img src={logo} alt="logo" className="logo" />
+            <img src="./Image/2.png" alt="logo" className="logo" />
           </Link>
 
           <ul>
