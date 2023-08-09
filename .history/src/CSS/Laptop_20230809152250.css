@@ -307,8 +307,6 @@
     width: 47%;
   }
   .search-cont{
-    width: 80%;
-    max-width: 80%;
-    margin-left: 15%;
+    width: 100%;
   }
 }
