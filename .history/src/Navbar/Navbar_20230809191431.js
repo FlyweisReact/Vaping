@@ -293,7 +293,7 @@ const Navbar = () => {
                             <div className="cart-total">
                               <span className="label">SubTotal:</span>
                               <span className="value">
-                              £{Items?.totalAmount}
+                                ${Items?.totalAmount}
                               </span>
                             </div>
 
