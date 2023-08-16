@@ -14,9 +14,10 @@ const Success = () => {
       const data = await axios.get(url, {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       });
-      localStorage.removeItem("cart");
-
+      localStorage.removeItem('cart')
+      
       navigate("/");
+ 
     } catch (e) {
       console.log(e);
     }
