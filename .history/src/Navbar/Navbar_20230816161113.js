@@ -28,6 +28,8 @@ const Navbar = () => {
   const [Items, setItems] = useState({});
   const cartItem = useSelector(CartItems);
   const [total, setTotal] = useState(0);
+const disatch = useDispatch()
+
 
   const getContact = async () => {
     try {
@@ -37,11 +39,13 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    dispatch(getCart());
-    console.log("Code Updated");
+    dispatch(getCart())
+    console.log("Code Updated")
     setItems(cartItem);
     getContact();
     setTotal(cartItem?.totalItem);
+    
+
   }, [cartItem]);
 
   const handleToggleOpen = () => {
@@ -279,7 +283,7 @@ const Navbar = () => {
                                       </div>
                                       <div>
                                         <span className="product-price">
-                                          £{i?.productPrice}
+                                        £{i?.productPrice}
                                         </span>
                                         <span className="quantity">
                                           {" "}
@@ -295,7 +299,7 @@ const Navbar = () => {
                             <div className="cart-total">
                               <span className="label">SubTotal:</span>
                               <span className="value">
-                                £{Items?.totalAmount}
+                              £{Items?.totalAmount}
                               </span>
                             </div>
 

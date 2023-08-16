@@ -9,7 +9,7 @@ import { isAuthenticated, user, LOGOUT } from "../Store/Slices/authSlice";
 import { useDispatch } from "react-redux";
 import { ContactDetail } from "../Repository/User/ContactDetail";
 import { AllSubCat } from "../Repository/User/Cat";
-import { deleteProductCart, getCart } from "../Repository/User/cart";
+import { deleteProductCart } from "../Repository/User/cart";
 import { CartItems } from "../Store/Slices/cartSlice";
 import logo from "./2.png";
 
@@ -29,6 +29,8 @@ const Navbar = () => {
   const cartItem = useSelector(CartItems);
   const [total, setTotal] = useState(0);
 
+
+
   const getContact = async () => {
     try {
       const res = await ContactDetail();
@@ -37,11 +39,10 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    dispatch(getCart());
-    console.log("Code Updated");
     setItems(cartItem);
     getContact();
     setTotal(cartItem?.totalItem);
+    
   }, [cartItem]);
 
   const handleToggleOpen = () => {
@@ -279,7 +280,7 @@ const Navbar = () => {
                                       </div>
                                       <div>
                                         <span className="product-price">
-                                          £{i?.productPrice}
+                                        £{i?.productPrice}
                                         </span>
                                         <span className="quantity">
                                           {" "}
@@ -295,7 +296,7 @@ const Navbar = () => {
                             <div className="cart-total">
                               <span className="label">SubTotal:</span>
                               <span className="value">
-                                £{Items?.totalAmount}
+                              £{Items?.totalAmount}
                               </span>
                             </div>
 
