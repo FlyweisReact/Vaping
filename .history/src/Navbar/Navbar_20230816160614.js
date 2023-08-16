@@ -30,6 +30,8 @@ const Navbar = () => {
   const [total, setTotal] = useState(0);
 
 
+  console.log(localStorage.)
+
   const getContact = async () => {
     try {
       const res = await ContactDetail();
