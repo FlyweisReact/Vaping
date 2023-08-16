@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { addItemCart } from "../Repository/User/cart";
 import { isAuthenticated } from "../Store/Slices/authSlice";
 import Rating from "./Rating";
-import { Store } from "react-notifications-component";
 
 const Product = ({ products, loading }) => {
   const quantity = 1;
@@ -105,26 +104,21 @@ const Product = ({ products, loading }) => {
             <div className="group-buttons">
               <div className="product-buttons">
                 {item?.status === "STOCK" ? (
-                  isLoggedIn ? (
-                    <a
-                      onClick={() =>
-                        submitHandler(
-                          item._id,
-                          item?.colors?.[0]?._id,
-                          item?.colors?.[0]?.colorSize?.[0]?.size
-                        )
-                      }
-                    >
-                      <i className="fa-solid fa-bag-shopping"></i>
-                      <span>Add To cart</span>
-                    </a>
-                  ) : (
-                    <Link to="/login">
-                      {" "}
-                      <i className="fa-solid fa-bag-shopping"></i>
-                      <span>Add To cart</span>
-                    </Link>
-                  )
+
+                  isLoggedIn ? 
+                  <a
+                    onClick={() =>
+                      submitHandler(
+                        item._id,
+                        item?.colors?.[0]?._id,
+                        item?.colors?.[0]?.colorSize?.[0]?.size
+                      )
+                    }
+                  >
+                    <i className="fa-solid fa-bag-shopping"></i>
+                    <span>Add To cart</span>
+                  </a> : <a>   <i className="fa-solid fa-bag-shopping"></i>
+                    <span>Add To </span></a>
                 ) : (
                   <a>
                     <i className="fa-solid fa-bag-shopping"></i>

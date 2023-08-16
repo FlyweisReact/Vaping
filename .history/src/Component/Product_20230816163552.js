@@ -122,8 +122,8 @@ const Product = ({ products, loading }) => {
                     <Link to="/login">
                       {" "}
                       <i className="fa-solid fa-bag-shopping"></i>
-                      <span>Add To cart</span>
-                    </Link>
+                      <span>Add To </span>
+                    </a>
                   )
                 ) : (
                   <a>

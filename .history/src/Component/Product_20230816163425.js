@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { addItemCart } from "../Repository/User/cart";
 import { isAuthenticated } from "../Store/Slices/authSlice";
 import Rating from "./Rating";
-import { Store } from "react-notifications-component";
 
 const Product = ({ products, loading }) => {
   const quantity = 1;
@@ -119,11 +118,11 @@ const Product = ({ products, loading }) => {
                       <span>Add To cart</span>
                     </a>
                   ) : (
-                    <Link to="/login">
+                    <a>
                       {" "}
                       <i className="fa-solid fa-bag-shopping"></i>
-                      <span>Add To cart</span>
-                    </Link>
+                      <span>Add To </span>
+                    </a>
                   )
                 ) : (
                   <a>

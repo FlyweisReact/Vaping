@@ -119,11 +119,30 @@ const Product = ({ products, loading }) => {
                       <span>Add To cart</span>
                     </a>
                   ) : (
-                    <Link to="/login">
+                    <a
+                      onClick={() =>
+                        Store.addNotification({
+                          title: "",
+                          message: msg,
+                          type: "danger",
+                          insert: "top",
+                          container: "top-center",
+                          animationIn: ["animate__animated", "animate__fadeIn"],
+                          animationOut: [
+                            "animate__animated",
+                            "animate__fadeOut",
+                          ],
+                          dismiss: {
+                            duration: 1000,
+                            onScreen: true,
+                          },
+                        })
+                      }
+                    >
                       {" "}
                       <i className="fa-solid fa-bag-shopping"></i>
-                      <span>Add To cart</span>
-                    </Link>
+                      <span>Add To </span>
+                    </a>
                   )
                 ) : (
                   <a>
