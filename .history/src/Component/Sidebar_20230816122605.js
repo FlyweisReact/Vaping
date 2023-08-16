@@ -49,6 +49,7 @@ const Sidebar = (props) => {
       },
     });
     navigate("/login");
+    localStorage.removeItem("token");
   };
 
   if (isLoggedIn === true) {

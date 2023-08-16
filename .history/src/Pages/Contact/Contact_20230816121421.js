@@ -36,6 +36,9 @@ const Contact = () => {
     getContact();
   }, []);
 
+  console.log(contactDetail?.map);
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.564465184463!2d77.37834267619705!3d28.612839984973466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5abc9471d59%3A0x5c647411835dccdc!2sFlyweis%20Group!5e0!3m2!1sen!2sin!4v1692168251672!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
   return (

@@ -12,12 +12,9 @@ import {
 } from "react-accessible-accordion";
 import { AllSubCat } from "../Repository/User/Cat";
 import logo from '../Navbar/2.png'
-import { useDispatch, useSelector } from "react-redux";
-import { isAuthenticated, LOGOUT } from "../Store/Slices/authSlice";
 
 const Sidebar = (props) => {
-  const isLoggedIn = useSelector(isAuthenticated);
-  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
   let links;
   const navigate = useNavigate();
   const [subCategory, setSubCategory] = useState([]);
@@ -34,7 +31,6 @@ const Sidebar = (props) => {
   }, []);
 
   const loggedOut = () => {
-    dispatch(LOGOUT());
     Store.addNotification({
       title: "Logged Out Successfully",
       message: "",
@@ -49,9 +45,10 @@ const Sidebar = (props) => {
       },
     });
     navigate("/login");
+    localStorage.removeItem("token");
   };
 
-  if (isLoggedIn === true) {
+  if (token) {
     const Component = () => {
       return (
         <>

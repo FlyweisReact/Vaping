@@ -36,6 +36,7 @@ const Contact = () => {
     getContact();
   }, []);
 
+  console.log(contactDetail?.map);
 
 
   return (

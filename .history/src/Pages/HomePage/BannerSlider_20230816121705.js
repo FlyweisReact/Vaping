@@ -12,7 +12,7 @@ const BannerSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1500,
-    
+    dy
   };
 
   const [images, setImages] = useState([]);

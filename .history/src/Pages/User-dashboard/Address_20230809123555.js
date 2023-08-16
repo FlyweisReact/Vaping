@@ -187,8 +187,7 @@ const Address = () => {
                         <input
                           className="Input"
                           type="tel"
-                          maxLength={12}
-                          minLength={8}
+                          pattern="[0-9]{12}"
                           placeholder="Phone"
                           onChange={(e) => setPhone(e.target.value)}
                         />

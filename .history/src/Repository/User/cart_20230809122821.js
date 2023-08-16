@@ -5,13 +5,16 @@ import { Store } from "react-notifications-component";
 import { getCartItems } from "../../Store/Slices/cartSlice";
 const BaseUrl = "https://krish-vapes-backend.vercel.app/";
 
+
 const getSize = async (payload) => {
   try {
     const response = await axios.get(
       `${BaseUrl}api/v1/Product/color/${payload}`
     );
     return response.data.data;
-  } catch {}
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 const getCart = () => {

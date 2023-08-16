@@ -61,6 +61,7 @@ const CreateAddress = () => {
 
               <form onSubmit={handleSubmit}>
                 <section>
+
                   <div className="form-group Gender_Group">
                     <label className="form-control-label">
                       Address <span style={{ color: "red" }}>*</span>{" "}
@@ -151,7 +152,7 @@ const CreateAddress = () => {
                         className="Input"
                         type="tel"
                         maxLength={12}
-                        minLength={8}
+                          minLength={8}
                         placeholder="Phone"
                         onChange={(e) => setPhone(e.target.value)}
                       />

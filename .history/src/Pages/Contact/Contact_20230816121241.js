@@ -36,25 +36,21 @@ const Contact = () => {
     getContact();
   }, []);
 
-
+  console.log(contactDetail?.map)
 
   return (
     <div className="contact-us">
       <Navbar />
       <Breadcrumb title={"Contact"} />
-      {contactDetail?.map ? (
-        <iframe
-          src={contactDetail?.map}
-          height="450"
-          style={{ border: 0, width: "100%" }}
-          allowFullScreen=""
-          loading="lazy"
-          title="GetInTouch"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      ) : (
-        ""
-      )}
+      <iframe
+        src={contactDetail?.map}
+        height="450"
+        style={{ border: 0, width: "100%" }}
+        allowFullScreen=""
+        loading="lazy"
+        title="GetInTouch"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
 
       <div className="container-width">
         <div className="contact-form">

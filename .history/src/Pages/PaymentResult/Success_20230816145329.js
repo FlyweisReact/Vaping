@@ -11,7 +11,7 @@ const Success = () => {
   const getOrder = async () => {
     const url = `https://krish-vapes-backend.vercel.app/api/v1/user/successOrder/${id}`;
     try {
-      const data = await axios.get(url, {
+      const  data  = await axios.get(url, {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       });
       navigate("/");

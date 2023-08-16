@@ -9,9 +9,10 @@ import {
   updateQuantityCart,
 } from "../../Repository/User/cart";
 import { getAllAddress } from "../../Repository/User/Addresses";
+import { Store } from "react-notifications-component";
 import { useDispatch, useSelector } from "react-redux";
 import { CartItems } from "../../Store/Slices/cartSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import axios from "axios";
 
@@ -45,23 +46,22 @@ const Cart = () => {
 
   const [orderId, setOrderId] = useState("");
 
-  const placeOrder = async (orderId) => {
+
+
+  const placeOrder = async(orderId)=>{
     const url = `https://krish-vapes-backend.vercel.app/api/v1/user/placeOrder/${orderId}`;
-    try {
+    try{
       console.log(orderId);
-      const { data } = await axios.post(
-        url,
-        {},
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-        }
-      );
-      window.location.href = data?.session?.url;
+      const {data} = await axios.post(url,{},{
+        headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}
+      })
+      console.log(data?.session?.url);
+      window.location.href=data?.session?.url;
       setOrderId("");
-    } catch (e) {
-      console.log(e);
+    }catch(e){
+      console.log(e)
     }
-  };
+  }
 
   const deleteHandler = (cartProductId) => {
     dispatch(deleteProductCart(cartProductId));
@@ -72,22 +72,20 @@ const Cart = () => {
     dispatch(updateQuantityCart(payload));
   };
 
-  const checkOut = async () => {
+  const checkOut = async()=>{
     const url = "https://krish-vapes-backend.vercel.app/api/v1/user/checkout";
-    try {
-      const { data } = await axios.post(
-        url,
-        { addressId },
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
-        }
-      );
+    try{
+      const {data} = await axios.post(url,{addressId}, {
+        headers:{Authorization : `Bearer ${localStorage.getItem("Token")}`}
+      })
+      console.log(data?.data?.orderId);
       setOrderId(data?.data?.orderId);
       placeOrder(data?.data?.orderId);
-    } catch (err) {
+
+    }catch(err){
       console.log(err.message);
     }
-  };
+  }
 
   return (
     <>
@@ -102,13 +100,13 @@ const Cart = () => {
                 {/* Left */}
 
                 {Items?.products?.length === 0 || !Items?.products ? (
-                  <Alert style={{ width: "100%" }} variant="danger">
+                  <Alert style={{width : '100%'}} variant="danger">
                     Add Products In Cart First !
                   </Alert>
                 ) : (
                   <>
                     <div className="cart-grid-body">
-                      <h1 className="page-title">Shopping Cart</h1>
+                      <h1 class="page-title">Shopping Cart</h1>
 
                       <div className="cart-container">
                         <div className="group_title ">
@@ -219,21 +217,7 @@ const Cart = () => {
                           </div>
                           <div className="summary">
                             <p>Discounted Price:</p>
-                            <p className="value">
-                              {" "}
-                              {Items?.discount
-                                ? `£${Items?.discount}`
-                                : "£0"}{" "}
-                            </p>
-                          </div>
-                          <div className="summary">
-                            <p>Delivery Amount:</p>
-                            <p className="value">
-                              {" "}
-                              {Items?.delivery
-                                ? `£${Items?.delivery}`
-                                : "£0"}{" "}
-                            </p>
+                            <p className="value">£{Items?.discountPrice}</p>
                           </div>
 
                           <div className="summary">
@@ -274,8 +258,9 @@ const Cart = () => {
             <div className="cart">
               <section id="main">
                 <div className="cart-grid">
+                  {/* Left */}
                   <div className="cart-grid-body" style={{ width: "100%" }}>
-                    <h1 className="page-title">Select Address </h1>
+                    <h1 class="page-title">Select Address </h1>
                     {address?.length === 0 || !address ? (
                       <>
                         <Link

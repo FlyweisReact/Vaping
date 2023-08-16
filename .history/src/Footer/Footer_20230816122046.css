@@ -49,6 +49,7 @@
 .footer .footer-container .footer-col ul li span {
   color: #909090;
   line-height: 2em;
+  border: 1px solid #fff;
 }
 .footer .footer-container .footer-col .icons {
   text-align: left;

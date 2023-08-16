@@ -6,13 +6,14 @@ import axios from "axios";
 
 const Success = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("Token");
+  console.log(token , "Dsad")
   const { id } = useParams();
-
   const getOrder = async () => {
     const url = `https://krish-vapes-backend.vercel.app/api/v1/user/successOrder/${id}`;
     try {
-      const data = await axios.get(url, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+      const { data } = await axios.get(url, {
+        headers: { Authorization: `Bearer ${token}` },
       });
       navigate("/");
     } catch (e) {
