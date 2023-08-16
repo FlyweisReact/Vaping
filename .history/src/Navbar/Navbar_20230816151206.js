@@ -30,6 +30,7 @@ const Navbar = () => {
   const [total, setTotal] = useState(0);
 
 
+  console.log
 
   const getContact = async () => {
     try {
