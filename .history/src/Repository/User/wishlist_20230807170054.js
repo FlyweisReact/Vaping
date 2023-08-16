@@ -4,6 +4,7 @@ import axios from "axios";
 import { Store } from "react-notifications-component";
 
 const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const token = localStorage.getItem("Token");
 
 const getWishlit = async () => {
   try {

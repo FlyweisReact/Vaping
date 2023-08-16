@@ -124,9 +124,9 @@ const Orders = () => {
                                                   >
                                                     <li>
                                                       <Link
-                                                        to={`/product/${item?.productId?._id}`}
+                                                        to={`/product/${item.productId?._id}`}
                                                       >
-                                                        {item?.productId?.name}
+                                                        {item.productId?.name}
                                                       </Link>
                                                     </li>
                                                   </ul>

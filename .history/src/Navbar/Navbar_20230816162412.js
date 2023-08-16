@@ -29,8 +29,6 @@ const Navbar = () => {
   const cartItem = useSelector(CartItems);
   const [total, setTotal] = useState(0);
 
-
-
   const getContact = async () => {
     try {
       const res = await ContactDetail();
@@ -44,9 +42,6 @@ const Navbar = () => {
     getContact();
     setTotal(cartItem?.totalItem);
   }, [cartItem]);
-
-
-  console.log(cartItem , "CartItem")
 
   const handleToggleOpen = () => {
     setIsOpen(!isOpen);
