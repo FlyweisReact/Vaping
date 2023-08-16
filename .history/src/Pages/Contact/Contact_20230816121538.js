@@ -97,8 +97,7 @@ const Contact = () => {
                     <br />
                     <input
                       type="tel"
-                      maxLength={12}
-                      minLength={8}
+                      pattern="[0-9]{12}"
                       onChange={(e) => setMobile(e.target.value)}
                       name="mobile"
                       placeholder="Phone Number"
