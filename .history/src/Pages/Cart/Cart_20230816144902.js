@@ -48,6 +48,7 @@ const Cart = () => {
   const placeOrder = async (orderId) => {
     const url = `https://krish-vapes-backend.vercel.app/api/v1/user/placeOrder/${orderId}`;
     try {
+      console.log(orderId);
       const { data } = await axios.post(
         url,
         {},

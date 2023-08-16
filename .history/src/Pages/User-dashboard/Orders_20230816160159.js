@@ -17,6 +17,7 @@ const Orders = () => {
     try {
       const res = await getOrder();
       setProducts(res);
+      console.log(res);
       setLoading(false);
     } catch {
       setLoading(false);
