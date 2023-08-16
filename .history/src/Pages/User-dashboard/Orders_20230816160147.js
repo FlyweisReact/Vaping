@@ -139,12 +139,7 @@ const Orders = () => {
 
                                         <td>
                                           {i.Orders?.map((item) => (
-                                            <ul
-                                              style={{
-                                                listStyle: "none",
-                                                paddingLeft: 0,
-                                              }}
-                                            >
+                                            <ul>
                                               <li>
                                                 {" "}
                                                 <span className="product-price">
@@ -156,12 +151,7 @@ const Orders = () => {
                                         </td>
                                         <td>
                                           {i.Orders?.map((item) => (
-                                            <ul
-                                              style={{
-                                                listStyle: "none",
-                                                paddingLeft: 0,
-                                              }}
-                                            >
+                                            <ul>
                                               <li>
                                                 {" "}
                                                 <span className="product-price">

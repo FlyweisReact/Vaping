@@ -17,7 +17,7 @@ const Orders = () => {
     try {
       const res = await getOrder();
       setProducts(res);
-      console.log(res);
+      console.log(res )
       setLoading(false);
     } catch {
       setLoading(false);
@@ -92,13 +92,11 @@ const Orders = () => {
                                 <table>
                                   <thead>
                                     <tr>
-                                      <th>Order Id</th>
                                       <th>Product</th>
                                       <th>Price</th>
                                       <th>Qty</th>
                                       <th>Sub-Total</th>
                                       <th>Tax</th>
-                                      <th>Delivery Charge</th>
                                       <th>Total</th>
                                     </tr>
                                   </thead>
@@ -106,86 +104,54 @@ const Orders = () => {
                                   <tbody style={{ marginTop: "100px" }}>
                                     {products?.map((i, index) => (
                                       <tr key={index}>
-                                        <td>
-                                          <span className="product-price">
-                                            {i.orderId}
-                                          </span>
-                                        </td>
-
-                                        <td>
-                                          <span className="product-price">
-                                            <span className="big-container">
-                                              <div>
-                                                {i.Orders?.map((item) => (
-                                                  <ul
-                                                    style={{
-                                                      listStyle: "none",
-                                                      paddingLeft: 0,
-                                                    }}
-                                                  >
-                                                    <li>
-                                                      <Link
-                                                        to={`/product/${item.productId._id}`}
-                                                      >
-                                                        {item.productId?.name}
-                                                      </Link>
-                                                    </li>
-                                                  </ul>
-                                                ))}
-                                              </div>
+                                        {/* <td>
+                                          <span className="big-container">
+                                            <span className="img-container">
+                                              <img
+                                                src={getImageLink(i)}
+                                                alt=""
+                                                className="img-fluid"
+                                              />
                                             </span>
+
+                                            <div>
+                                              <Link
+                                                to={`/product/${i.productId._id}`}
+                                              >
+                                                {i?.productId?.name}
+                                              </Link>
+                                            </div>
+                                          </span>
+                                        </td> */}
+
+                                        <td>
+                                          <span className="product-price">
+                                            £{i?.productPrice}
                                           </span>
                                         </td>
 
                                         <td>
-                                          {i.Orders?.map((item) => (
-                                            <ul
-                                              style={{
-                                                listStyle: "none",
-                                                paddingLeft: 0,
-                                              }}
-                                            >
-                                              <li>
-                                                {" "}
-                                                <span className="product-price">
-                                                  £{item?.productId?.price}
-                                                </span>
-                                              </li>
-                                            </ul>
-                                          ))}
-                                        </td>
-                                        <td>
-                                          {i.Orders?.map((item) => (
-                                            <ul
-                                              style={{
-                                                listStyle: "none",
-                                                paddingLeft: 0,
-                                              }}
-                                            >
-                                              <li>
-                                                {" "}
-                                                <span className="product-price">
-                                                  {item?.quantity}
-                                                </span>
-                                              </li>
-                                            </ul>
-                                          ))}
+                                          <span className="product-price">
+                                            £{i?.productPrice}
+                                          </span>
                                         </td>
 
+                                        <td>
+                                          <span className="product-price">
+                                            {" "}
+                                            {i?.quantity}{" "}
+                                          </span>
+                                        </td>
                                         <td>
                                           <span className="product-price">
                                             {" "}
                                             £{i?.total}{" "}
                                           </span>
                                         </td>
+
                                         <td>
                                           <span className="product-price">
-                                            £{i?.tax}
-                                          </span>
-                                        </td>
-                                        <td>
-                                          <span className="product-price">
-                                            £{i?.delivery}
+                                            £{i?.totalTax}
                                           </span>
                                         </td>
                                         <td>

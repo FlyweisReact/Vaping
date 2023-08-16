@@ -116,7 +116,7 @@ const placeOrder = async (payload) => {
 
 const getOrder = async () => {
   try {
-    const response = await axios.get(`${BaseUrl}api/v1/user/allOrders`, {
+    const response = await axios.get(`${BaseUrl}api/v1/user/Orders`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
     });
     return response.data.data;

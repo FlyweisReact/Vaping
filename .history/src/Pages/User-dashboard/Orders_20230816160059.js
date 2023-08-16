@@ -92,7 +92,6 @@ const Orders = () => {
                                 <table>
                                   <thead>
                                     <tr>
-                                      <th>Order Id</th>
                                       <th>Product</th>
                                       <th>Price</th>
                                       <th>Qty</th>
@@ -106,23 +105,19 @@ const Orders = () => {
                                   <tbody style={{ marginTop: "100px" }}>
                                     {products?.map((i, index) => (
                                       <tr key={index}>
+                                   
                                         <td>
-                                          <span className="product-price">
-                                            {i.orderId}
-                                          </span>
+                                        <span className="product-price"></span>
                                         </td>
 
+                                       
                                         <td>
                                           <span className="product-price">
                                             <span className="big-container">
+                                     
                                               <div>
                                                 {i.Orders?.map((item) => (
-                                                  <ul
-                                                    style={{
-                                                      listStyle: "none",
-                                                      paddingLeft: 0,
-                                                    }}
-                                                  >
+                                                  <ul>
                                                     <li>
                                                       <Link
                                                         to={`/product/${item.productId._id}`}
@@ -139,12 +134,7 @@ const Orders = () => {
 
                                         <td>
                                           {i.Orders?.map((item) => (
-                                            <ul
-                                              style={{
-                                                listStyle: "none",
-                                                paddingLeft: 0,
-                                              }}
-                                            >
+                                            <ul>
                                               <li>
                                                 {" "}
                                                 <span className="product-price">
@@ -156,12 +146,7 @@ const Orders = () => {
                                         </td>
                                         <td>
                                           {i.Orders?.map((item) => (
-                                            <ul
-                                              style={{
-                                                listStyle: "none",
-                                                paddingLeft: 0,
-                                              }}
-                                            >
+                                            <ul>
                                               <li>
                                                 {" "}
                                                 <span className="product-price">
