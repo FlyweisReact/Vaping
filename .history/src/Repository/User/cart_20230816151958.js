@@ -21,7 +21,7 @@ const getCart = () => {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       });
       const data = response.data.data;
-      console.log(data , "Cart Data In Api")
+      console.log(data)
       dispatch(getCartItems(data));
     } catch (e) {
       console.log(e);

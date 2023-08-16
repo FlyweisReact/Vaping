@@ -21,7 +21,7 @@ const cartSlice = createSlice({
     getCartItems: (state, action) => {
       state.item = action.payload;
       localStorage.setItem("cart", JSON.stringify(action.payload));
-      console.log(localStorage.getItem('cart') , "In Cart Slice")
+      console.log(localStorage.getItem('car'))
     },
   },
 });
