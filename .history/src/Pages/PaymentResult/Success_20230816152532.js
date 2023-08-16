@@ -3,6 +3,8 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getCart } from "../../Repository/User/cart";
 
 const Success = () => {
   const navigate = useNavigate();
@@ -14,10 +16,7 @@ const Success = () => {
       const data = await axios.get(url, {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       });
-      // navigate("/");
-      console.log(localStorage.getItem("cart") , "Cart Get");
-      localStorage.removeItem('cart')
-      console.log(localStorage.getItem("cart") , "Cart Get 34");
+      navigate("/");
     } catch (e) {
       console.log(e);
     }

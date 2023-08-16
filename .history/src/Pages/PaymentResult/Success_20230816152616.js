@@ -14,10 +14,11 @@ const Success = () => {
       const data = await axios.get(url, {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       });
-      // navigate("/");
+      navigate("/");
       console.log(localStorage.getItem("cart") , "Cart Get");
       localStorage.removeItem('cart')
-      console.log(localStorage.getItem("cart") , "Cart Get 34");
+      console.log(localStorage.getItem("cart") , "Cart Get");
+      
     } catch (e) {
       console.log(e);
     }
