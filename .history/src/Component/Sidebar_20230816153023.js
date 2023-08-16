@@ -68,7 +68,7 @@ const Sidebar = (props) => {
             <Link to="/mywishlist">Wishlist</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/mywishlist">Wishlist</Link>
           </li>
           <li>
             <a href="#" onClick={loggedOut}>
