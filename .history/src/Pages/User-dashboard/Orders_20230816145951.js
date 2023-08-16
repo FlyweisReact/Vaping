@@ -27,6 +27,9 @@ const Orders = () => {
     fetchHandler();
   }, []);
 
+
+  console.log(products)
+
   const getImageLink = (item) => {
     if (item?.productId?.colorActive === true) {
       return item?.productColorId?.img;
@@ -34,6 +37,7 @@ const Orders = () => {
       return item?.productId?.img;
     }
   };
+
 
   return (
     <div>
@@ -94,8 +98,7 @@ const Orders = () => {
                                       <th>Product</th>
                                       <th>Price</th>
                                       <th>Qty</th>
-                                      <th>Sub-Total</th>
-                                      <th>Tax</th>
+                                      <th>Qty</th>
                                       <th>Total</th>
                                     </tr>
                                   </thead>
@@ -134,18 +137,7 @@ const Orders = () => {
                                             {i?.quantity}{" "}
                                           </span>
                                         </td>
-                                        <td>
-                                          <span className="product-price">
-                                            {" "}
-                                            £{i?.total}{" "}
-                                          </span>
-                                        </td>
 
-                                        <td>
-                                          <span className="product-price">
-                                            £{i?.totalTax}
-                                          </span>
-                                        </td>
                                         <td>
                                           <span className="product-price total">
                                             £{i?.paidAmount}

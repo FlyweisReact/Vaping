@@ -27,6 +27,9 @@ const Orders = () => {
     fetchHandler();
   }, []);
 
+
+  console.log(products)
+
   const getImageLink = (item) => {
     if (item?.productId?.colorActive === true) {
       return item?.productColorId?.img;
@@ -34,6 +37,7 @@ const Orders = () => {
       return item?.productId?.img;
     }
   };
+
 
   return (
     <div>

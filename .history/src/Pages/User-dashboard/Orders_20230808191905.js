@@ -35,6 +35,7 @@ const Orders = () => {
     }
   };
 
+
   return (
     <div>
       <Navbar />
@@ -94,8 +95,6 @@ const Orders = () => {
                                       <th>Product</th>
                                       <th>Price</th>
                                       <th>Qty</th>
-                                      <th>Sub-Total</th>
-                                      <th>Tax</th>
                                       <th>Total</th>
                                     </tr>
                                   </thead>
@@ -134,21 +133,10 @@ const Orders = () => {
                                             {i?.quantity}{" "}
                                           </span>
                                         </td>
-                                        <td>
-                                          <span className="product-price">
-                                            {" "}
-                                            £{i?.total}{" "}
-                                          </span>
-                                        </td>
 
                                         <td>
-                                          <span className="product-price">
-                                            £{i?.totalTax}
-                                          </span>
-                                        </td>
-                                        <td>
                                           <span className="product-price total">
-                                            £{i?.paidAmount}
+                                            £{i?.total}
                                           </span>
                                         </td>
                                       </tr>
