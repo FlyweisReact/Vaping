@@ -3,12 +3,10 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Store } from "react-notifications-component";
-import { LOGOUT } from "../../Store/Slices/authSlice";
-import { useDispatch } from "react-redux";
 
 const Profilebar = () => {
   const location = useLocation();
-  const dispatch = useDispatch()
+  const name = localStorage.getItem("token");
   const navigate = useNavigate();
 
   const links = [
@@ -35,7 +33,6 @@ const Profilebar = () => {
   ];
 
   const loggedOut = () => {
-    dispatch(LOGOUT());
     Store.addNotification({
       title: "Logged Out Successfully",
       message: "",
@@ -50,6 +47,7 @@ const Profilebar = () => {
       },
     });
     navigate("/login");
+    localStorage.removeItem("token");
   };
 
   return (
