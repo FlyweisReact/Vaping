@@ -15,7 +15,7 @@ const Identity = () => {
   const userDetail = useSelector(user);
   const Details = userDetail;
 
-  const Address = JSON.parse(localStorage.getItem("AddressUser"));
+  const Address = JSON.parse(localStorage.getItem("AddressUser"))
 
   const [firstName, setFirstName] = useState(Details?.firstName);
   const [lastName, setLastName] = useState(Details?.lastName);
@@ -25,10 +25,8 @@ const Identity = () => {
   const [courtesyTitle, setCourtesyTitle] = useState(Details?.courtesyTitle);
   const [company, setCompany] = useState(Details?.company);
   const [vatNumber, setVatNumber] = useState(Details?.vatNumber);
-  const [phone, setPhone] = useState(Details?.phone);
-  const [registrationNo, setRegestrationNumber] = useState(
-    Details?.registrationNo
-  );
+  const [ phone , setPhone ] = useState(Details?.phone)
+
 
   const payload = {
     firstName,
@@ -39,8 +37,6 @@ const Identity = () => {
     courtesyTitle,
     company,
     vatNumber,
-    phone,
-    registrationNo,
   };
 
   function FiledChooser(field, placeholder) {
@@ -52,6 +48,9 @@ const Identity = () => {
     e.preventDefault();
     dispatch(UpdateUser(payload));
   };
+
+  console.log(Details)
+
 
   return (
     <div>
@@ -204,7 +203,7 @@ const Identity = () => {
                           Details?.phone,
                           "Phone Number"
                         )}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                   </div>
@@ -284,14 +283,14 @@ const Identity = () => {
                       <input
                         className="Input"
                         type="text"
-                        placeholder={FiledChooser(Details?.registrationNo)}
-                        onChange={(e) => setRegestrationNumber(e.target.value)}
+                        defaultValue={FiledChooser(Details?.registrationNo)}
                       />
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
                     <label className="form-control-label">
-                      Company address
+                      Company Address
+                      <span style={{ color: "red" }}>*</span>{" "}
                     </label>
 
                     <div className="form-control-valign">
@@ -304,7 +303,8 @@ const Identity = () => {
                   </div>
                   <div className="form-group Gender_Group">
                     <label className="form-control-label">
-                      Address Complement
+                    Address Complement	
+                      <span style={{ color: "red" }}>*</span>{" "}
                     </label>
 
                     <div className="form-control-valign">
@@ -316,7 +316,10 @@ const Identity = () => {
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
-                    <label className="form-control-label">City</label>
+                    <label className="form-control-label">
+                    City
+                      <span style={{ color: "red" }}>*</span>{" "}
+                    </label>
 
                     <div className="form-control-valign">
                       <input
@@ -327,7 +330,10 @@ const Identity = () => {
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
-                    <label className="form-control-label">Postal Code</label>
+                    <label className="form-control-label">
+                    Postal Code
+                      <span style={{ color: "red" }}>*</span>{" "}
+                    </label>
 
                     <div className="form-control-valign">
                       <input
@@ -338,7 +344,10 @@ const Identity = () => {
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
-                    <label className="form-control-label">Country</label>
+                    <label className="form-control-label">
+                    Country
+                      <span style={{ color: "red" }}>*</span>{" "}
+                    </label>
 
                     <div className="form-control-valign">
                       <input
@@ -348,6 +357,7 @@ const Identity = () => {
                       />
                     </div>
                   </div>
+                
 
                   <div className="form-group Gender_Group">
                     <label className="form-control-label" />

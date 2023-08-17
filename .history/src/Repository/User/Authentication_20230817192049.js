@@ -51,7 +51,8 @@ const LoginUser = (payload, navigate) => {
       const data = response.data.data;
       localStorage.setItem("Token", response.data.accessToken);
       dispatch(Login(data));
-      localStorage.setItem("AddressUser" , JSON.stringify(response.data.Address))
+      
+      localStorage.setItem("AddressUser" , response.data.Address)
       Store.addNotification({
         title: "Success !",
         message: "Welcome Back",

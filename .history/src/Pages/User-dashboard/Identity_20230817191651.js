@@ -15,7 +15,8 @@ const Identity = () => {
   const userDetail = useSelector(user);
   const Details = userDetail;
 
-  const Address = JSON.parse(localStorage.getItem("AddressUser"));
+
+  console.log(Details)
 
   const [firstName, setFirstName] = useState(Details?.firstName);
   const [lastName, setLastName] = useState(Details?.lastName);
@@ -23,25 +24,9 @@ const Identity = () => {
   const [password, setPassword] = useState(null);
   const [dob, setDob] = useState(Details?.dob);
   const [courtesyTitle, setCourtesyTitle] = useState(Details?.courtesyTitle);
-  const [company, setCompany] = useState(Details?.company);
-  const [vatNumber, setVatNumber] = useState(Details?.vatNumber);
-  const [phone, setPhone] = useState(Details?.phone);
-  const [registrationNo, setRegestrationNumber] = useState(
-    Details?.registrationNo
-  );
-
-  const payload = {
-    firstName,
-    lastName,
-    email,
-    password,
-    dob,
-    courtesyTitle,
-    company,
-    vatNumber,
-    phone,
-    registrationNo,
-  };
+  const [ company , setCompany ] = useState(Details?.company)
+  const [ vatNumber , setVatNumber] = useState(Details?.vatNumber)
+  const payload = { firstName, lastName, email, password, dob, courtesyTitle , company , vatNumber };
 
   function FiledChooser(field, placeholder) {
     const Title = field ? field : placeholder;
@@ -83,9 +68,7 @@ const Identity = () => {
 
           <div className="right-container">
             <div className="block_content-right">
-              <div className="title_account_second">
-                Your personal information
-              </div>
+              <div className="title_account_second">Your personal information</div>
 
               <form onSubmit={handleSubmit}>
                 <section>
@@ -102,6 +85,7 @@ const Identity = () => {
                             checked={
                               Details?.courtesyTitle === "Mr" ? true : null
                             }
+                            
                             onClick={(e) => setCourtesyTitle(e.target.value)}
                           />
                           <span></span>
@@ -189,25 +173,6 @@ const Identity = () => {
                       />
                     </div>
                   </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Phone Number <span style={{ color: "red" }}>*</span>{" "}
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="tel"
-                        minLength={8}
-                        maxLength={12}
-                        placeholder={FiledChooser(
-                          Details?.phone,
-                          "Phone Number"
-                        )}
-                        onChange={(e) => setPhone(e.target.value)}
-                      />
-                    </div>
-                  </div>
 
                   <div className="form-group Gender_Group">
                     <label className="form-control-label">
@@ -253,6 +218,7 @@ const Identity = () => {
                         placeholder={FiledChooser(Details?.company, "Company")}
                         onChange={(e) => setCompany(e.target.value)}
                       />
+
                     </div>
                   </div>
 
@@ -266,10 +232,7 @@ const Identity = () => {
                       <input
                         className="Input"
                         type="text"
-                        placeholder={FiledChooser(
-                          Details?.vatNumber,
-                          "VAT Number"
-                        )}
+                        placeholder={FiledChooser(Details?.vatNumber, "VAT Number")}
                         onChange={(e) => setVatNumber(e.target.value)}
                       />
                     </div>
@@ -284,70 +247,12 @@ const Identity = () => {
                       <input
                         className="Input"
                         type="text"
-                        placeholder={FiledChooser(Details?.registrationNo)}
-                        onChange={(e) => setRegestrationNumber(e.target.value)}
+                        placeholder={FiledChooser(Details?.vatNumber, "VAT Number")}
+                        defaultValue={FiledChooser(Details?.vatNumber, "VAT Number")}
                       />
                     </div>
                   </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Company address
-                    </label>
 
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.address)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Address Complement
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.addressComplement)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">City</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.city)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">Postal Code</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.pincode)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">Country</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.country)}
-                      />
-                    </div>
-                  </div>
 
                   <div className="form-group Gender_Group">
                     <label className="form-control-label" />

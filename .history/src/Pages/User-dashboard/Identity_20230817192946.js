@@ -40,7 +40,7 @@ const Identity = () => {
     company,
     vatNumber,
     phone,
-    registrationNo,
+    registrationNo
   };
 
   function FiledChooser(field, placeholder) {
@@ -52,6 +52,8 @@ const Identity = () => {
     e.preventDefault();
     dispatch(UpdateUser(payload));
   };
+
+  console.log(Details);
 
   return (
     <div>
@@ -316,7 +318,9 @@ const Identity = () => {
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
-                    <label className="form-control-label">City</label>
+                    <label className="form-control-label">
+                      City
+                    </label>
 
                     <div className="form-control-valign">
                       <input
@@ -327,7 +331,9 @@ const Identity = () => {
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
-                    <label className="form-control-label">Postal Code</label>
+                    <label className="form-control-label">
+                      Postal Code
+                    </label>
 
                     <div className="form-control-valign">
                       <input
@@ -338,7 +344,9 @@ const Identity = () => {
                     </div>
                   </div>
                   <div className="form-group Gender_Group">
-                    <label className="form-control-label">Country</label>
+                    <label className="form-control-label">
+                      Country
+                    </label>
 
                     <div className="form-control-valign">
                       <input

@@ -15,7 +15,7 @@ const Identity = () => {
   const userDetail = useSelector(user);
   const Details = userDetail;
 
-  const Address = JSON.parse(localStorage.getItem("AddressUser"));
+  const Address = JSON.parse(localStorage.getItem("AddressUser"))
 
   const [firstName, setFirstName] = useState(Details?.firstName);
   const [lastName, setLastName] = useState(Details?.lastName);
@@ -25,10 +25,7 @@ const Identity = () => {
   const [courtesyTitle, setCourtesyTitle] = useState(Details?.courtesyTitle);
   const [company, setCompany] = useState(Details?.company);
   const [vatNumber, setVatNumber] = useState(Details?.vatNumber);
-  const [phone, setPhone] = useState(Details?.phone);
-  const [registrationNo, setRegestrationNumber] = useState(
-    Details?.registrationNo
-  );
+
 
   const payload = {
     firstName,
@@ -39,8 +36,6 @@ const Identity = () => {
     courtesyTitle,
     company,
     vatNumber,
-    phone,
-    registrationNo,
   };
 
   function FiledChooser(field, placeholder) {
@@ -52,6 +47,9 @@ const Identity = () => {
     e.preventDefault();
     dispatch(UpdateUser(payload));
   };
+
+  console.log(Address)
+
 
   return (
     <div>
@@ -189,25 +187,6 @@ const Identity = () => {
                       />
                     </div>
                   </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Phone Number <span style={{ color: "red" }}>*</span>{" "}
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="tel"
-                        minLength={8}
-                        maxLength={12}
-                        placeholder={FiledChooser(
-                          Details?.phone,
-                          "Phone Number"
-                        )}
-                        onChange={(e) => setPhone(e.target.value)}
-                      />
-                    </div>
-                  </div>
 
                   <div className="form-group Gender_Group">
                     <label className="form-control-label">
@@ -284,67 +263,7 @@ const Identity = () => {
                       <input
                         className="Input"
                         type="text"
-                        placeholder={FiledChooser(Details?.registrationNo)}
-                        onChange={(e) => setRegestrationNumber(e.target.value)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Company address
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.address)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">
-                      Address Complement
-                    </label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.addressComplement)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">City</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.city)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">Postal Code</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.pincode)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group Gender_Group">
-                    <label className="form-control-label">Country</label>
-
-                    <div className="form-control-valign">
-                      <input
-                        className="Input"
-                        type="text"
-                        defaultValue={FiledChooser(Address?.country)}
+                        defaultValue={FiledChooser(Details?.registrationNo)}
                       />
                     </div>
                   </div>

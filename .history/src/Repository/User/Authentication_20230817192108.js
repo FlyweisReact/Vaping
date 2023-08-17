@@ -51,7 +51,9 @@ const LoginUser = (payload, navigate) => {
       const data = response.data.data;
       localStorage.setItem("Token", response.data.accessToken);
       dispatch(Login(data));
-      localStorage.setItem("AddressUser" , JSON.stringify(response.data.Address))
+
+      localStorage.setItem("AddressUser" , response.data.Address)
+      console.log(response.data.Address)
       Store.addNotification({
         title: "Success !",
         message: "Welcome Back",
@@ -65,7 +67,7 @@ const LoginUser = (payload, navigate) => {
           onScreen: true,
         },
       });
-      navigate("/identity");
+      // navigate("/identity");
     } catch (e) {
       const msg = e?.response?.data?.message;
       Store.addNotification({
