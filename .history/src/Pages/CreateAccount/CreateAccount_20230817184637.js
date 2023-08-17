@@ -196,17 +196,6 @@ const CreateAccount = () => {
                       onChange={(e) => setCountry(e.target.value)}
                     />
                   </div>
-
-                  <div className="form-group">
-                    <input
-                      type="tel"
-                      placeholder="Telephone No."
-                      required
-                      maxLength={12}
-                      minLength={8}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
                 </div>
 
                 <div className="col-6">
@@ -245,7 +234,16 @@ const CreateAccount = () => {
                   </div>
 
                 
-                
+                  <div className="form-group">
+                    <input
+                      type="tel"
+                      placeholder="Telephone No."
+                      required
+                      maxLength={12}
+                      minLength={8}
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
+                  </div>
                   <div className="form-group">
                     <input
                       type="text"
