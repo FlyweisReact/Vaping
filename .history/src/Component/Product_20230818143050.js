@@ -12,6 +12,8 @@ const Product = ({ products, loading }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(isAuthenticated);
 
+  console.info(products);
+
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
       return item?.colors?.[0]?.img;
@@ -87,13 +89,13 @@ const Product = ({ products, loading }) => {
               {isLoggedIn ? (
                 <div className="product-price-and-shipping">
                   <span className="price">
-                    {item.discount === false
+                    {i.discount === false
                       ? `£${item?.price}`
                       : `£ ${item?.discountPrice}`}
                   </span>
                   <span className="regular-price">
                     {" "}
-                    {item.discount === false ? `` : `£${item?.price}`}{" "}
+                    {i.discount === false ? `` : `£${item?.price}`}{" "}
                   </span>
                 </div>
               ) : (
@@ -115,7 +117,6 @@ const Product = ({ products, loading }) => {
                           item?.colors?.[0]?.colorSize?.[0]?.size
                         )
                       }
-                      href="#"
                     >
                       <i className="fa-solid fa-bag-shopping"></i>
                       <span>Add To cart</span>
@@ -128,7 +129,7 @@ const Product = ({ products, loading }) => {
                     </Link>
                   )
                 ) : (
-                  <a href="#">
+                  <a>
                     <i className="fa-solid fa-bag-shopping"></i>
                     <span>out of stock</span>
                   </a>

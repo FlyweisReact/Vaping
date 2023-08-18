@@ -12,6 +12,8 @@ const Product = ({ products, loading }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(isAuthenticated);
 
+  console.info(products);
+
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
       return item?.colors?.[0]?.img;
@@ -115,7 +117,6 @@ const Product = ({ products, loading }) => {
                           item?.colors?.[0]?.colorSize?.[0]?.size
                         )
                       }
-                      href="#"
                     >
                       <i className="fa-solid fa-bag-shopping"></i>
                       <span>Add To cart</span>
@@ -128,7 +129,7 @@ const Product = ({ products, loading }) => {
                     </Link>
                   )
                 ) : (
-                  <a href="#">
+                  <a>
                     <i className="fa-solid fa-bag-shopping"></i>
                     <span>out of stock</span>
                   </a>

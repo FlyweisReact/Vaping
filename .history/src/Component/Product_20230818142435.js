@@ -87,14 +87,11 @@ const Product = ({ products, loading }) => {
               {isLoggedIn ? (
                 <div className="product-price-and-shipping">
                   <span className="price">
-                    {item.discount === false
-                      ? `£${item?.price}`
-                      : `£ ${item?.discountPrice}`}
+                    {item?.discountPrice
+                      ? `£ ${item?.discountPrice}`
+                      : `£${item?.price}`}
                   </span>
-                  <span className="regular-price">
-                    {" "}
-                    {item.discount === false ? `` : `£${item?.price}`}{" "}
-                  </span>
+                  <span className="regular-price">£{item?.price}</span>
                 </div>
               ) : (
                 <div className="product-price-and-shipping">
@@ -115,7 +112,6 @@ const Product = ({ products, loading }) => {
                           item?.colors?.[0]?.colorSize?.[0]?.size
                         )
                       }
-                      href="#"
                     >
                       <i className="fa-solid fa-bag-shopping"></i>
                       <span>Add To cart</span>
@@ -128,7 +124,7 @@ const Product = ({ products, loading }) => {
                     </Link>
                   )
                 ) : (
-                  <a href="#">
+                  <a>
                     <i className="fa-solid fa-bag-shopping"></i>
                     <span>out of stock</span>
                   </a>

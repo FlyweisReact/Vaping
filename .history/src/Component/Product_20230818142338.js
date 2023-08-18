@@ -1,11 +1,13 @@
 /** @format */
 import { Skeleton } from "antd";
 import React from "react";
+import { Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItemCart } from "../Repository/User/cart";
 import { isAuthenticated } from "../Store/Slices/authSlice";
 import Rating from "./Rating";
+import { Store } from "react-notifications-component";
 
 const Product = ({ products, loading }) => {
   const quantity = 1;
@@ -87,14 +89,11 @@ const Product = ({ products, loading }) => {
               {isLoggedIn ? (
                 <div className="product-price-and-shipping">
                   <span className="price">
-                    {item.discount === false
-                      ? `£${item?.price}`
-                      : `£ ${item?.discountPrice}`}
+                    {/* {item?.discountPrice
+                      ? `£ ${item?.discountPrice}`
+                      : `£${item?.price}`} */}
                   </span>
-                  <span className="regular-price">
-                    {" "}
-                    {item.discount === false ? `` : `£${item?.price}`}{" "}
-                  </span>
+                  <span className="regular-price">£{item?.price}</span>
                 </div>
               ) : (
                 <div className="product-price-and-shipping">
@@ -115,7 +114,6 @@ const Product = ({ products, loading }) => {
                           item?.colors?.[0]?.colorSize?.[0]?.size
                         )
                       }
-                      href="#"
                     >
                       <i className="fa-solid fa-bag-shopping"></i>
                       <span>Add To cart</span>
@@ -128,7 +126,7 @@ const Product = ({ products, loading }) => {
                     </Link>
                   )
                 ) : (
-                  <a href="#">
+                  <a>
                     <i className="fa-solid fa-bag-shopping"></i>
                     <span>out of stock</span>
                   </a>
