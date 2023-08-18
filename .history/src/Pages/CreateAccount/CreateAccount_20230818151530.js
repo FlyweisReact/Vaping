@@ -469,6 +469,19 @@ const CreateAccount = () => {
                 />
               </div>
 
+
+              <div className="form-group">
+                <i className="fa-solid fa-globe"></i>
+                <input
+                  type="text"
+                  placeholder="Country"
+                  required
+                  name="country"
+                  onChange={(e) => setAddressCountry(e.target.value)}
+                />
+              </div>
+
+           
               <div className="form-group">
                 <i className="fa-solid fa-location-arrow"></i>
                 <input
@@ -501,18 +514,6 @@ const CreateAccount = () => {
                   onChange={(e) => setPinCode(e.target.value)}
                 />
               </div>
-
-              <div className="form-group">
-                <i className="fa-solid fa-globe"></i>
-                <input
-                  type="text"
-                  placeholder="Country"
-                  required
-                  name="country"
-                  onChange={(e) => setAddressCountry(e.target.value)}
-                />
-              </div>
-
               <button type="submit">Register </button>
             </form>
           </div>

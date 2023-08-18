@@ -60,6 +60,7 @@ const CreateAccount = () => {
           dob,
           courtesyTitle,
           company,
+          // country,
           phone,
           vatUsed,
           registrationNo,
@@ -163,7 +164,7 @@ const CreateAccount = () => {
 
                   {vatUsed === "true" ? (
                     <div className="form-group">
-                      <i className="fa-solid fa-elevator"></i>
+                    <i className="fa-solid fa-elevator"></i>
                       <input
                         type="text"
                         placeholder="VAT Number (if available) "
@@ -183,9 +184,10 @@ const CreateAccount = () => {
                       onChange={(e) => setCompany(e.target.value)}
                     />
                   </div>
+               
 
                   <div className="form-group">
-                    <i className="fa-solid fa-phone"></i>
+                  <i className="fa-solid fa-phone"></i>
                     <input
                       type="tel"
                       placeholder="Telephone No."
@@ -198,7 +200,7 @@ const CreateAccount = () => {
                   </div>
 
                   <div className="form-group">
-                    <i className="fa-solid fa-globe"></i>
+                  <i className="fa-solid fa-globe"></i>
                     <input
                       type="text"
                       placeholder="Country"
@@ -245,7 +247,7 @@ const CreateAccount = () => {
                   </div>
 
                   <div className="form-group">
-                    <i className="fa-solid fa-address-card"></i>
+                  <i className="fa-solid fa-address-card"></i>
                     <input
                       type="text"
                       placeholder="Registration Number"
@@ -255,7 +257,7 @@ const CreateAccount = () => {
                   </div>
 
                   <div className="form-group">
-                    <i className="fa-solid fa-location-dot"></i>
+                  <i className="fa-solid fa-location-dot"></i>
                     <input
                       type="text"
                       placeholder="Buisness Address"
@@ -266,7 +268,7 @@ const CreateAccount = () => {
                   </div>
 
                   <div className="form-group">
-                    <i className="fa-solid fa-location-arrow"></i>
+                  <i className="fa-solid fa-location-arrow"></i>
                     <input
                       type="text"
                       placeholder="Buisness Address Complement"
@@ -277,7 +279,7 @@ const CreateAccount = () => {
                   </div>
 
                   <div className="form-group">
-                    <i className="fa-solid fa-city"></i>
+                  <i className="fa-solid fa-city"></i>
                     <input
                       type="text"
                       placeholder="City"
@@ -288,7 +290,7 @@ const CreateAccount = () => {
                   </div>
 
                   <div className="form-group">
-                    <i className="fa-solid fa-map-pin"></i>
+                  <i className="fa-solid fa-map-pin"></i>
                     <input
                       type="text"
                       placeholder="Postal Code"
@@ -349,6 +351,7 @@ const CreateAccount = () => {
                 allowed.
               </p>
 
+
               <div className="form-group">
                 <i className="fa-solid fa-user"></i>
                 <input
@@ -364,18 +367,6 @@ const CreateAccount = () => {
                 allowed.
               </p>
 
-              <div className="form-group">
-                <i className="fa-solid fa-phone"></i>
-                <input
-                  type="tel"
-                  placeholder="Telephone No."
-                  required
-                  maxLength={12}
-                  minLength={8}
-                  name="Phone"
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </div>
 
               <div className="form-group">
                 <i className="fa-solid fa-envelope"></i>
@@ -383,10 +374,11 @@ const CreateAccount = () => {
                   type="text"
                   placeholder="Email"
                   required
-                  name="Email"
+                  name="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
+
 
               <div className="form-group">
                 <i className="fa-solid fa-lock"></i>
@@ -407,6 +399,7 @@ const CreateAccount = () => {
                 )}
               </div>
 
+       
               <div className="form-group">
                 <i className="fa-solid fa-calendar-days"></i>
                 <input
@@ -414,26 +407,6 @@ const CreateAccount = () => {
                   placeholder="Birthdate"
                   required
                   onChange={(e) => setDob(e.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <i className="fa-solid fa-calendar-days"></i>
-                <input
-                  type="text"
-                  placeholder="Company"
-                  required
-                  onChange={(e) => setCompany(e.target.value)}
-                />
-              </div>
-
-              <div className="form-group">
-                <i className="fa-solid fa-address-card"></i>
-                <input
-                  type="text"
-                  placeholder="Registration Number"
-                  required
-                  onChange={(e) => setRegistrationNo(e.target.value)}
                 />
               </div>
 
@@ -447,7 +420,7 @@ const CreateAccount = () => {
 
               {vatUsed === "true" ? (
                 <div className="form-group">
-                  <i className="fa-solid fa-elevator"></i>
+                <i className="fa-solid fa-elevator"></i>
                   <input
                     type="text"
                     placeholder="VAT Number (if available) "
@@ -458,8 +431,65 @@ const CreateAccount = () => {
                 ""
               )}
 
+          
+
               <div className="form-group">
-                <i className="fa-solid fa-location-dot"></i>
+              <i className="fa-solid fa-phone"></i>
+                <input
+                  type="tel"
+                  placeholder="Telephone No."
+                  required
+                  maxLength={12}
+                  minLength={8}
+                  name="phone"
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+              <i className="fa-solid fa-address-card"></i>
+                <input
+                  type="text"
+                  placeholder="Registration Number"
+                  required
+                  onChange={(e) => setRegistrationNo(e.target.value)}
+                />
+              </div>
+
+
+
+              <div className="form-group">
+                <i className="fa-solid fa-calendar-days"></i>
+                <input
+                  type="text"
+                  placeholder="Company"
+                  required
+                  onChange={(e) => setCompany(e.target.value)}
+                />
+              </div>
+
+              <div className="form-group">
+              <i className="fa-solid fa-globe"></i>
+                <input
+                  type="text"
+                  placeholder="Country"
+                  required
+                  name="country"
+                  onChange={(e) => setAddressCountry(e.target.value)}
+                />
+              </div>
+
+            
+
+
+
+          
+
+
+            
+
+              <div className="form-group">
+              <i className="fa-solid fa-location-dot"></i>
                 <input
                   type="text"
                   placeholder="Buisness Address"
@@ -470,7 +500,7 @@ const CreateAccount = () => {
               </div>
 
               <div className="form-group">
-                <i className="fa-solid fa-location-arrow"></i>
+              <i className="fa-solid fa-location-arrow"></i>
                 <input
                   type="text"
                   placeholder="Buisness Address Complement"
@@ -481,7 +511,7 @@ const CreateAccount = () => {
               </div>
 
               <div className="form-group">
-                <i className="fa-solid fa-city"></i>
+              <i className="fa-solid fa-city"></i>
                 <input
                   type="text"
                   placeholder="City"
@@ -492,7 +522,7 @@ const CreateAccount = () => {
               </div>
 
               <div className="form-group">
-                <i className="fa-solid fa-map-pin"></i>
+              <i className="fa-solid fa-map-pin"></i>
                 <input
                   type="text"
                   placeholder="Postal Code"
@@ -501,18 +531,6 @@ const CreateAccount = () => {
                   onChange={(e) => setPinCode(e.target.value)}
                 />
               </div>
-
-              <div className="form-group">
-                <i className="fa-solid fa-globe"></i>
-                <input
-                  type="text"
-                  placeholder="Country"
-                  required
-                  name="country"
-                  onChange={(e) => setAddressCountry(e.target.value)}
-                />
-              </div>
-
               <button type="submit">Register </button>
             </form>
           </div>

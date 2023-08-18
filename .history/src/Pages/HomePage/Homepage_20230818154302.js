@@ -120,7 +120,7 @@ const Homepage = () => {
                 : banner?.map((item, index) => (
                     <div className="img-container" key={index}>
                       {item?.subcategoryId?._id ? (
-                        <Link to={`/category_product/${item?.subcategoryId?._id}/${item?.subcategoryId?.name}`}>
+                        <Link to={`/category_product/${item?.subcategoryId?._id}/${img?.subcategoryId?.name}`}>
                           <img src={item?.bannerImage} alt={item?.bannerName} />
                         </Link>
                       ) : (

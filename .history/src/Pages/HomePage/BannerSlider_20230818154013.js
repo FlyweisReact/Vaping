@@ -29,6 +29,9 @@ const BannerSlider = () => {
   }, []);
 
 
+  console.log(images)
+
+
   return (
     <>
       <div className="Banner_Slider_Container">

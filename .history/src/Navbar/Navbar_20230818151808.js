@@ -43,9 +43,10 @@ const Navbar = () => {
 
   useEffect(() => {
     getContact();
-    if (isLoggedIn === true) {
-      dispatch(getCart());
+    if(isLoggedIn === true) {
+      
     }
+    dispatch(getCart());
   }, []);
 
   const handleToggleOpen = () => {

@@ -29,6 +29,9 @@ const BannerSlider = () => {
   }, []);
 
 
+  console.log(images)
+
+
   return (
     <>
       <div className="Banner_Slider_Container">
@@ -36,7 +39,7 @@ const BannerSlider = () => {
           {images?.map((img, index) => (
             <div className="Main" key={index}>
               {img?.subcategoryId?._id ? (
-                <Link to={`/category_product/${img?.subcategoryId?._id}/${img?.subcategoryId?.name}`}>
+                <Link to={`category_product/64d2ccb28c6cb90c5f157390/ELF%20BAR`}>
                   {" "}
                   <img src={img?.bannerImage} alt={img?.bannerName} />
                 </Link>

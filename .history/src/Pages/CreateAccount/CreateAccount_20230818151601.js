@@ -469,6 +469,7 @@ const CreateAccount = () => {
                 />
               </div>
 
+
               <div className="form-group">
                 <i className="fa-solid fa-location-arrow"></i>
                 <input
@@ -480,6 +481,8 @@ const CreateAccount = () => {
                 />
               </div>
 
+
+              
               <div className="form-group">
                 <i className="fa-solid fa-city"></i>
                 <input
@@ -491,16 +494,6 @@ const CreateAccount = () => {
                 />
               </div>
 
-              <div className="form-group">
-                <i className="fa-solid fa-map-pin"></i>
-                <input
-                  type="text"
-                  placeholder="Postal Code"
-                  required
-                  name="pincode"
-                  onChange={(e) => setPinCode(e.target.value)}
-                />
-              </div>
 
               <div className="form-group">
                 <i className="fa-solid fa-globe"></i>
@@ -513,6 +506,11 @@ const CreateAccount = () => {
                 />
               </div>
 
+           
+       
+
+
+          
               <button type="submit">Register </button>
             </form>
           </div>
