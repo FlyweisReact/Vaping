@@ -24,8 +24,8 @@
   background-color: #000000;
 }
 .HomePage .Container {
-  /* width: 1200px; */
-  /* margin: auto; */
+  width: 1200px;
+  margin: auto;
   background-color: #fff;
 }
 .HomePage .Container .Banner_Two_Sec {
@@ -1832,7 +1832,7 @@
   color: #f12b2b;
   font-weight: bold;
   cursor: pointer;
-  font-family: Water Brush;
+  font-family:Water Brus  ;
 }
 
 .search-cont {

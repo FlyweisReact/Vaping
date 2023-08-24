@@ -242,7 +242,9 @@
 #header.header-1 .header-center .three-sec-cont a {
   text-decoration: none;
 }
-
+#header.header-1 .header-center .three-sec-cont .logoImg {
+  text-decoration: none;
+}
 
 #header.header-1 .header-center .three-sec-cont .right-cont {
   display: flex;
