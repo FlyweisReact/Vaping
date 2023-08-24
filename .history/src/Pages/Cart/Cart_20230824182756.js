@@ -159,12 +159,15 @@ const Cart = () => {
                                             className="button-minus"
                                             type="button"
                                             onClick={() =>
-                                              i.quantity > 1
-                                                ? updateProductQuantity(
-                                                    i._id,
-                                                    i.quantity - 1
-                                                  )
-                                                : ""
+                                            if(i.quantity > 1 ) {
+
+                                            }else{
+                                              updateProductQuantity(
+                                                i._id,
+                                                i.quantity - 1
+                                              )
+                                            }
+                                              
                                             }
                                           >
                                             <i className="fa-solid fa-minus"></i>
