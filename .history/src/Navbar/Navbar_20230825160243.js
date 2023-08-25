@@ -158,7 +158,9 @@ const Navbar = () => {
                 </div>
 
                 <Link to="/">
-                  <h2 className="logoImg">KRISH WHOLESELLER</h2>
+                  <h2 className="logoImg">
+                    KRISH  WHOLESELLER
+                  </h2>
                 </Link>
 
                 <i
@@ -178,7 +180,7 @@ const Navbar = () => {
                       {contactDetail?.tollfreeNo}{" "}
                     </span>
                     <br />
-                    <span> {contactDetail?.openingTime} </span>
+                    <span style={{color : "#fff"}} > {contactDetail?.openingTime} </span>
                   </div>
 
                   <div className="mini-cart">

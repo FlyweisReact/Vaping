@@ -157,7 +157,6 @@
   align-items: center;
   padding-top: 20px;
   flex-wrap: wrap;
-  justify-content: center;
   padding: 10px 10px 0px 10px;
 }
 .products-container .Main {
@@ -172,16 +171,10 @@
   position: relative;
   padding: 4px;
   width: 100%;
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .products-container .Main .thumbnail img {
-  max-width: 260px;
-  max-height: 260px;
-  display: block;
-  margin: auto;
+  width: 100%;
+  max-height: 262px;
 }
 .products-container .Main .product-groups {
   padding-top: 22px !important;
@@ -258,8 +251,7 @@
   max-width: 210px;
   width: 100%;
   line-height: 38px;
-  /* background: #f0f0f0; */
-  background: #f12b2b;
+  background: #f0f0f0;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -271,11 +263,8 @@
   padding: 5px;
   padding-left: 20px;
   text-decoration: none;
-  /* color: #000; */
-  color: #ffd800;
+  color: #000;
   padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 7px;
 }
 .products-container .Main .product-buttons {
   position: absolute;
@@ -287,8 +276,8 @@
 }
 
 .products-container .Main .group-buttons a:hover {
-  background: #f0f0f0;
-  color: #000;
+  background: #f12b2b;
+  color: #fff;
 }
 
 /* ---------------------- */
@@ -1848,9 +1837,11 @@
 .search-cont {
   border: 1px solid #333;
   height: 40px;
-  width: 23%;
+  max-width: 600px;
+  margin-left: 50%;
   border-radius: 8px;
   margin-top: 20px;
+  margin-right: 20px;
 }
 .search-cont i {
   margin-left: 5%;

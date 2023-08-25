@@ -167,6 +167,7 @@
   margin-bottom: 50px;
   background: #fff;
   width: 23%;
+  max-height: 700px;
 }
 .products-container .Main .thumbnail {
   position: relative;

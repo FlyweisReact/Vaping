@@ -183,7 +183,6 @@
   display: flex;
   align-items: flex-end;
   margin-top: 10px;
-  gap: 5px;
 }
 .fa-bars-staggered {
   display: none !important;
@@ -266,11 +265,11 @@
   .phone_number {
   color: #fff;
   font-weight: 900;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 !important;
 }
 #header.header-1 .header-center .three-sec-cont .right-cont .content span {
-  color: #fff;
+  color: #474747;
   font-weight: 500;
   font-size: 14px;
   padding-top: 2px;

@@ -171,11 +171,8 @@
 .products-container .Main .thumbnail {
   position: relative;
   padding: 4px;
-  width: 100%;
+  width: 260px;
   height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .products-container .Main .thumbnail img {
   max-width: 260px;

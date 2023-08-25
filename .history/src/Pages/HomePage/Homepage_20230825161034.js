@@ -120,9 +120,7 @@ const Homepage = () => {
                 : banner?.map((item, index) => (
                     <div className="img-container" key={index}>
                       {item?.subcategoryId?._id ? (
-                        <Link
-                          to={`/category_product/${item?.subcategoryId?._id}/${item?.subcategoryId?.name}`}
-                        >
+                        <Link to={`/category_product/${item?.subcategoryId?._id}/${item?.subcategoryId?.name}`}>
                           <img src={item?.bannerImage} alt={item?.bannerName} />
                         </Link>
                       ) : (
@@ -189,21 +187,14 @@ const Homepage = () => {
               </button>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                paddingRight: "60px",
-              }}
-            >
-              <div className="search-cont">
-                <i className="fa-solid fa-magnifying-glass"></i>
-                <input
-                  type="text"
-                  placeholder="Enter Search Keyword"
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-              </div>
+          <iv></iv>
+            <div className="search-cont">
+              <i className="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                placeholder="Enter Search Keyword"
+                onChange={(e) => setSearch(e.target.value)}
+              />
             </div>
 
             <Product products={searchD} loading={productLoading} />
@@ -216,10 +207,7 @@ const Homepage = () => {
               ) : (
                 bottomBanner?.map((item, index) =>
                   item?.subcategoryId?._id ? (
-                    <Link
-                      to={`/category_product/${item?.subcategoryId?._id}/${item?.subcategoryId?.name}`}
-                      key={index}
-                    >
+                    <Link to={`/category_product/${item?.subcategoryId?._id}/${item?.subcategoryId?.name}`} key={index} >
                       <img
                         src={item?.bannerImage}
                         alt={item?.bannerName}

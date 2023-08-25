@@ -183,7 +183,8 @@
   display: flex;
   align-items: flex-end;
   margin-top: 10px;
-  gap: 5px;
+  border: 1px solid red;
+  max-width: 150px;
 }
 .fa-bars-staggered {
   display: none !important;
@@ -192,15 +193,15 @@
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 10px;
 }
 #header .w-login a i {
-  font-size: 13px;
+  font-size: 10px;
 }
 
 #header .w-login span {
   color: #fff;
-  font-size: 13px;
+  font-size: 10px;
   padding-left: 5px;
 }
 
@@ -244,6 +245,7 @@
   text-decoration: none;
 }
 
+
 #header.header-1 .header-center .three-sec-cont .right-cont {
   display: flex;
   gap: 10px;
@@ -266,11 +268,11 @@
   .phone_number {
   color: #fff;
   font-weight: 900;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 !important;
 }
 #header.header-1 .header-center .three-sec-cont .right-cont .content span {
-  color: #fff;
+  color: #474747;
   font-weight: 500;
   font-size: 14px;
   padding-top: 2px;
@@ -518,7 +520,7 @@
   color: #f12b2b;
 }
 .Special_Link a {
-  padding: 0 !important;
+  padding: 0  !important;
 }
 .sidebar ul li .accordion {
   --bs-accordion-bg: none !important ;

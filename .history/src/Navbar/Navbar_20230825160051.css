@@ -183,7 +183,9 @@
   display: flex;
   align-items: flex-end;
   margin-top: 10px;
-  gap: 5px;
+  width: 150px;
+  max-width: 200px;
+  justify-content: space-between;
 }
 .fa-bars-staggered {
   display: none !important;
@@ -244,6 +246,7 @@
   text-decoration: none;
 }
 
+
 #header.header-1 .header-center .three-sec-cont .right-cont {
   display: flex;
   gap: 10px;
@@ -266,11 +269,11 @@
   .phone_number {
   color: #fff;
   font-weight: 900;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 !important;
 }
 #header.header-1 .header-center .three-sec-cont .right-cont .content span {
-  color: #fff;
+  color: #474747;
   font-weight: 500;
   font-size: 14px;
   padding-top: 2px;
@@ -518,7 +521,7 @@
   color: #f12b2b;
 }
 .Special_Link a {
-  padding: 0 !important;
+  padding: 0  !important;
 }
 .sidebar ul li .accordion {
   --bs-accordion-bg: none !important ;

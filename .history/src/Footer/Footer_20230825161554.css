@@ -70,7 +70,7 @@
   display: flex;
   max-width: 90%;
   margin: auto;
-  align-items: center;
+  align-items: flex-end;
 }
 .footer .footer-container .footer-col .block_newsletter input {
   height: 42px;
@@ -79,11 +79,10 @@
   padding-left: 20px;
   padding-right: 20px;
   font-size: 1.2rem;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 4px;
   outline: none;
   color: #eeee;
   width: 60%;
-  margin: 0;
 }
 .footer .footer-container .footer-col .block_newsletter button {
   height: 46px;
@@ -95,7 +94,6 @@
   border-radius: 3px;
   font-weight: 700;
   font-size: 12px;
-  margin: 0;
 }
 
 

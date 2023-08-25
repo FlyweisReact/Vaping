@@ -193,7 +193,7 @@ const Homepage = () => {
               style={{
                 display: "flex",
                 justifyContent: "flex-end",
-                paddingRight: "60px",
+                paddingRight: "50px",
               }}
             >
               <div className="search-cont">

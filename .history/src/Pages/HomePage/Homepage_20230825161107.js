@@ -189,13 +189,7 @@ const Homepage = () => {
               </button>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                paddingRight: "60px",
-              }}
-            >
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <div className="search-cont">
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input
