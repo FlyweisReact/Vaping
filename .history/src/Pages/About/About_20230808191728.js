@@ -47,7 +47,7 @@ const About = () => {
 
         <div className="About_Us-two_Sec">
           <div className="right">
-            <p>{data?.desc?.[3]?.desc}</p>
+            <p>{data?.desc?.[2]?.desc}</p>
           </div>
           <div className="left">
             <img src={data?.aboutusImages?.[1]} alt="" />
