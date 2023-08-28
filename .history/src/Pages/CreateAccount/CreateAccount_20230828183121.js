@@ -345,7 +345,7 @@ const CreateAccount = () => {
                     />
                     <span></span>
                   </span>
-                  Ms.
+                  Miss.
                 </label>
 
               </div>

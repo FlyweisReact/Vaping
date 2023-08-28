@@ -362,7 +362,7 @@ const CreateAccount = () => {
 
               <p className="form-control-comment">
                 Only letters and the dot (.) character, followed by a space, are
-                allowed.
+                allowed.dsadas
               </p>
 
               <div className="form-group">

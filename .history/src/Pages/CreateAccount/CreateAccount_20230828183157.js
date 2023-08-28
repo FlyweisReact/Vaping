@@ -349,6 +349,49 @@ const CreateAccount = () => {
                 </label>
 
               </div>
+              <div className="form-control-valign">
+                <label className="radio-inline">
+                  <span className="custom-radio">
+                    <input
+                      type="radio"
+                      name="id_gender"
+                      value="Mr"
+                      onClick={(e) => setCourtesyTitle(e.target.value)}
+                    />
+                    <span></span>
+                  </span>
+                  Mr.
+                </label>
+
+                <label className="radio-inline">
+                  <span className="custom-radio">
+                    <input
+                      type="radio"
+                      name="id_gender"
+                      value="Mrs"
+                      onClick={(e) => setCourtesyTitle(e.target.value)}
+                    />
+                    <span></span>
+                  </span>
+                  Mrs.
+                </label>
+
+
+
+                <label className="radio-inline">
+                  <span className="custom-radio">
+                    <input
+                      type="radio"
+                      name="id_gender"
+                      value="Ms"
+                      onClick={(e) => setCourtesyTitle(e.target.value)}
+                    />
+                    <span></span>
+                  </span>
+                  Ms.
+                </label>
+
+              </div>
               <div className="form-group">
                 <i className="fa-solid fa-user"></i>
                 <input

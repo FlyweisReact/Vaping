@@ -340,12 +340,12 @@ const CreateAccount = () => {
                     <input
                       type="radio"
                       name="id_gender"
-                      value="Ms"
+                      value="Mrs"
                       onClick={(e) => setCourtesyTitle(e.target.value)}
                     />
                     <span></span>
                   </span>
-                  Ms.
+                  Mrs.
                 </label>
 
               </div>
