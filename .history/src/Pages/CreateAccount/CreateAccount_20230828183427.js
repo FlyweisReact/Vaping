@@ -89,18 +89,7 @@ const CreateAccount = () => {
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="form-control-valign">
-                <label className="radio-inline">
-                    <span className="custom-radio">
-                      <input
-                        type="radio"
-                        name="id_gender"
-                        value="Mr"
-                        onClick={(e) => setCourtesyTitle(e.target.value)}
-                      />
-                      <span></span>
-                    </span>
-                    Mr.
-                  </label>
+                
 
                   <label className="radio-inline">
                     <span className="custom-radio">
@@ -113,19 +102,6 @@ const CreateAccount = () => {
                       <span></span>
                     </span>
                     Mrs.
-                  </label>
-
-                  <label className="radio-inline">
-                    <span className="custom-radio">
-                      <input
-                        type="radio"
-                        name="id_gender"
-                        value="Ms"
-                        onClick={(e) => setCourtesyTitle(e.target.value)}
-                      />
-                      <span></span>
-                    </span>
-                    Miss.
                   </label>
                 </div>
                 <div className="col-6">

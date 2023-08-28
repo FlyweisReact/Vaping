@@ -123,21 +123,6 @@ const Identity = () => {
                         </span>
                         Mrs.
                       </label>
-                      <label className="radio-inline">
-                        <span className="custom-radio">
-                          <input
-                            name="id_gender"
-                            type="radio"
-                            value="Ms"
-                            checked={
-                              Details?.courtesyTitle === "Ms" ? true : null
-                            }
-                            onClick={(e) => setCourtesyTitle(e.target.value)}
-                          />
-                          <span></span>
-                        </span>
-                        Miss.
-                      </label>
                     </div>
                   </div>
 

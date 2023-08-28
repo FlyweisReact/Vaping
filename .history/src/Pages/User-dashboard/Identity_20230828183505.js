@@ -128,15 +128,15 @@ const Identity = () => {
                           <input
                             name="id_gender"
                             type="radio"
-                            value="Ms"
+                            value="Mrs"
                             checked={
-                              Details?.courtesyTitle === "Ms" ? true : null
+                              Details?.courtesyTitle === "Mrs" ? true : null
                             }
                             onClick={(e) => setCourtesyTitle(e.target.value)}
                           />
                           <span></span>
                         </span>
-                        Miss.
+                        Mrs.
                       </label>
                     </div>
                   </div>

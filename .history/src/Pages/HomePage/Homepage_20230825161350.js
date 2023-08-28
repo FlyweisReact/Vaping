@@ -193,7 +193,7 @@ const Homepage = () => {
               style={{
                 display: "flex",
                 justifyContent: "flex-end",
-                paddingRight: "55px",
+                paddingRight: "60px",
               }}
             >
               <div className="search-cont">
@@ -270,7 +270,7 @@ const Homepage = () => {
 
                       <div className="content-blog">
                         <div className="post_title ">
-                          <a> {item?.title} </a>
+                          <a href="#"> {item?.title} </a>
                         </div>
                       </div>
                     </div>

@@ -180,7 +180,9 @@
 }
 .products-container .Main .thumbnail img {
   max-width: 260px;
-  max-height: 260px;
+  height: 260px;
+  /* max-width: 260px;
+  max-height: 260px; */
   display: block;
   margin: auto;
 }
@@ -1849,7 +1851,7 @@
 .search-cont {
   border: 1px solid #333;
   height: 40px;
-  width: 23.5%;
+  width: 23%;
   border-radius: 8px;
   margin-top: 20px;
 }

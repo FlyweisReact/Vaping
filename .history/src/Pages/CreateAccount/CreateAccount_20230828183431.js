@@ -114,19 +114,6 @@ const CreateAccount = () => {
                     </span>
                     Mrs.
                   </label>
-
-                  <label className="radio-inline">
-                    <span className="custom-radio">
-                      <input
-                        type="radio"
-                        name="id_gender"
-                        value="Ms"
-                        onClick={(e) => setCourtesyTitle(e.target.value)}
-                      />
-                      <span></span>
-                    </span>
-                    Miss.
-                  </label>
                 </div>
                 <div className="col-6">
                   <div className="form-group">

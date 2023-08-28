@@ -330,7 +330,7 @@ const Cart = () => {
                         <button
                           className="continue_shopping"
                           onClick={checkOut}
-                          style={{backgroundColor : "#000" , color : "#fff"}}
+                          style={{backgroundColor : "#000"}}
                         >
                           Checkout
                         </button>
