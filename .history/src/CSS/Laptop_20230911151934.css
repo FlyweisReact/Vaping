@@ -405,14 +405,7 @@
   .products-container .Main .group-buttons a {
     line-height: normal;
     padding: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 12px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .products-container .Main .product-buttons {
-    bottom: -10px;
+    padding-left: 5px !important;
   }
 }
 

@@ -127,15 +127,19 @@
   .products-container .Main .product-title a {
     font-size: 12px;
     line-height: normal;
+    
   }
   .products-container
-    .Main
-    .product-group-price
-    .product-price-and-shipping
-    .price {
+  .Main
+  .product-group-price
+  .product-price-and-shipping
+  .price {
     font-size: 12px;
   }
-  .products-container .Main .product-group-price .product-price-and-shipping {
+  .products-container
+  .Main
+  .product-group-price
+  .product-price-and-shipping {
     text-align: center;
     line-height: normal;
   }
@@ -282,43 +286,31 @@
     overflow-x: scroll;
   }
   .cart
-    #main
-    .cart-grid
-    .cart-grid-body
-    .cart-container
-    .group_title
-    table
-    tbody
-    tr
-    td
-    .big-container {
-    width: 300px;
+  #main
+  .cart-grid
+  .cart-grid-body
+  .cart-container
+  .group_title
+  table tbody tr td .big-container {
+width: 300px;
   }
   .cart
-    #main
-    .cart-grid
-    .cart-grid-body
-    .cart-container
-    .group_title
-    table
-    tbody
-    tr
-    td
-    .qty {
+  #main
+  .cart-grid
+  .cart-grid-body
+  .cart-container
+  .group_title
+  table tbody tr td .qty {
     margin-left: 20px;
     margin-right: 20px;
   }
   .cart
-    #main
-    .cart-grid
-    .cart-grid-body
-    .cart-container
-    .group_title
-    table
-    tbody
-    tr
-    td
-    .fa-trash {
+  #main
+  .cart-grid
+  .cart-grid-body
+  .cart-container
+  .group_title
+  table tbody tr td .fa-trash{
     margin-left: 10px;
   }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
@@ -395,25 +387,14 @@
     display: block !important;
   }
 
-  .logoImg {
+
+  .logoImg{
     font-size: 20px;
   }
   .search-cont input {
     margin-left: 0;
   }
 
-  .products-container .Main .group-buttons a {
-    line-height: normal;
-    padding: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 12px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-  .products-container .Main .product-buttons {
-    bottom: -10px;
-  }
 }
 
 .Hide-on-Normal {
