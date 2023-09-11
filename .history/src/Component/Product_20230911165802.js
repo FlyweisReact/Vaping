@@ -1,6 +1,6 @@
 /** @format */
 import { Skeleton } from "antd";
-import React , { useState} from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItemCart } from "../Repository/User/cart";
@@ -8,9 +8,19 @@ import { isAuthenticated } from "../Store/Slices/authSlice";
 import Rating from "./Rating";
 
 const Product = ({ products, loading }) => {
-  const quantity  = 1
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(isAuthenticated);
+
+  function increaeQuan() {
+    setQuantity(quantity + 1);
+  }
+
+  function decreaseQuan() {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  }
 
 
   const getImageLink = (item) => {
@@ -72,9 +82,9 @@ const Product = ({ products, loading }) => {
               <div className="product-description">
                 <div className="product-title">
                   {isLoggedIn ? (
-                    <Link to={`/product/${item?._id}`}> {item?.name?.length > 40 ? `${item?.name?.substring(0,40)}...` : item?.name } </Link>
+                    <Link to={`/product/${item?._id}`}>{item?.name}</Link>
                   ) : (
-                    <Link to="/login">{item?.name?.substring(0,10)}</Link>
+                    <Link to="/login">{item?.name}</Link>
                   )}
                 </div>
               </div>
@@ -83,8 +93,6 @@ const Product = ({ products, loading }) => {
             <div className="product-comments">
               <Rating rating={item.ratings} />
             </div>
-
-          
 
             <div className="product-group-price">
               {isLoggedIn ? (

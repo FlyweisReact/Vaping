@@ -1,6 +1,6 @@
 /** @format */
 import { Skeleton } from "antd";
-import React , { useState} from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItemCart } from "../Repository/User/cart";
@@ -8,10 +8,19 @@ import { isAuthenticated } from "../Store/Slices/authSlice";
 import Rating from "./Rating";
 
 const Product = ({ products, loading }) => {
-  const quantity  = 1
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(isAuthenticated);
 
+  function increaeQuan() {
+    setQuantity(quantity + 1);
+  }
+
+  function decreaseQuan() {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  }
 
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
@@ -72,9 +81,9 @@ const Product = ({ products, loading }) => {
               <div className="product-description">
                 <div className="product-title">
                   {isLoggedIn ? (
-                    <Link to={`/product/${item?._id}`}> {item?.name?.length > 40 ? `${item?.name?.substring(0,40)}...` : item?.name } </Link>
+                    <Link to={`/product/${item?._id}`}>{item?.name}</Link>
                   ) : (
-                    <Link to="/login">{item?.name?.substring(0,10)}</Link>
+                    <Link to="/login">{item?.name}</Link>
                   )}
                 </div>
               </div>
@@ -84,7 +93,7 @@ const Product = ({ products, loading }) => {
               <Rating rating={item.ratings} />
             </div>
 
-          
+
 
             <div className="product-group-price">
               {isLoggedIn ? (
@@ -104,6 +113,42 @@ const Product = ({ products, loading }) => {
                   <span className="price">Please Login To See The Price</span>
                 </div>
               )}
+            </div>
+
+
+            <div className="product-actions">
+              <div className="product-add-to-cart">
+                <div className="control-label">Quantity:</div>
+                <div className="product-quantity">
+                  <div className="qty">
+                    <div className="input-group">
+                      <input
+                        type="text"
+                        id="quantity_wanted"
+                        min="1"
+                        max="200"
+                        placeholder={quantity}
+                        disabled
+                      />
+
+                      <span className="input-group-btn-vertical">
+                        <button className="button-minus" type="button">
+                          <i
+                            className="fa-solid fa-minus"
+                            onClick={() => decreaseQuan()}
+                          ></i>
+                        </button>
+                        <button className="button-plus" type="button">
+                          <i
+                            className="fa-solid fa-plus"
+                            onClick={() => increaeQuan()}
+                          ></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="group-buttons">

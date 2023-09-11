@@ -8,10 +8,19 @@ import { isAuthenticated } from "../Store/Slices/authSlice";
 import Rating from "./Rating";
 
 const Product = ({ products, loading }) => {
-  const quantity  = 1
+  const [, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(isAuthenticated);
 
+  function increaeQuan() {
+    setQuantity(quantity + 1);
+  }
+
+  function decreaseQuan() {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  }
 
   const getImageLink = (item) => {
     if (item?.colorActive === true) {
@@ -72,9 +81,9 @@ const Product = ({ products, loading }) => {
               <div className="product-description">
                 <div className="product-title">
                   {isLoggedIn ? (
-                    <Link to={`/product/${item?._id}`}> {item?.name?.length > 40 ? `${item?.name?.substring(0,40)}...` : item?.name } </Link>
+                    <Link to={`/product/${item?._id}`}>{item?.name}</Link>
                   ) : (
-                    <Link to="/login">{item?.name?.substring(0,10)}</Link>
+                    <Link to="/login">{item?.name?.subString(0,40)}</Link>
                   )}
                 </div>
               </div>
