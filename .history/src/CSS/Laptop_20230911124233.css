@@ -292,7 +292,8 @@
   .cart-container
   .group_title
   table tbody tr td .big-container {
-width: 300px;
+    max-width: 300px !important;
+    
   }
   .cart
   #main
@@ -303,15 +304,7 @@ width: 300px;
   table tbody tr td .qty {
     margin-left: 20px;
     margin-right: 20px;
-  }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .fa-trash{
-    margin-left: 10px;
+  
   }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
     display: none;

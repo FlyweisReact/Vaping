@@ -112,40 +112,14 @@
   }
   .products-container .Main {
     width: 45%;
-    height: auto;
   }
   .products-container .Main .thumbnail {
-    height: 120px;
-    padding-top: 20px;
+    height: 100px;
+    border: 1px solid black;
   }
   .products-container .Main .thumbnail img {
-    max-height: 120px;
-  }
-  .products-container .Main .product-description {
-    padding: 0 10px;
-  }
-  .products-container .Main .product-title a {
-    font-size: 12px;
-    line-height: normal;
-    
-  }
-  .products-container
-  .Main
-  .product-group-price
-  .product-price-and-shipping
-  .price {
-    font-size: 12px;
-  }
-  .products-container
-  .Main
-  .product-group-price
-  .product-price-and-shipping {
-    text-align: center;
-    line-height: normal;
-  }
-
-  .products-container .Main .product-title {
-    font-size: 12px;
+    max-height: 200px;
+    border: 1px solid black;
   }
 
   .HomePage .Container .Blog-posts {
@@ -284,34 +258,6 @@
   .cart #main .cart-grid .cart-grid-body .cart-container .group_title {
     width: 100%;
     overflow-x: scroll;
-  }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .big-container {
-width: 300px;
-  }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .qty {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .fa-trash{
-    margin-left: 10px;
   }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
     display: none;

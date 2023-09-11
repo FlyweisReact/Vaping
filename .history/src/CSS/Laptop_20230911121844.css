@@ -112,41 +112,12 @@
   }
   .products-container .Main {
     width: 45%;
+  }
+  .products-container .Main .thumbnail{
     height: auto;
   }
-  .products-container .Main .thumbnail {
-    height: 120px;
-    padding-top: 20px;
-  }
-  .products-container .Main .thumbnail img {
-    max-height: 120px;
-  }
-  .products-container .Main .product-description {
-    padding: 0 10px;
-  }
-  .products-container .Main .product-title a {
-    font-size: 12px;
-    line-height: normal;
-    
-  }
-  .products-container
-  .Main
-  .product-group-price
-  .product-price-and-shipping
-  .price {
-    font-size: 12px;
-  }
-  .products-container
-  .Main
-  .product-group-price
-  .product-price-and-shipping {
-    text-align: center;
-    line-height: normal;
-  }
 
-  .products-container .Main .product-title {
-    font-size: 12px;
-  }
+
 
   .HomePage .Container .Blog-posts {
     display: none;
@@ -285,34 +256,6 @@
     width: 100%;
     overflow-x: scroll;
   }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .big-container {
-width: 300px;
-  }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .qty {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .cart
-  #main
-  .cart-grid
-  .cart-grid-body
-  .cart-container
-  .group_title
-  table tbody tr td .fa-trash{
-    margin-left: 10px;
-  }
   .cart #main .cart-grid .cart-grid-body .cart-container .Hide_This {
     display: none;
   }
@@ -369,24 +312,25 @@ width: 300px;
   .block_content-right .wlp_bought_list .Wishlist {
     width: 47%;
   }
-  .search-cont {
+  .search-cont{
     width: 80%;
     max-width: 80%;
     margin-left: 15%;
   }
-  .row {
+  .row{
     display: block !important;
   }
-  .col-6 {
+  .col-6{
     width: 100% !important;
   }
-  .Hide-on-Mobile-Phone {
+  .Hide-on-Mobile-Phone{
     display: none;
   }
-  .Hide-on-Normal {
-    display: block !important;
+  .Hide-on-Normal{
+    display: block  !important;
   }
 }
+
 
 .Hide-on-Normal {
   display: none;

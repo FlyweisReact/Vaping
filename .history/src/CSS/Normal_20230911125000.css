@@ -1023,7 +1023,6 @@
   font-style: normal;
   font-weight: 400;
   margin: 0;
-  text-align: justify;
 }
 
 .About_Us-two_Sec {
@@ -1036,7 +1035,7 @@
 }
 .About_Us-two_Sec .right {
   width: 55%;
-  text-align: justify;
+  text-align: left;
   display: flex;
   justify-content: flex-end;
 }

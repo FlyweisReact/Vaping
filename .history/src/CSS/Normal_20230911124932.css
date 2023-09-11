@@ -1023,7 +1023,6 @@
   font-style: normal;
   font-weight: 400;
   margin: 0;
-  text-align: justify;
 }
 
 .About_Us-two_Sec {
@@ -1036,7 +1035,7 @@
 }
 .About_Us-two_Sec .right {
   width: 55%;
-  text-align: justify;
+  text-align: left;
   display: flex;
   justify-content: flex-end;
 }
@@ -1097,7 +1096,8 @@
 .post .post-info {
   display: flex;
   gap: 10px;
-  align-items: center;
+  /* align-items: center; */
+  align-items: ;
   justify-content: center;
 }
 .post .post-info .comment a {
@@ -1158,8 +1158,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* align-items: center; */
-  align-items: flex-start;
+  align-items: center;
 }
 .post-container .post {
   width: 45%;
