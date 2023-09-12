@@ -237,7 +237,7 @@ const Homepage = () => {
                 </button>
               </div>
             )}
-{/* New Update */}
+{/* New  */}
             <div
               style={{
                 display: "flex",
