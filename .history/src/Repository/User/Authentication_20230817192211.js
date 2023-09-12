@@ -65,7 +65,7 @@ const LoginUser = (payload, navigate) => {
           onScreen: true,
         },
       });
-      navigate("/");
+      navigate("/identity");
     } catch (e) {
       const msg = e?.response?.data?.message;
       Store.addNotification({
