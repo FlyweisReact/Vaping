@@ -170,7 +170,7 @@ const Navbar = () => {
             >
               <motion.p
                 style={{
-                  color: "#0bdeda",
+                  color: "#0079fa",
                   fontWeight: "bold",
                   margin: 0,
                   padding: "10px",

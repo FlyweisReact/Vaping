@@ -170,12 +170,11 @@ const Navbar = () => {
             >
               <motion.p
                 style={{
-                  color: "#0bdeda",
+                  color: "#d7d7d7",
                   fontWeight: "bold",
                   margin: 0,
                   padding: "10px",
-                  fontSize: "25px",
-                  fontFamily: "Pacifico",
+                  fontSize : '25px'
                 }}
               >
                 {" "}
