@@ -176,8 +176,8 @@ const Navbar = () => {
                   padding: "10px",
                   fontSize: "25px",
                   fontFamily: "Pacifico",
-                  textTransform: "capitalize",
-                }}
+                  textTransform
+                                  }}
               >
                 {" "}
                 {ad.message}
