@@ -55,10 +55,7 @@ const Navbar = () => {
   };
 
   const getSubCategories = async () => {
-    try {
-      const res = await AllSubCat();
-      setSubCategory(res);
-    } catch {}
+
   };
 
   useEffect(() => {

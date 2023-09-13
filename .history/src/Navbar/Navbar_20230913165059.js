@@ -13,6 +13,7 @@ import { deleteProductCart, getCart } from "../Repository/User/cart";
 import { CartItems } from "../Store/Slices/cartSlice";
 import logo from "./2.png";
 import { getAd } from "../Repository/User/Product";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const isLoggedIn = useSelector(isAuthenticated);
@@ -154,31 +155,19 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div
-            className="container"
-            style={{ width: "100%", overflow: "hidden" }}
-          >
+          <div className="container" style={{ width: "100%", overflow: "hidden" }}>
             <motion.div
               style={{ display: "flex", whiteSpace: "nowrap" }}
               initial={{ x: "100%" }}
               animate={{ x: "-100%" }}
               transition={{
                 ease: "linear",
-                duration: 15,
+                duration: 5,
                 repeat: "Infinity",
+                // repeatType: "reverse"
               }}
             >
-              <motion.p
-                style={{
-                  color: "#f12b2b",
-                  fontWeight: "bold",
-                  margin: 0,
-                  padding: "10px",
-                }}
-              >
-                {" "}
-                {ad.message}
-              </motion.p>
+              <motion.p>{ad.message}</motion.p>
             </motion.div>
           </div>
           <div className="container">

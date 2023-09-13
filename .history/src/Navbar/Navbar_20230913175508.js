@@ -54,12 +54,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const getSubCategories = async () => {
-    try {
-      const res = await AllSubCat();
-      setSubCategory(res);
-    } catch {}
-  };
+  const getSubCategories = useCa
 
   useEffect(() => {
     getSubCategories();

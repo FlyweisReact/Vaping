@@ -20,6 +20,7 @@ const Product = ({ products, loading, productFetching }) => {
     }
   };
 
+  console.log(products);
 
   const submitHandler = async (productId, colorId, size) => {
     let payload;

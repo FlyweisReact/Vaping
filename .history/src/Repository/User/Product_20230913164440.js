@@ -58,11 +58,15 @@ const subCategoryProduct = async (id) => {
 };
 
 const getAd = async (data) => {
-  try {
-    const response = await axios.get(`${BaseUrl}api/v1/Notification`);
-    data(response.data.data);
-  } catch {}
-};
+  try{
+
+    const response = await axios.get(`${BaseUrl}api/v1/Notification`)
+    
+  }catch{
+
+  }
+}
+
 
 export {
   FilterProducts,
@@ -70,5 +74,5 @@ export {
   getRelatedProduct,
   subCategoryProduct,
   getProductAuth,
-  getAd,
+  getAd
 };

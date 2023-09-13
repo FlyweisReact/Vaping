@@ -12,7 +12,6 @@ import { AllSubCat } from "../Repository/User/Cat";
 import { deleteProductCart, getCart } from "../Repository/User/cart";
 import { CartItems } from "../Store/Slices/cartSlice";
 import logo from "./2.png";
-import { getAd } from "../Repository/User/Product";
 
 const Navbar = () => {
   const isLoggedIn = useSelector(isAuthenticated);
@@ -29,7 +28,6 @@ const Navbar = () => {
   const [Items, setItems] = useState({});
   const cartItem = useSelector(CartItems);
   const [total, setTotal] = useState(0);
-  const [ad, setAd] = useState("");
 
   const getContact = async () => {
     try {
@@ -134,13 +132,8 @@ const Navbar = () => {
     dispatch(deleteProductCart(cartProductId));
   };
 
-  const getAds = () => {
-    getAd(setAd);
-  };
+  
 
-  useEffect(() => {
-    getAds();
-  }, []);
 
   return (
     <>
@@ -154,33 +147,11 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div
-            className="container"
-            style={{ width: "100%", overflow: "hidden" }}
-          >
-            <motion.div
-              style={{ display: "flex", whiteSpace: "nowrap" }}
-              initial={{ x: "100%" }}
-              animate={{ x: "-100%" }}
-              transition={{
-                ease: "linear",
-                duration: 15,
-                repeat: "Infinity",
-              }}
-            >
-              <motion.p
-                style={{
-                  color: "#f12b2b",
-                  fontWeight: "bold",
-                  margin: 0,
-                  padding: "10px",
-                }}
-              >
-                {" "}
-                {ad.message}
-              </motion.p>
-            </motion.div>
+
+          <div className="container">
+            <p className="Ad"></p>
           </div>
+
           <div className="container">
             <div className="header-center">
               <div className="three-sec-cont">

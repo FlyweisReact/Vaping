@@ -164,18 +164,11 @@ const Navbar = () => {
               animate={{ x: "-100%" }}
               transition={{
                 ease: "linear",
-                duration: 15,
+                duration: 5,
                 repeat: "Infinity",
               }}
             >
-              <motion.p
-                style={{
-                  color: "#f12b2b",
-                  fontWeight: "bold",
-                  margin: 0,
-                  padding: "10px",
-                }}
-              >
+              <motion.p style={{ color: "#f12b2b", fontWeight: "bold" , marign }}>
                 {" "}
                 {ad.message}
               </motion.p>

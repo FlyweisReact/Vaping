@@ -13,6 +13,7 @@ import { deleteProductCart, getCart } from "../Repository/User/cart";
 import { CartItems } from "../Store/Slices/cartSlice";
 import logo from "./2.png";
 import { getAd } from "../Repository/User/Product";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const isLoggedIn = useSelector(isAuthenticated);
@@ -29,7 +30,7 @@ const Navbar = () => {
   const [Items, setItems] = useState({});
   const cartItem = useSelector(CartItems);
   const [total, setTotal] = useState(0);
-  const [ad, setAd] = useState("");
+  const [ ad ,setAd ] = useState("")
 
   const getContact = async () => {
     try {
@@ -134,13 +135,15 @@ const Navbar = () => {
     dispatch(deleteProductCart(cartProductId));
   };
 
+
   const getAds = () => {
-    getAd(setAd);
-  };
+    getAd(setAd)
+  }
 
   useEffect(() => {
-    getAds();
-  }, []);
+    getAds()
+  },[])
+
 
   return (
     <>
@@ -154,33 +157,28 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div
-            className="container"
-            style={{ width: "100%", overflow: "hidden" }}
-          >
-            <motion.div
-              style={{ display: "flex", whiteSpace: "nowrap" }}
-              initial={{ x: "100%" }}
-              animate={{ x: "-100%" }}
-              transition={{
-                ease: "linear",
-                duration: 15,
-                repeat: "Infinity",
-              }}
-            >
-              <motion.p
-                style={{
-                  color: "#f12b2b",
-                  fontWeight: "bold",
-                  margin: 0,
-                  padding: "10px",
-                }}
-              >
-                {" "}
-                {ad.message}
-              </motion.p>
-            </motion.div>
+
+          <div className="container">
+          <motion.div
+        style={{ display: "flex", whiteSpace: "nowrap" }}
+        initial={{ x: "100%" }}
+        animate={{ x: "-100%" }}
+        transition={{
+          ease: "linear",
+          duration: 5,
+          repeat: "Infinity"
+          // repeatType: "reverse"
+        }}
+      >
+        <motion.p>
+          In publishing and graphic design, Lorem ipsum is a placeholder text
+          commonly used to demonstrate the visual form of a document or a
+          typeface without relying on meaningful content
+        </motion.p>
+      </motion.div>
+            <p className="Ad"> {ad.message} </p>
           </div>
+
           <div className="container">
             <div className="header-center">
               <div className="three-sec-cont">

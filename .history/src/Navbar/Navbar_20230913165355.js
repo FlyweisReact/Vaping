@@ -164,7 +164,7 @@ const Navbar = () => {
               animate={{ x: "-100%" }}
               transition={{
                 ease: "linear",
-                duration: 15,
+                duration: 30,
                 repeat: "Infinity",
               }}
             >

@@ -13,6 +13,7 @@ import { deleteProductCart, getCart } from "../Repository/User/cart";
 import { CartItems } from "../Store/Slices/cartSlice";
 import logo from "./2.png";
 import { getAd } from "../Repository/User/Product";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const isLoggedIn = useSelector(isAuthenticated);
@@ -164,21 +165,11 @@ const Navbar = () => {
               animate={{ x: "-100%" }}
               transition={{
                 ease: "linear",
-                duration: 15,
+                duration: 5,
                 repeat: "Infinity",
               }}
             >
-              <motion.p
-                style={{
-                  color: "#f12b2b",
-                  fontWeight: "bold",
-                  margin: 0,
-                  padding: "10px",
-                }}
-              >
-                {" "}
-                {ad.message}
-              </motion.p>
+              <motion.p>{ad.message}</motion.p>
             </motion.div>
           </div>
           <div className="container">
