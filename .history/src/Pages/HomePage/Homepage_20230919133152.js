@@ -40,6 +40,7 @@ const Homepage = () => {
     }
   };
 
+  console.log(isLoggedIn)
 
   const getBottomBanner = async () => {
     setBigBanner(true);

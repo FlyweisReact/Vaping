@@ -44,9 +44,9 @@ const LogOutHandler = () => {
 
   useEffect(() => {
     if (!Token){
-      LogOutHandler()
+
     }
-  },[Token])
+  })
 
   return (
     <>

@@ -40,6 +40,7 @@ const Homepage = () => {
     }
   };
 
+  console.log(is)
 
   const getBottomBanner = async () => {
     setBigBanner(true);
