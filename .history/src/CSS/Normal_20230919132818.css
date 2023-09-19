@@ -199,7 +199,7 @@ height: 400px;
   line-height: 1;
   /* white-space: nowrap; */
   max-width: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .products-container .Main .product-title a {
   color: #444;

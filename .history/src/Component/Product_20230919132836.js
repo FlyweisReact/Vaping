@@ -36,6 +36,12 @@ const Product = ({ products, loading, productFetching }) => {
     productFetching();
   };
 
+  function truncateLastWord(str, maxLength) {
+    if (str.length <= maxLength) return str;
+
+    const lastSpaceIndex = str.lastIndexOf(" ", maxLength);
+    return str.substring(0, lastSpaceIndex) + "...";
+  }
 
   const updateProductQuantity = async (products_id, quantity) => {
     const payload = { products_id, quantity };
