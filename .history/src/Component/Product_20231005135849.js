@@ -203,7 +203,7 @@ const Product = ({ products, loading, productFetching }) => {
             </div>
           ))}
         </div>
-        <div className="switch_btn mb-4">
+        <div className="switch_btn">
           <button
             className="active"
             onClick={() => setCurrentPage2(currentPage2 + 1)}
@@ -225,7 +225,7 @@ const Product = ({ products, loading, productFetching }) => {
               className="active"
               onClick={() => setCurrentPage2(currentPage2 - 1)}
             >
-              Go Back
+             Go Back
             </button>
           </div>{" "}
         </>

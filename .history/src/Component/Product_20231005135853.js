@@ -203,7 +203,7 @@ const Product = ({ products, loading, productFetching }) => {
             </div>
           ))}
         </div>
-        <div className="switch_btn mb-4">
+        <div className="switch_btn">
           <button
             className="active"
             onClick={() => setCurrentPage2(currentPage2 + 1)}
@@ -220,12 +220,12 @@ const Product = ({ products, loading, productFetching }) => {
           <div className="Not-Found-Div">
             <img src="/Image/1.png" alt="notFound" />
           </div>
-          <div className="switch_btn mb-4">
+          <div className="switch_btn">
             <button
               className="active"
               onClick={() => setCurrentPage2(currentPage2 - 1)}
             >
-              Go Back
+             Go Back
             </button>
           </div>{" "}
         </>

@@ -203,38 +203,17 @@ const Product = ({ products, loading, productFetching }) => {
             </div>
           ))}
         </div>
-        <div className="switch_btn mb-4">
-          <button
-            className="active"
-            onClick={() => setCurrentPage2(currentPage2 + 1)}
-          >
+        <div className="switch_btn">
+          <button onClick={() => setCurrentPage2(currentPage2 + 1)}>
             View More
           </button>
         </div>
       </>
     )
   ) : (
-    <>
-      {products?.length > 0 && slicedData?.length === 0 ? (
-        <>
-          <div className="Not-Found-Div">
-            <img src="/Image/1.png" alt="notFound" />
-          </div>
-          <div className="switch_btn mb-4">
-            <button
-              className="active"
-              onClick={() => setCurrentPage2(currentPage2 - 1)}
-            >
-              Go Back
-            </button>
-          </div>{" "}
-        </>
-      ) : (
-        <div className="Not-Found-Div">
-          <img src="/Image/1.png" alt="notFound" />
-        </div>
-      )}
-    </>
+    <div className="Not-Found-Div">
+      <img src="/Image/1.png" alt="notFound" />
+    </div>
   );
 };
 
