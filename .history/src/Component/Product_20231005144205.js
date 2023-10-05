@@ -42,9 +42,12 @@ const Product = ({ products, loading, productFetching }) => {
   };
 
   const [currentPage2, setCurrentPage2] = useState(1);
-  const [postPerPage2] = useState(12);
+  const [postPerPage2] = useState(28);
   const lastPostIndex2 = currentPage2 * postPerPage2;
-  const slicedData = products?.slice(0, lastPostIndex2);
+  const firstPostIndex2 = lastPostIndex2 - postPerPage2;
+  const slicedData = products?.slice(firstPostIndex2, lastPostIndex2);
+
+  console.log()
 
   return slicedData?.length > 0 ? (
     loading ? (
@@ -179,7 +182,6 @@ const Product = ({ products, loading, productFetching }) => {
                               item?.colors?.[0]?.colorSize?.[0]?.size
                             )
                           }
-                          href='#'
                         >
                           <i className="fa-solid fa-bag-shopping"></i>
                           <span>Add To cart</span>
@@ -214,9 +216,27 @@ const Product = ({ products, loading, productFetching }) => {
       </>
     )
   ) : (
-    <div className="Not-Found-Div">
-      <img src="/Image/1.png" alt="notFound" />
-    </div>
+    <>
+      {products?.length > 0 && slicedData?.length === 0 ? (
+        <>
+          <div className="Not-Found-Div">
+            <img src="/Image/1.png" alt="notFound" />
+          </div>
+          <div className="switch_btn mb-4">
+            <button
+              className="active"
+              onClick={() => setCurrentPage2(currentPage2 - 1)}
+            >
+              Go Back
+            </button>
+          </div>{" "}
+        </>
+      ) : (
+        <div className="Not-Found-Div">
+          <img src="/Image/1.png" alt="notFound" />
+        </div>
+      )}
+    </>
   );
 };
 

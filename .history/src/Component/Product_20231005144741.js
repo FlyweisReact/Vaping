@@ -179,7 +179,6 @@ const Product = ({ products, loading, productFetching }) => {
                               item?.colors?.[0]?.colorSize?.[0]?.size
                             )
                           }
-                          href='#'
                         >
                           <i className="fa-solid fa-bag-shopping"></i>
                           <span>Add To cart</span>

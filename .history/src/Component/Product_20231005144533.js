@@ -42,9 +42,10 @@ const Product = ({ products, loading, productFetching }) => {
   };
 
   const [currentPage2, setCurrentPage2] = useState(1);
-  const [postPerPage2] = useState(12);
+  const [postPerPage2] = useState(28);
   const lastPostIndex2 = currentPage2 * postPerPage2;
   const slicedData = products?.slice(0, lastPostIndex2);
+
 
   return slicedData?.length > 0 ? (
     loading ? (
@@ -66,7 +67,7 @@ const Product = ({ products, loading, productFetching }) => {
       </div>
     ) : (
       <>
-        <div className="products-container">
+        <div className="products-container" href='#pro' >
           {slicedData?.map((item, index) => (
             <div className="Main" key={index}>
               <div className="thumbnail">
@@ -179,7 +180,6 @@ const Product = ({ products, loading, productFetching }) => {
                               item?.colors?.[0]?.colorSize?.[0]?.size
                             )
                           }
-                          href='#'
                         >
                           <i className="fa-solid fa-bag-shopping"></i>
                           <span>Add To cart</span>
@@ -204,6 +204,9 @@ const Product = ({ products, loading, productFetching }) => {
           ))}
         </div>
         <div className="switch_btn mb-4">
+        <a href="" >
+
+        </a>
           <button
             className="active"
             onClick={() => setCurrentPage2(currentPage2 + 1)}
