@@ -211,7 +211,7 @@ const Navbar = () => {
                   onMouseLeave={() => setIsOpen(false)}
                 >
                   <a href="https://wa.me/07472078196" target="_blank">
-                    <i class="fa-brands fa-whatsapp" style={{color : "#128c7e"}} ></i>
+                    <i class="fa-brands fa-whatsapp" style={{color : "#075e54"}} ></i>
                     {/* <i className="fa-solid fa-phone"></i> */}
                   </a>
 

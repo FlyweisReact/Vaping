@@ -253,7 +253,7 @@ const SpecificProduct = () => {
                       </div>
 
                       <div className="tax-shipping-delivery-label">
-                        Tax Excluded
+                        Tax included
                       </div>
                     </div>
 
