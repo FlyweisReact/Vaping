@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Navbar/Navbar.css";
 import Homepage from "./Pages/HomePage/Homepage";
@@ -31,23 +31,8 @@ import Success from "./Pages/PaymentResult/Success";
 import Failure from "./Pages/PaymentResult/Failure";
 import RecoverPassword from "./Pages/RecoverPassword/RecoverPassword";
 import NotFound from "./Pages/404/NotFound";
-import { useDispatch } from "react-redux";
-import { LOGOUT } from "./Store/Slices/authSlice";
 
 const App = () => {
-const Token = localStorage.getItem("Token")
-const dispatch = useDispatch()
-
-const LogOutHandler = () => {
-  dispatch(LOGOUT());
-}
-
-  useEffect(() => {
-    if (!Token){
-      LogOutHandler()
-    }
-  },[Token])
-
   return (
     <>
       <ReactNotifications />
