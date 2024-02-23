@@ -36,12 +36,10 @@ const Contact = () => {
     getContact();
   }, []);
 
-
-
   return (
     <div className="contact-us">
       <Navbar />
-      <Breadcrumb title={"Contact"} />
+      <Breadcrumb title={"Contact"} link={"/contact-us"} />
       {contactDetail?.map ? (
         <iframe
           src={contactDetail?.map}

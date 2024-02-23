@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const BaseUrl = process.env.React_App_Baseurl;
 
 const AllSubCat = async () => {
   try {

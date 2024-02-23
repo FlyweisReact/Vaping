@@ -1,20 +1,23 @@
-import React from 'react'
+/** @format */
 
-const Breadcrumb = ({title}) => {
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Breadcrumb = ({ title, link }) => {
   return (
-    <div className='BreadCrumb'  >
-        <div className='container'>
-                <ol>
-                    <li>
-                        <a href='/'>Home</a>
-                    </li>
-                    <li>
-                        <a href='/'> {title} </a>
-                    </li>
-                </ol>
-        </div>
+    <div className="BreadCrumb">
+      <div className="container">
+        <ol>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to={link}>{title} </Link>
+          </li>
+        </ol>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Breadcrumb
+export default Breadcrumb;

@@ -22,7 +22,7 @@ const Blogs = () => {
   return (
     <div>
       <Navbar />
-      <Breadcrumb title={"All Post"} />
+      <Breadcrumb title={"All Post"} link={'/posts'} />
 
       <div className="container-width ">
         <div className="post-container">

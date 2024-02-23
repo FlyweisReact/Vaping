@@ -30,7 +30,7 @@ const FullWidthProduct = () => {
     <>
       <div>
         <Navbar />
-        <Breadcrumb title={name} />
+        <Breadcrumb title={name} link={`/category_product/${id}/${name}`} />
         <div className="container-width ">
           <div className="products-selection">
             <div className="product-list-fiter">

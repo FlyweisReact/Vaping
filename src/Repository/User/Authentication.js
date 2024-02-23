@@ -3,7 +3,7 @@ import { Store } from "react-notifications-component";
 import axios from "axios";
 import { Login, UPDATE_PROFILE } from "../../Store/Slices/authSlice";
 
-const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const BaseUrl = process.env.React_App_Baseurl;
 
 const RegisterUser = async (payload, navigate) => {
   try {
@@ -51,7 +51,10 @@ const LoginUser = (payload, navigate) => {
       const data = response.data.data;
       localStorage.setItem("Token", response.data.accessToken);
       dispatch(Login(data));
-      localStorage.setItem("AddressUser" , JSON.stringify(response.data.Address))
+      localStorage.setItem(
+        "AddressUser",
+        JSON.stringify(response.data.Address)
+      );
       Store.addNotification({
         title: "Success !",
         message: "Welcome Back",

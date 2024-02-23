@@ -3,7 +3,7 @@
 import axios from "axios";
 import { Store } from "react-notifications-component";
 
-const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const BaseUrl = process.env.React_App_Baseurl;
 
 const getWishlit = async () => {
   try {

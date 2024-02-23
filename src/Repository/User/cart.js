@@ -3,7 +3,7 @@
 import axios from "axios";
 import { Store } from "react-notifications-component";
 import { getCartItems } from "../../Store/Slices/cartSlice";
-const BaseUrl = "https://krish-vapes-backend.vercel.app/";
+const BaseUrl = process.env.React_App_Baseurl;
 
 const getSize = async (payload) => {
   try {
@@ -216,14 +216,24 @@ const placeOrder = async (orderId) => {
   }
 };
 
-const successOrder = async (id, navigate) => {
+const successOrder = async (id, setIsVerified) => {
   try {
     const res = await axios.get(`${BaseUrl}api/v1/user/successOrder/${id}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
     });
     if (res.status === 200) {
-      navigate("/");
+      setIsVerified(true);
     }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const orderFailed = async (id) => {
+  try {
+    const res = await axios.get(`${BaseUrl}api/v1/user/cancelOrder/${id}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
+    });
   } catch (e) {
     console.log(e);
   }
@@ -238,5 +248,6 @@ export {
   deleteProductCart,
   updateQuantityCart,
   CheckOut,
-  successOrder
+  successOrder,
+  orderFailed,
 };

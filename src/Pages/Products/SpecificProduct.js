@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Product from "../../Component/Product";
 import Navbar from "../../Navbar/Navbar";
 import { addItemCart, getSize } from "../../Repository/User/cart";
@@ -12,6 +12,7 @@ import {
 } from "../../Repository/User/Product";
 import { addItemWishlist } from "../../Repository/User/wishlist";
 import { Skeleton } from "antd";
+import Breadcrumb from "../../Component/Breadcrumb";
 
 const SpecificProduct = () => {
   const [quantity, setQuantity] = useState(1);
@@ -31,7 +32,7 @@ const SpecificProduct = () => {
   }
 
   function decreaseQuan() {
-    if (quantity > 0) {
+    if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   }
@@ -112,24 +113,7 @@ const SpecificProduct = () => {
   return (
     <div>
       <Navbar />
-      <div className="BreadCrumb">
-        <div className="container">
-          <ol>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/"> Vaping </a>
-            </li>
-            <li>
-              <a href="/"> {product?.name} </a>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      {/* ---------------- */}
-
+      <Breadcrumb title={product?.name} link={`/product/${name}`} />
       <div className="container-width ">
         <div className="thumb-v4">
           {loading ? (
