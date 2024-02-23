@@ -1529,12 +1529,12 @@
   border: none;
   transition: 0.5s;
 }
-.backtohome {
+.backtohome{
   height: 50px;
   line-height: 50px;
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: #222;
   background: #000;
   width: 200px;
   border: none;

@@ -14,7 +14,7 @@ const Success = () => {
 
   return isVerified ? (
     <div className="payment-success-container">
-      <div className="payment-success-content" style={{ minWidth: "60%" }}>
+      <div className="payment-success-content">
         <h2>Thank You!</h2>
         <p className="fw-bold">
           {" "}
@@ -23,7 +23,7 @@ const Success = () => {
         </p>
 
         <Link to="/">
-          <button className="backtohome">RETURN TO HOMEPAGE</button>
+          <button className="continue_shopping">RETURN TO HOMEPAGE</button>
         </Link>
       </div>
     </div>

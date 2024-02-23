@@ -6,7 +6,7 @@ import { successOrder } from "../../Repository/User/cart";
 
 const Success = () => {
   const { id } = useParams();
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(true);
 
   useEffect(() => {
     successOrder(id, setIsVerified);

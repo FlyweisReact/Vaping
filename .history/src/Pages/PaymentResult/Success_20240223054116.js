@@ -6,7 +6,7 @@ import { successOrder } from "../../Repository/User/cart";
 
 const Success = () => {
   const { id } = useParams();
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(true);
 
   useEffect(() => {
     successOrder(id, setIsVerified);
@@ -23,7 +23,7 @@ const Success = () => {
         </p>
 
         <Link to="/">
-          <button className="backtohome">RETURN TO HOMEPAGE</button>
+          <button className="continue_shopping">RETURN TO HOMEPAGE</button>
         </Link>
       </div>
     </div>
