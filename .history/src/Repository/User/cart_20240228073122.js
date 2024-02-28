@@ -226,15 +226,10 @@ const successOrder = async (id) => {
   }
 };
 
-export const successOrderForPaypal = async (
-  paymentId,
-  PayerID,
-  amount,
-  setIsVerified
-) => {
+export const successOrderForPaypal = async (paymentId, setIsVerified) => {
   try {
     const res = await axios.get(
-      `${BaseUrl}api/v1/user/successOrderForPaypal?paymentId=${paymentId}&PayerID=${PayerID}&amount=${amount}`,
+      `${BaseUrl}api/v1/user/successOrderForPaypal?paymentId=fft546&PayerID=6554&amount=1`,
       {
         headers: { Authorization: `Bearer ${localStorage.getItem("Token")}` },
       }

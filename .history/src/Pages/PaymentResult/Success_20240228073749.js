@@ -2,10 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import {
-  successOrder,
-  successOrderForPaypal,
-} from "../../Repository/User/cart";
+import { successOrder, successOrderForPaypal } from "../../Repository/User/cart";
 
 const Success = () => {
   const { id } = useParams();
@@ -33,14 +30,9 @@ const Success = () => {
   useEffect(() => {
     if (splitIds?.[0]) {
       successOrder(splitIds?.[0]);
+      successOrderForPaypal(
     }
   }, [splitIds]);
-
-  useEffect(() => {
-    if (payerId && paymentId && amount) {
-      successOrderForPaypal(paymentId, payerId, amount, setIsVerified);
-    }
-  }, [paymentId, payerId, amount]);
 
   return isVerified ? (
     <div className="payment-success-container">

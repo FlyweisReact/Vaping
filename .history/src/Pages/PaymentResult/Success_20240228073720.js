@@ -2,10 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
-import {
-  successOrder,
-  successOrderForPaypal,
-} from "../../Repository/User/cart";
+import { successOrder } from "../../Repository/User/cart";
 
 const Success = () => {
   const { id } = useParams();
@@ -14,6 +11,7 @@ const Success = () => {
   const splitIds = id.split("-");
   const [amount, setAmount] = useState("");
   const [paymentId, setPaymentId] = useState("");
+  const [token, setToken] = useState("");
   const [payerId, setPayerId] = useState("");
 
   useEffect(() => {
@@ -25,22 +23,18 @@ const Success = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const paymentId = searchParams.get("paymentId");
+    const token = searchParams.get("token");
     const payerId = searchParams.get("PayerID");
     setPayerId(payerId);
+    setToken(token);
     setPaymentId(paymentId);
   }, [location.search]);
 
   useEffect(() => {
     if (splitIds?.[0]) {
-      successOrder(splitIds?.[0]);
+      successOrder(splitIds?.[0], setIsVerified);
     }
   }, [splitIds]);
-
-  useEffect(() => {
-    if (payerId && paymentId && amount) {
-      successOrderForPaypal(paymentId, payerId, amount, setIsVerified);
-    }
-  }, [paymentId, payerId, amount]);
 
   return isVerified ? (
     <div className="payment-success-container">

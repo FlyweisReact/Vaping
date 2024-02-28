@@ -228,8 +228,8 @@ const successOrder = async (id) => {
 
 export const successOrderForPaypal = async (
   paymentId,
-  PayerID,
-  amount,
+  PayerID, 
+  amount
   setIsVerified
 ) => {
   try {
